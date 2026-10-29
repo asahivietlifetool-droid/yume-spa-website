@@ -28,3 +28,8 @@ Chạy miễn phí trên GitHub Pages, 3 ngôn ngữ (日本語 / Tiếng Việt
 
 ## Chạy thử
 Mở `index.html` bằng trình duyệt là chạy (không cần build). GitHub Pages: Settings → Pages → Deploy from branch `main` / root.
+
+## Phản biện từ ChatGPT (29/10/2026) – đã áp dụng
+- Sửa 4 câu JA để giảm hàm ý "giảm triệu chứng" (head spa, facial, flow).
+- Giá: gel 1 màu ¥5.500 ngang mặt bằng Takenotsuka; head spa 30' ¥3.300 cạnh tranh; facial 40' ¥6.600 hơi cao so với đối thủ (~¥4.980/40') → cân nhắc ¥5.500 hoặc nêu rõ giá trị.
+- Ba thứ còn thiếu để khách tin đặt lịch: link LINE thật, địa chỉ + Google Maps + ngày nghỉ, ảnh thật của quán/nhân viên.
