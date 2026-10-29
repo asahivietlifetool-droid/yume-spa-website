@@ -26,6 +26,14 @@ Chạy miễn phí trên GitHub Pages, 3 ngôn ngữ (日本語 / Tiếng Việt
 - Nối mi (lashes) cần 美容師免許 → **chưa đưa lên web** cho đến khi có thợ có giấy.
 - Chi tiết: xem repo `asahi-vietlife-ai-ops/legal/`.
 
+## Gallery (ảnh quán · mẫu nail · khách)
+- Bỏ ảnh vào `assets/img/gallery/` (dọc 4:5, ≤ 250KB, WebP/JPG) rồi thêm dòng `{src, alt}` vào `assets/js/gallery.js`.
+- Chưa có ảnh → ô trống "Ảnh đang cập nhật" tự hiện. Thẻ ảnh nghiêng 3D theo chuột (máy tính), bấm để phóng to.
+- Ảnh khách: chỉ đăng khi khách đồng ý (đã ghi trên web). Không đăng ảnh "trước/sau" cho facial (薬機法).
+
+## Hiệu ứng 2.5D
+Hero 6 lớp (nền → quầng sáng → 2 bướm mờ → bướm chính → chữ → hạt vàng) parallax theo cuộn và theo chuột; chữ sáng dần khi cuộn; thẻ menu/gallery xuất hiện lần lượt. GSAP 3.12.5 để trong `assets/js/vendor/` (không phụ thuộc CDN). Tự tắt khi người dùng bật "giảm chuyển động".
+
 ## Chạy thử
 Mở `index.html` bằng trình duyệt là chạy (không cần build). GitHub Pages: Settings → Pages → Deploy from branch `main` / root.
 

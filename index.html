@@ -49,6 +49,7 @@
   <nav class="nav" aria-label="Site">
     <a href="#concept" data-i18n="nav.concept">コンセプト</a>
     <a href="#menu" data-i18n="nav.menu">メニュー</a>
+    <a href="#gallery" data-i18n="nav.gallery">ギャラリー</a>
     <a href="#flow" data-i18n="nav.flow">ご来店の流れ</a>
     <a href="#access" data-i18n="nav.access">アクセス</a>
     <a href="#faq" data-i18n="nav.faq">よくある質問</a>
@@ -62,11 +63,19 @@
 
 <main>
 
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="hero-inner">
-      <img class="hero-butterfly" src="assets/img/icon-gold.svg" alt="" width="458" height="405">
+  <!-- Techniques: 6-layer parallax scene, float loop, mouse parallax (desktop), gold particles, clip-path title reveal -->
+  <section class="hero scene" data-scene="hero" aria-labelledby="hero-title">
+    <div class="layer depth-0" data-depth="0" aria-hidden="true"></div>
+    <div class="layer depth-1" data-depth="1" aria-hidden="true"><span class="glow"></span></div>
+    <div class="layer depth-2" data-depth="2" aria-hidden="true">
+      <img class="companion companion-l" src="assets/img/icon-gold.svg" alt="" width="458" height="405">
+      <img class="companion companion-r" src="assets/img/icon-gold.svg" alt="" width="458" height="405">
+    </div>
+    <div class="layer depth-5" data-depth="5" aria-hidden="true"><span class="dust d1"></span><span class="dust d2"></span><span class="dust d3"></span><span class="dust d4"></span><span class="dust d5"></span><span class="dust d6"></span><span class="dust d7"></span><span class="dust d8"></span></div>
+    <div class="hero-inner layer depth-4" data-depth="4">
+      <img class="hero-butterfly" src="assets/img/icon-gold.svg" alt="" width="458" height="405" data-depth="3">
       <p class="hero-kana" data-i18n="hero.kana">ゆめ すぱ</p>
-      <h1 id="hero-title" data-i18n="hero.title">夢のような、ひとときを。</h1>
+      <h1 id="hero-title" class="reveal-title" data-i18n="hero.title">夢のような、ひとときを。</h1>
       <p class="hero-lead" data-i18n="hero.lead">竹ノ塚の小さなビューティースタジオ。ネイル、ヘッドスパ、フェイシャルケア。</p>
       <p class="hero-open" data-i18n="hero.open">2026年12月オープン</p>
       <div class="hero-actions">
@@ -82,7 +91,7 @@
         <h2 id="concept-title" data-i18n="concept.title">コンセプト</h2>
       </div>
       <div class="col-body">
-        <p class="big" data-i18n="concept.lead">「Yume」は、日本語でもベトナム語でも「夢」。仕事や家事のあいだに、自分のために使う一時間を。</p>
+        <p class="big" data-animate="words" data-i18n="concept.lead">「Yume」は、日本語でもベトナム語でも「夢」。仕事や家事のあいだに、自分のために使う一時間を。</p>
         <p data-i18n="concept.body">派手ではなく、ていねいに。清潔な空間で、ひとりひとりの手と肌に合わせて施術します。日本語・ベトナム語・英語でご案内できます。</p>
         <ul class="values">
           <li><strong data-i18n="concept.v1">清潔</strong><span data-i18n="concept.v1b">器具は毎回消毒。タオルはお客様ごとに交換します。</span></li>
@@ -101,6 +110,18 @@
       </div>
       <div class="menu-grid" id="menu-grid"></div>
       <p class="note small" data-i18n="menu.legal">当店はリラクゼーションと美容を目的としたサロンです。医療行為は行いません。</p>
+    </div>
+  </section>
+
+
+  <!-- Gallery: 3D tilt cards, slots for salon / nail designs / guests. Images listed in assets/js/gallery.js -->
+  <section class="section gallery" id="gallery" aria-labelledby="gallery-title">
+    <div class="wrap">
+      <div class="menu-head">
+        <h2 id="gallery-title" data-i18n="gallery.title">ギャラリー</h2>
+        <p class="note" data-i18n="gallery.note">お客様の写真は、ご本人の同意をいただいたもののみ掲載しています。</p>
+      </div>
+      <div class="gallery-groups" id="gallery-groups"></div>
     </div>
   </section>
 
@@ -193,7 +214,13 @@
   </div>
 </footer>
 
+<div class="lightbox" id="lightbox" hidden><button type="button" class="lightbox-close" aria-label="Close">×</button><img alt=""></div>
+
+<script src="assets/js/vendor/gsap.min.js"></script>
+<script src="assets/js/vendor/ScrollTrigger.min.js"></script>
 <script src="assets/js/i18n.js"></script>
+<script src="assets/js/gallery.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/effects.js"></script>
 </body>
 </html>

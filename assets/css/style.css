@@ -208,3 +208,67 @@ details p { color: var(--ink-soft); font-size: .96rem; margin: 0 0 1rem; }
 .foot-tag { font-family: var(--display); color: var(--gold-light); font-size: 1.1rem; letter-spacing: .04em; }
 .foot-legal { font-size: .85rem; margin: .25rem 0; }
 .foot-legal.small { font-size: .78rem; opacity: .8; max-width: 36rem; margin: .5rem auto 0; }
+
+/* ======================================================================
+   2.5D layer: hero scene, gallery tilt cards, lightbox, reduced motion
+   ====================================================================== */
+.scene { position: relative; overflow: hidden; }
+.layer { position: absolute; inset: -15% 0; pointer-events: none; }
+.layer.depth-4 { position: relative; inset: auto; pointer-events: auto; }
+.depth-0 { z-index: 0; background: radial-gradient(120% 80% at 50% 0%, #3A3147 0%, var(--night) 55%, var(--night-deep) 100%); }
+.depth-1 { z-index: 1; }
+.depth-1 .glow { position: absolute; left: 50%; top: 42%; width: 46vw; max-width: 620px; aspect-ratio: 1; transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(200,160,74,.32) 0%, rgba(200,160,74,.08) 45%, transparent 70%); filter: blur(28px); }
+.depth-2 { z-index: 2; }
+.companion { position: absolute; top: 38%; width: clamp(70px, 11vw, 150px); height: auto; opacity: .16; filter: blur(.6px); }
+.companion-l { left: calc(50% - clamp(75px, 13vw, 120px) - clamp(110px, 14vw, 200px)); transform: rotate(-14deg); animation: floatL 11s ease-in-out infinite; }
+.companion-r { right: calc(50% - clamp(75px, 13vw, 120px) - clamp(110px, 14vw, 200px)); transform: rotate(12deg); animation: floatR 13s ease-in-out infinite; }
+@keyframes floatL { 0%,100% { transform: rotate(-14deg) translateY(0); } 50% { transform: rotate(-10deg) translateY(-14px); } }
+@keyframes floatR { 0%,100% { transform: rotate(12deg) translateY(0); } 50% { transform: rotate(16deg) translateY(-18px); } }
+.hero-inner.depth-4 { z-index: 4; }
+.hero-butterfly { position: relative; z-index: 3; }
+.depth-5 { z-index: 5; }
+.dust { position: absolute; width: 5px; height: 5px; border-radius: 50%; background: var(--gold-light); opacity: .55; box-shadow: 0 0 10px 2px rgba(231,208,138,.35); animation: dust 9s ease-in-out infinite; }
+.dust.d1 { left: 18%; top: 30%; animation-delay: 0s; }   .dust.d2 { left: 27%; top: 62%; width: 3px; height: 3px; animation-delay: -2s; }
+.dust.d3 { left: 40%; top: 22%; width: 4px; height: 4px; animation-delay: -4s; } .dust.d4 { left: 58%; top: 70%; animation-delay: -1s; }
+.dust.d5 { left: 66%; top: 28%; width: 3px; height: 3px; animation-delay: -6s; } .dust.d6 { left: 78%; top: 50%; animation-delay: -3s; }
+.dust.d7 { left: 86%; top: 36%; width: 4px; height: 4px; animation-delay: -5s; } .dust.d8 { left: 12%; top: 76%; width: 3px; height: 3px; animation-delay: -7s; }
+@keyframes dust { 0%,100% { transform: translate(0,0); opacity: .35; } 50% { transform: translate(8px,-22px); opacity: .8; } }
+@media (max-width: 760px) { .companion { display: none; } .dust.d2, .dust.d5, .dust.d7 { display: none; } }
+
+/* title reveal (clip-path, GPU safe) */
+.reveal-title { clip-path: inset(0 0 0 0); }
+
+/* word lighting */
+[data-animate="words"] .w { display: inline-block; }
+
+/* ---------- gallery ---------- */
+.gallery { background: var(--silk); }
+.gallery-groups { display: grid; gap: clamp(2rem, 5vw, 3.5rem); }
+.gallery-group h3 { font-size: 1.5rem; margin-bottom: 1rem; display: flex; align-items: center; gap: .6rem; }
+.gallery-group h3 i { width: .55rem; height: .55rem; border-radius: 50%; background: var(--gold); display: inline-block; }
+.tilt-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 2.5vw, 1.75rem); perspective: 1200px; }
+@media (max-width: 760px) { .tilt-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 420px) { .tilt-grid { grid-template-columns: 1fr 1fr; gap: .75rem; } }
+.tilt { position: relative; aspect-ratio: 4 / 5; border-radius: 16px; overflow: hidden; transform-style: preserve-3d;
+  transition: transform .25s ease, box-shadow .25s ease; box-shadow: 0 10px 30px rgba(43,36,52,.12); background: var(--silk-deep); border: 0; padding: 0; cursor: zoom-in; }
+.tilt img { width: 100%; height: 100%; object-fit: cover; display: block; transform: translateZ(20px) scale(1.02); }
+.tilt .shine { position: absolute; inset: 0; background: linear-gradient(115deg, rgba(255,255,255,0) 40%, rgba(255,255,255,.28) 50%, rgba(255,255,255,0) 60%); opacity: 0; transition: opacity .25s; pointer-events: none; transform: translateZ(30px); }
+.tilt:hover .shine, .tilt:focus-visible .shine { opacity: 1; }
+.tilt.placeholder { cursor: default; display: grid; place-items: center; text-align: center; color: var(--ink-soft); font-size: .85rem;
+  background: linear-gradient(160deg, #F3ECDF 0%, #EADFCB 100%); outline: 1px dashed var(--line); outline-offset: -10px; }
+.tilt.placeholder img { width: 38%; height: auto; opacity: .35; object-fit: contain; transform: translateZ(10px); margin-bottom: .5rem; }
+.tilt.placeholder span { position: absolute; bottom: 12%; left: 0; right: 0; padding: 0 .75rem; }
+.tilt .cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 1.5rem .85rem .7rem; color: #fff; font-size: .82rem; background: linear-gradient(transparent, rgba(31,26,39,.75)); transform: translateZ(25px); }
+
+/* lightbox */
+.lightbox { position: fixed; inset: 0; z-index: 60; background: rgba(31,26,39,.92); display: grid; place-items: center; padding: 1.5rem; }
+.lightbox[hidden] { display: none; }
+.lightbox img { max-width: min(92vw, 1100px); max-height: 88vh; border-radius: 12px; box-shadow: 0 30px 80px rgba(0,0,0,.5); }
+.lightbox-close { position: absolute; top: 1rem; right: 1.25rem; font-size: 2rem; line-height: 1; background: none; border: 0; color: #F5EFE3; cursor: pointer; }
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+@media (max-width: 760px) { .tilt-grid .tilt.placeholder:nth-child(n+3) { display: none; } }
