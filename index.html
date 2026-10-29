@@ -102,6 +102,93 @@
     </div>
   </section>
 
+
+  <!-- Showcase: original 2.5D vector character, 3 states (nail / head spa / facial), tilt + layer parallax. Illustration only; real photos go in the gallery. -->
+  <section class="section showcase" id="showcase" aria-labelledby="showcase-title">
+    <div class="wrap two">
+      <div class="col-title">
+        <h2 id="showcase-title" data-i18n="showcase.title">三つのケア</h2>
+        <div class="state-tabs" role="tablist" aria-label="Service">
+          <button type="button" role="tab" aria-selected="true" data-state="nail"><strong data-i18n="showcase.nail">ネイル</strong><span data-i18n="showcase.nail.d">自爪をいたわり、手元を清潔に、きれいに。</span></button>
+          <button type="button" role="tab" aria-selected="false" data-state="head"><strong data-i18n="showcase.head">ヘッドスパ</strong><span data-i18n="showcase.head.d">頭皮にやさしく触れる、ゆったりとした時間。</span></button>
+          <button type="button" role="tab" aria-selected="false" data-state="facial"><strong data-i18n="showcase.facial">フェイシャル</strong><span data-i18n="showcase.facial.d">やさしいクレンジングと保湿で、しっとりなめらかに。</span></button>
+        </div>
+        <p class="note small" data-i18n="showcase.note">イラストはイメージです。実際の写真はギャラリーに掲載します。</p>
+      </div>
+      <div class="col-body figure-wrap">
+        <div class="figure-stage" id="figure-stage">
+          <svg class="figure" viewBox="0 0 600 660" role="img" aria-label="Illustration of a woman enjoying nail, head spa and facial care" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+              <radialGradient id="fg-glow" cx="50%" cy="45%" r="55%"><stop offset="0" stop-color="#E7D08A" stop-opacity=".55"/><stop offset=".6" stop-color="#C8A04A" stop-opacity=".12"/><stop offset="1" stop-color="#C8A04A" stop-opacity="0"/></radialGradient>
+              <linearGradient id="fg-skin" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7EBDF"/><stop offset="1" stop-color="#EBD3BF"/></linearGradient>
+              <linearGradient id="fg-hair" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4A3F5C"/><stop offset="1" stop-color="#2B2434"/></linearGradient>
+              <linearGradient id="fg-nail" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6E3C8"/><stop offset=".55" stop-color="#E2B9A8"/><stop offset="1" stop-color="#C8A04A"/></linearGradient>
+              <linearGradient id="fg-mask" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".92"/><stop offset="1" stop-color="#F3EBDD" stop-opacity=".82"/></linearGradient>
+              <filter id="fg-soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="1.2"/></filter>
+              <symbol id="fg-finger" viewBox="-14 -90 28 100"><rect x="-11" y="-80" width="22" height="90" rx="11" fill="url(#fg-skin)"/><rect x="-8" y="-82" width="16" height="22" rx="8" fill="url(#fg-nail)"/><rect x="-5" y="-78" width="4" height="9" rx="2" fill="#fff" opacity=".7"/></symbol>
+            </defs>
+
+            <g class="fg-layer fg-bg" data-fdepth="0">
+              <circle cx="300" cy="330" r="250" fill="url(#fg-glow)"/>
+              <circle class="fg-ring" cx="300" cy="330" r="235" fill="none" stroke="#C8A04A" stroke-opacity=".25" stroke-width="1.2" stroke-dasharray="4 10"/>
+            </g>
+
+            <g class="fg-layer fg-hair" data-fdepth="1">
+              <path class="fg-hairmass" d="M312,140 C230,112 160,160 150,262 C142,340 176,410 214,468 C236,520 220,580 190,640 C170,678 190,700 236,690 C300,676 330,620 332,560 L332,470 C300,420 282,330 292,220 C296,180 304,156 312,140 Z" fill="url(#fg-hair)"/>
+              <path class="fg-strand s1" d="M214,470 C236,520 228,600 196,660" fill="none" stroke="#C8A04A" stroke-opacity=".55" stroke-width="1.6" stroke-linecap="round"/>
+              <path class="fg-strand s2" d="M246,440 C262,520 250,600 220,672" fill="none" stroke="#E7D08A" stroke-opacity=".5" stroke-width="1.3" stroke-linecap="round"/>
+              <path class="fg-strand s3" d="M190,260 C178,330 190,392 210,440" fill="none" stroke="#C8A04A" stroke-opacity=".4" stroke-width="1.2" stroke-linecap="round"/>
+            </g>
+
+            <g class="fg-layer fg-face" data-fdepth="2">
+              <path d="M312,140 C352,150 372,195 374,236 C375,250 366,256 370,268 C380,282 400,296 398,306 C395,316 378,316 377,322 C382,330 390,336 388,348 C386,360 374,360 376,370 C380,384 376,400 366,406 C348,416 328,422 316,436 C314,458 318,482 332,500 C352,524 386,536 420,546 C450,554 462,570 462,640 L190,640 L190,580 C226,564 262,534 276,498 C284,474 286,440 284,404 C290,380 292,330 290,280 C288,220 296,170 312,140 Z" fill="url(#fg-skin)"/>
+              <path d="M318,440 C320,466 330,488 346,500" fill="none" stroke="#E0C4AE" stroke-width="1.2" stroke-linecap="round" opacity=".9"/>
+              <path class="fg-robe" d="M150,640 C176,586 236,556 318,560 C372,562 420,580 446,604 C456,614 460,626 460,640 Z" fill="#EFE8DC"/>
+              <path d="M156,632 C190,588 246,566 318,568 C372,570 418,588 444,610" fill="none" stroke="#C8A04A" stroke-opacity=".7" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M316,436 C322,452 334,470 352,480" fill="none" stroke="#D9B9A6" stroke-width="1.4" stroke-linecap="round" opacity=".8"/>
+              <path class="fg-brow" d="M336,242 C350,236 364,239 372,247" fill="none" stroke="#3A3147" stroke-width="2.2" stroke-linecap="round"/>
+              <path class="fg-eye" d="M342,268 C352,276 364,276 372,268" fill="none" stroke="#3A3147" stroke-width="2" stroke-linecap="round"/>
+              <path d="M372,268 L379,272 M366,274 L370,280 M358,276 L360,283" stroke="#3A3147" stroke-width="1.4" stroke-linecap="round"/>
+              <ellipse cx="358" cy="330" rx="16" ry="9" fill="#D9A6A0" opacity=".32" filter="url(#fg-soft)"/>
+              <path d="M378,338 C384,336 390,340 388,348 C386,356 378,356 376,352" fill="#D9A6A0" opacity=".85"/>
+              <path d="M298,292 C290,286 286,298 290,306 C294,314 302,310 302,302" fill="url(#fg-skin)" stroke="#E0C4AE" stroke-width="1"/>
+              <path class="fg-mask" d="M312,140 C352,150 372,195 374,236 C375,250 366,256 370,268 C380,282 400,296 398,306 C395,316 378,316 377,322 C382,330 390,336 388,348 C386,360 374,360 376,370 C380,384 376,400 366,406 C348,416 328,422 316,436 L292,420 C292,330 288,220 296,170 Z" fill="url(#fg-mask)" opacity="0"/>
+              <g class="fg-maskdots" opacity="0" fill="#fff"><circle cx="340" cy="300" r="3"/><circle cx="330" cy="360" r="2.4"/><circle cx="352" cy="392" r="2"/></g>
+            </g>
+
+            <g class="fg-layer fg-carehands" data-fdepth="3" opacity="0" stroke="#E3C9B4" stroke-width="1">
+              <g transform="translate(252,168) rotate(205)"><g class="fg-carehand ch1">
+                <ellipse cx="0" cy="30" rx="26" ry="34" fill="url(#fg-skin)"/>
+                <rect x="-24" y="-30" width="14" height="62" rx="7" fill="url(#fg-skin)"/><rect x="-7" y="-40" width="14" height="72" rx="7" fill="url(#fg-skin)"/><rect x="10" y="-36" width="14" height="68" rx="7" fill="url(#fg-skin)"/><rect x="26" y="-22" width="13" height="54" rx="6.5" fill="url(#fg-skin)"/>
+              </g></g>
+              <g transform="translate(334,122) rotate(168)"><g class="fg-carehand ch2">
+                <ellipse cx="0" cy="30" rx="26" ry="34" fill="url(#fg-skin)"/>
+                <rect x="-24" y="-30" width="14" height="62" rx="7" fill="url(#fg-skin)"/><rect x="-7" y="-40" width="14" height="72" rx="7" fill="url(#fg-skin)"/><rect x="10" y="-36" width="14" height="68" rx="7" fill="url(#fg-skin)"/><rect x="26" y="-22" width="13" height="54" rx="6.5" fill="url(#fg-skin)"/>
+              </g></g>
+            </g>
+
+            <g class="fg-layer fg-hand" data-fdepth="4">
+              <path d="M418,566 C414,530 426,508 452,504 C494,500 518,520 518,560 L516,632 C510,660 430,660 424,632 Z" fill="url(#fg-skin)"/>
+              <use href="#fg-finger" x="-14" y="-90" width="28" height="100" transform="translate(438,516) rotate(-10)"/>
+              <use href="#fg-finger" x="-14" y="-90" width="28" height="100" transform="translate(462,506) rotate(-3)"/>
+              <use href="#fg-finger" x="-14" y="-90" width="28" height="100" transform="translate(486,510) rotate(4)"/>
+              <use href="#fg-finger" x="-14" y="-90" width="28" height="100" transform="translate(508,524) rotate(13) scale(.9)"/>
+              <use href="#fg-finger" x="-14" y="-90" width="28" height="100" transform="translate(420,580) rotate(-58) scale(.72)"/>
+              <image class="fg-butterfly" href="assets/img/icon-gold.svg" x="404" y="402" width="54" height="48"/>
+            </g>
+
+            <g class="fg-layer fg-sparks" data-fdepth="5" fill="#E7D08A">
+              <path class="fg-spark k1" d="M470,180 l3,9 9,3 -9,3 -3,9 -3,-9 -9,-3 9,-3z"/>
+              <path class="fg-spark k2" d="M150,520 l2.5,7 7,2.5 -7,2.5 -2.5,7 -2.5,-7 -7,-2.5 7,-2.5z"/>
+              <path class="fg-spark k3" d="M520,420 l2,6 6,2 -6,2 -2,6 -2,-6 -6,-2 6,-2z"/>
+              <path class="fg-spark k4" d="M240,120 l2,6 6,2 -6,2 -2,6 -2,-6 -6,-2 6,-2z"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section menu" id="menu" aria-labelledby="menu-title">
     <div class="wrap">
       <div class="menu-head">
@@ -222,5 +309,6 @@
 <script src="assets/js/gallery.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/effects.js"></script>
+<script src="assets/js/showcase.js"></script>
 </body>
 </html>
