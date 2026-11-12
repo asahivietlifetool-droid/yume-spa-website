@@ -2,10 +2,24 @@
 
 Website tĩnh (HTML/CSS/JS thuần) cho **Yume Spa** – studio làm đẹp nhỏ ở Takenotsuka, Adachi-ku, Tokyo.
 Dịch vụ: nail · head spa (chăm sóc da đầu nhẹ) · chăm sóc da mặt. Khai trương 12/2026.
-Chạy miễn phí trên GitHub Pages, 3 ngôn ngữ (日本語 / Tiếng Việt / English) đổi tại chỗ.
+Chạy miễn phí trên GitHub Pages, 3 ngôn ngữ (日本語 / Tiếng Việt / English), mỗi ngôn ngữ một địa chỉ riêng.
 
 ## Cấu trúc
-- `index.html` – khung trang (hero, concept, menu, quy trình, ưu đãi khai trương, địa chỉ, đặt lịch, FAQ).
+- `src/template.html` – **khung trang** (hero, concept, menu, quy trình, ưu đãi khai trương, địa chỉ, đặt lịch, FAQ). Sửa khung ở đây.
+- `index.html` (tiếng Nhật), `vi/index.html`, `en/index.html`, `sitemap.xml` – **do máy dựng ra**, đừng sửa tay.
+- `tools/build.mjs` – dựng ba trang trên từ khung trang + `i18n.js`.
+
+### Sau khi sửa chữ, giá hoặc khung trang
+```
+node tools/build.mjs          # dựng lại ba trang và sitemap
+node tools/build.mjs --check  # kiểm tra trang tĩnh có lệch với i18n.js không
+```
+Rồi mới commit. Nếu quên, người xem vẫn thấy chữ mới (JavaScript vẽ lại), nhưng Google và trợ lý AI đọc bản cũ.
+
+### Vì sao có ba trang
+Trước đây cả ba ngôn ngữ nằm chung một địa chỉ và đổi bằng JavaScript, nên công cụ tìm kiếm chỉ đọc được một bản, và bảng giá không nằm trong HTML. Nay mỗi ngôn ngữ có địa chỉ riêng (`/`, `/vi/`, `/en/`), có `hreflang`, `canonical`, dữ liệu FAQ cho Google, và bảng giá nằm sẵn trong HTML. Ngôn ngữ của trang do địa chỉ quyết định, không tự đổi theo trình duyệt; trình duyệt tiếng Việt hoặc tiếng Anh chỉ thấy nút ngôn ngữ của mình được làm nổi.
+Khi chia sẻ cho người Việt, dùng link `/vi/`; cho người nói tiếng Anh, dùng `/en/`.
+
 - `assets/js/i18n.js` – **toàn bộ chữ + bảng giá + link**. Sửa nội dung ở đây.
 - `assets/js/main.js` – đổi ngôn ngữ, vẽ bảng giá, gắn link LINE/Facebook/Map.
 - `assets/css/style.css` – giao diện. Màu thương hiệu: gold `#C8A04A`, gold đậm `#8A6620`, gold nhạt `#E7D08A`.

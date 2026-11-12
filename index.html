@@ -1,14 +1,15 @@
 <!doctype html>
-<html lang="ja">
+<!-- Tệp này do tools/build.mjs tạo ra. Đừng sửa tay: sửa src/template.html hoặc assets/js/i18n.js rồi chạy node tools/build.mjs -->
+<html lang="ja" data-page-lang="ja" data-base="">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Yume Spa｜竹ノ塚のネイル・ヘッドスパ・フェイシャル</title>
   <meta name="description" content="Yume Spa は東京都足立区・竹ノ塚の小さなビューティースタジオ。ジェルネイル、ヘッドスパ（頭皮ケア）、フェイシャルケア。日本語・ベトナム語・英語で対応。2026年12月オープン。">
-  <meta property="og:title" content="Yume Spa – 竹ノ塚のネイル・ヘッドスパ・フェイシャル">
+  <meta property="og:title" content="Yume Spa｜竹ノ塚のネイル・ヘッドスパ・フェイシャル">
   <meta property="og:description" content="夢のような、ひとときを。竹ノ塚の小さなビューティースタジオ。2026年12月オープン。">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/img/logo.png">
+  <meta property="og:image" content="https://asahivietlifetool-droid.github.io/yume-spa-website/assets/img/logo.png">
   <meta name="theme-color" content="#2B2434">
   <link rel="icon" href="assets/img/icon-32.png" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/img/icon-180.png">
@@ -36,6 +37,61 @@
     "knowsLanguage": ["ja", "vi", "en"]
   }
   </script>
+  <link rel="canonical" href="https://asahivietlifetool-droid.github.io/yume-spa-website/">
+  <link rel="alternate" hreflang="ja" href="https://asahivietlifetool-droid.github.io/yume-spa-website/">
+  <link rel="alternate" hreflang="vi" href="https://asahivietlifetool-droid.github.io/yume-spa-website/vi/">
+  <link rel="alternate" hreflang="en" href="https://asahivietlifetool-droid.github.io/yume-spa-website/en/">
+  <link rel="alternate" hreflang="x-default" href="https://asahivietlifetool-droid.github.io/yume-spa-website/">
+  <meta property="og:url" content="https://asahivietlifetool-droid.github.io/yume-spa-website/">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "ja",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "予約なしでも利用できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "空きがあればご案内できますが、小さなサロンのためご予約をおすすめします。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "日本語が苦手でも大丈夫ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。ベトナム語・英語でもご案内します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ネイルのオフだけでもできますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "できます。他店で付けたジェルのオフもご相談ください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "妊娠中・持病がある場合は？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ご予約時にお知らせください。内容によってはお受けできないメニューがあります。医師にご相談のうえご利用ください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "支払い方法は？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "現金のほか、キャッシュレス決済を準備中です。"
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -55,9 +111,9 @@
     <a href="#faq" data-i18n="nav.faq">よくある質問</a>
   </nav>
   <div class="lang" role="group" aria-label="Language">
-    <button type="button" data-lang="ja" aria-pressed="true">日本語</button>
-    <button type="button" data-lang="vi" aria-pressed="false">Tiếng Việt</button>
-    <button type="button" data-lang="en" aria-pressed="false">English</button>
+    <button type="button" data-lang="ja" data-href="" aria-pressed="true">日本語</button>
+    <button type="button" data-lang="vi" data-href="vi/" aria-pressed="false">Tiếng Việt</button>
+    <button type="button" data-lang="en" data-href="en/" aria-pressed="false">English</button>
   </div>
 </header>
 
@@ -195,7 +251,7 @@
         <h2 id="menu-title" data-i18n="menu.title">メニュー</h2>
         <p class="note" data-i18n="menu.note">価格は税込・オープン時の予定価格です。初回はカウンセリングのお時間を含みます。</p>
       </div>
-      <div class="menu-grid" id="menu-grid"></div>
+      <div class="menu-grid" id="menu-grid"><div class="menu-card nails"><h3><i aria-hidden="true"></i>ネイル</h3><p class="d">ジェルネイル、ケア、オフ。自爪をいたわりながら、手元を清潔に、きれいに整えます。</p><ul class="price-list"><li><span class="n">ジェル ワンカラー</span><span class="p">¥5,500</span><span class="t">60分</span></li><li><span class="n">ジェル デザイン（ラメ・フレンチ・ニュアンス）</span><span class="p"><small>〜</small>¥7,000</span><span class="t">90分</span></li><li><span class="n">フットジェル</span><span class="p"><small>〜</small>¥8,800</span><span class="t">75分</span></li><li><span class="n">ハンドケア（甘皮・形・保湿）</span><span class="p">¥3,300</span><span class="t">30分</span></li><li><span class="n">ジェルオフ（他店オフも可）</span><span class="p">¥1,100</span><span class="t">20分</span></li></ul></div><div class="menu-card head"><h3><i aria-hidden="true"></i>ヘッドスパ</h3><p class="d">頭皮にやさしく触れながら、ゆったりとお過ごしいただく時間です。香りは数種類からお選びいただけます。</p><ul class="price-list"><li><span class="n">ヘッドスパ ショート</span><span class="p">¥3,300</span><span class="t">30分</span></li><li><span class="n">ヘッドスパ ロング（頭皮中心のリラックスケア）</span><span class="p">¥5,500</span><span class="t">50分</span></li><li><span class="n">ヘッドスパ 追加（他メニューと同時）</span><span class="p">¥2,200</span><span class="t">20分</span></li></ul></div><div class="menu-card facial"><h3><i aria-hidden="true"></i>フェイシャル</h3><p class="d">やさしいクレンジングと保湿を中心としたフェイシャルケアです。マスクの時間は、手のあたたかさでゆったりとお過ごしください。</p><ul class="price-list"><li><span class="n">フェイシャル ベーシック（クレンジング・保湿）</span><span class="p">¥6,600</span><span class="t">40分</span></li><li><span class="n">フェイシャル うるおいマスク</span><span class="p">¥8,800</span><span class="t">60分</span></li><li><span class="n">フェイシャル ＋ ヘッドスパ セット</span><span class="p">¥11,000</span><span class="t">80分</span></li></ul></div></div>
       <p class="note small" data-i18n="menu.legal">当店はリラクゼーションと美容を目的としたサロンです。医療行為は行いません。</p>
     </div>
   </section>
@@ -221,7 +277,7 @@
         <ol class="steps">
           <li><strong data-i18n="flow.s1">ご予約</strong><span data-i18n="flow.s1b">LINE・お電話・Facebookメッセージで。希望日時とメニューをお知らせください。</span></li>
           <li><strong data-i18n="flow.s2">カウンセリング</strong><span data-i18n="flow.s2b">当日のご希望、お肌や爪の状態、避けたい香りなどをうかがいます。</span></li>
-          <li><strong data-i18n="flow.s3">施術</strong><span data-i18n="flow.s3b">静かな個室スペースで。途中で強さや温度の調整もお気軽に。</span></li>
+          <li><strong data-i18n="flow.s3">施術</strong><span data-i18n="flow.s3b">静かな個室スペースで。施術中に気になることがあれば、お気軽にお申し付けください。</span></li>
           <li><strong data-i18n="flow.s4">お会計・次回のご相談</strong><span data-i18n="flow.s4b">現金・各種キャッシュレスに対応予定。次回のおすすめ時期もお伝えします。</span></li>
         </ol>
       </div>
@@ -295,7 +351,7 @@
 <footer class="foot">
   <div class="wrap foot-inner">
     <img src="assets/img/logo-white.svg" alt="Yume Spa" width="120" height="142" class="foot-logo">
-    <p class="foot-tag" data-i18n="foot.tag">Nails · Head spa · Facial — Takenotsuka, Tokyo</p>
+    <p class="foot-tag" data-i18n="foot.tag">ネイル · ヘッドスパ · フェイシャル — 東京・竹ノ塚</p>
     <p class="foot-legal" data-i18n="foot.legal">© 2026 Yume Spa. 運営：合同会社朝日越南ライフ（Asahi VietLife LLC）</p>
     <p class="foot-legal small" data-i18n="foot.privacy">お預かりした個人情報は、ご予約の管理とご連絡のみに使用し、第三者に提供しません。</p>
   </div>

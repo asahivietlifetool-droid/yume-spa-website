@@ -303,3 +303,6 @@ details p { color: var(--ink-soft); font-size: .96rem; margin: 0 0 1rem; }
 @keyframes spin { to { transform: rotate(360deg); } }
 @keyframes knead { 0%,100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
 @media (max-width: 760px) { .figure { max-width: 420px; } .state-tabs { grid-template-columns: 1fr 1fr 1fr; gap: .4rem; } .state-tabs button { padding: .6rem .6rem; } .state-tabs button span { display: none; } }
+
+/* Nút ngôn ngữ được gợi ý theo trình duyệt của khách (không đổi nội dung trang) */
+.lang button.suggest{box-shadow:0 0 0 2px #C8A04A inset;font-weight:500}

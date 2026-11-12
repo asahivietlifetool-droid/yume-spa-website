@@ -2,6 +2,9 @@
    Everything degrades gracefully: no GSAP → static page; reduced motion → static page. */
 (function () {
   var G = window.YUME_GALLERY || { slots: 3, space: [], nails: [], guests: [] };
+  /* Trang /vi/ và /en/ nằm trong thư mục con: đường dẫn ảnh phải lùi một cấp (tools/build.mjs đặt data-base). */
+  var BASE = document.documentElement.getAttribute("data-base") || "";
+  function asset(p) { return /^(https?:)?\/\//.test(p) || p.charAt(0) === "/" ? p : BASE + p; }
 
   /* ---- gallery render (always, no GSAP needed) ---- */
   function t(key) { var l = document.documentElement.lang || "ja"; var d = (window.YUME.t[l] || window.YUME.t.ja); return d[key] || window.YUME.t.ja[key] || ""; }
@@ -17,12 +20,12 @@
       for (var i = 0; i < n; i++) {
         var it = items[i];
         if (it) {
-          var b = document.createElement("button"); b.type = "button"; b.className = "tilt"; b.setAttribute("data-full", it.src);
-          b.innerHTML = "<img loading='lazy' src='" + it.src + "' alt='" + (it.alt || "") + "' width='800' height='1000'><span class='shine' aria-hidden='true'></span>" + (it.alt ? "<span class='cap'>" + it.alt + "</span>" : "");
+          var b = document.createElement("button"); b.type = "button"; b.className = "tilt"; b.setAttribute("data-full", asset(it.src));
+          b.innerHTML = "<img loading='lazy' src='" + asset(it.src) + "' alt='" + (it.alt || "") + "' width='800' height='1000'><span class='shine' aria-hidden='true'></span>" + (it.alt ? "<span class='cap'>" + it.alt + "</span>" : "");
           grid.appendChild(b);
         } else {
           var d = document.createElement("div"); d.className = "tilt placeholder"; d.setAttribute("aria-hidden", "true");
-          d.innerHTML = "<img src='assets/img/icon-gold.svg' alt=''><span>" + t("gallery.soon") + "</span>";
+          d.innerHTML = "<img src='" + asset("assets/img/icon-gold.svg") + "' alt=''><span>" + t("gallery.soon") + "</span>";
           grid.appendChild(d);
         }
       }

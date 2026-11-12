@@ -1,5 +1,7 @@
 /* Yume Spa – nội dung 3 ngôn ngữ.
-   Sửa chữ ở đây, không cần sửa index.html.
+   Sửa chữ ở đây, không cần sửa khung trang.
+   SỬA XONG PHẢI CHẠY:  node tools/build.mjs   (dựng lại index.html, vi/index.html, en/index.html)
+   Nếu không, Google và trợ lý AI vẫn đọc bản cũ.
    Quy tắc từ ngữ (luật Nhật – 薬機法 / あん摩マッサージ指圧師法):
    - KHÔNG dùng: 治療, 治す, 改善, 医療, マッサージ, 美白, シミが消える, 小顔, アンチエイジング, 若返り, 肩こり解消, 発毛
    - DÙNG: ケア, 整える, うるおい, 清潔, リラックス, リフレッシュ, ほぐす, 癒し, 心地よい
@@ -42,6 +44,9 @@ window.YUME = {
 
   t: {
     ja: {
+      "meta.title": "Yume Spa｜竹ノ塚のネイル・ヘッドスパ・フェイシャル",
+      "meta.desc": "Yume Spa は東京都足立区・竹ノ塚の小さなビューティースタジオ。ジェルネイル、ヘッドスパ（頭皮ケア）、フェイシャルケア。日本語・ベトナム語・英語で対応。2026年12月オープン。",
+      "meta.og": "夢のような、ひとときを。竹ノ塚の小さなビューティースタジオ。2026年12月オープン。",
       "skip": "メニューへ移動",
       "nav.concept": "コンセプト", "nav.menu": "メニュー", "nav.flow": "ご来店の流れ", "nav.access": "アクセス", "nav.faq": "よくある質問",
       "hero.kana": "ゆめ すぱ",
@@ -113,6 +118,9 @@ window.YUME = {
     },
 
     vi: {
+      "meta.title": "Yume Spa｜Nail · Head spa · Chăm sóc da mặt ở Takenotsuka, Tokyo",
+      "meta.desc": "Yume Spa là studio làm đẹp nhỏ ở Takenotsuka, Adachi-ku, Tokyo: gel nail, head spa, chăm sóc da mặt. Phục vụ bằng tiếng Việt, tiếng Nhật và tiếng Anh. Khai trương tháng 12/2026.",
+      "meta.og": "Một khoảng lặng đẹp như mơ. Studio làm đẹp nhỏ ở Takenotsuka, Tokyo. Khai trương tháng 12/2026.",
       "skip": "Đến phần menu",
       "nav.concept": "Về Yume", "nav.menu": "Bảng giá", "nav.flow": "Quy trình", "nav.access": "Địa chỉ", "nav.faq": "Hỏi đáp",
       "hero.kana": "yume · 夢 · giấc mơ",
@@ -184,6 +192,9 @@ window.YUME = {
     },
 
     en: {
+      "meta.title": "Yume Spa | Nails, head spa and facial care in Takenotsuka, Tokyo",
+      "meta.desc": "Yume Spa is a small beauty studio in Takenotsuka, Adachi-ku, Tokyo: gel nails, head spa and facial care. English, Japanese and Vietnamese spoken. Opening December 2026.",
+      "meta.og": "A moment as soft as a dream. A small beauty studio in Takenotsuka, Tokyo. Opening December 2026.",
       "skip": "Skip to menu",
       "nav.concept": "About", "nav.menu": "Menu", "nav.flow": "Your visit", "nav.access": "Access", "nav.faq": "FAQ",
       "hero.kana": "yume · 夢 · dream",

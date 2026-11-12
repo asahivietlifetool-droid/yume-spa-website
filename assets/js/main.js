@@ -70,16 +70,30 @@
     }
   }
 
+  // Ngôn ngữ của trang do ĐỊA CHỈ quyết định (/ = tiếng Nhật, /vi/, /en/), không tự đổi theo trình duyệt.
+  // Nhờ vậy Google và trợ lý AI đọc đúng từng bản. Trang do tools/build.mjs dựng có data-page-lang.
+  var fixed = document.documentElement.getAttribute("data-page-lang");
   document.querySelectorAll(".lang button").forEach(function (b) {
-    b.addEventListener("click", function () { applyLang(b.getAttribute("data-lang")); });
+    b.addEventListener("click", function () {
+      var href = b.getAttribute("data-href");
+      if (fixed && href != null) {
+        if (b.getAttribute("data-lang") !== fixed) { location.href = href + location.hash; }
+        return;
+      }
+      applyLang(b.getAttribute("data-lang"));
+    });
   });
 
-  var saved = null;
-  try { saved = localStorage.getItem("yume-lang"); } catch (e) {}
-  if (!saved) {
-    var nav = (navigator.language || "ja").toLowerCase();
-    saved = nav.indexOf("vi") === 0 ? "vi" : (nav.indexOf("en") === 0 ? "en" : "ja");
+  applyLang(fixed || "ja");
+
+  // Khách dùng trình duyệt tiếng Việt hoặc tiếng Anh: chỉ làm nổi nút ngôn ngữ của họ, không đổi nội dung trang.
+  if (fixed) {
+    var nav = (navigator.language || "").toLowerCase();
+    var hint = nav.indexOf("vi") === 0 ? "vi" : (nav.indexOf("en") === 0 ? "en" : (nav.indexOf("ja") === 0 ? "ja" : ""));
+    if (hint && hint !== fixed) {
+      var btn = document.querySelector('.lang button[data-lang="' + hint + '"]');
+      if (btn) btn.classList.add("suggest");
+    }
   }
-  applyLang(saved);
   wireLinks();
 })();
