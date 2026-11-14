@@ -12,8 +12,12 @@ import vm from "node:vm";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-// Địa chỉ chính thức của website. Đổi tên miền thì sửa đúng một dòng này rồi dựng lại.
-const BASE = "https://yumespaadachi.com/";
+// Địa chỉ gốc của website. Đổi tên miền thì sửa đúng một dòng này rồi dựng lại.
+// 14/11/2026: tên miền chính thức https://yumespaadachi.com/ CHƯA chạy (Tenten đang khóa DNS),
+// nên tạm dùng địa chỉ GitHub Pages. Khi tên miền mở được: đổi dòng dưới thành
+//   const BASE = "https://yumespaadachi.com/";
+// rồi chạy node tools/build.mjs và commit.
+const BASE = "https://asahivietlifetool-droid.github.io/yume-spa-website/";
 const LANGS = [
   { code: "ja", dir: "", hreflang: "ja" },
   { code: "vi", dir: "vi/", hreflang: "vi" },
@@ -39,7 +43,11 @@ function t(lang, key) {
 // Giống hệt renderMenu() trong assets/js/main.js, để bảng giá nằm sẵn trong HTML.
 function menuHtml(lang) {
   return Y.menu.map((cat) => {
-    const items = cat.items.map((it) =>
+    if (cat.soon) {
+      return `<div class="menu-card ${cat.id} is-soon"><h3><i aria-hidden="true"></i>${esc(t(lang, "menu." + cat.id))}</h3>` +
+        `<p class="d">${esc(t(lang, "menu." + cat.id + ".d"))}</p><p class="soon">${esc(t(lang, "menu.soon"))}</p></div>`;
+    }
+    const items = cat.items.filter((it) => !it.hidden).map((it) =>
       `<li><span class="n">${esc(t(lang, "menu." + it.key))}</span>` +
       `<span class="p">${it.from ? "<small>" + esc(t(lang, "menu.from")) + "</small>" : ""}${yen(it.price)}</span>` +
       `<span class="t">${esc(t(lang, "menu." + it.key + ".t") + t(lang, "menu.min"))}</span></li>`).join("");
@@ -68,6 +76,12 @@ function page(lang) {
       const value = t(lang, key);
       return value ? open + esc(value) + close : whole;
     });
+
+  // 1b. Chữ thay thế (alt) của ảnh có data-i18n-alt
+  html = html.replace(/<img\b[^>]*\bdata-i18n-alt="([^"]+)"[^>]*>/g, (tag, key) => {
+    const value = t(lang, key);
+    return value ? tag.replace(/\balt="[^"]*"/, `alt="${escAttr(value)}"`) : tag;
+  });
 
   // 2. Bảng giá nằm sẵn trong HTML
   html = html.replace('<div class="menu-grid" id="menu-grid"></div>',
@@ -99,7 +113,11 @@ function page(lang) {
     });
 
   // 6. Đường dẫn tới assets từ thư mục con
-  if (up) html = html.replace(/((?:href|src)=")assets\//g, `$1${up}assets/`);
+  if (up) {
+    html = html.replace(/((?:href|src)=")assets\//g, `$1${up}assets/`);
+    html = html.replace(/(srcset=")([^"]+)(")/g, (_whole, open, list, close) =>
+      open + list.split(",").map((part) => part.trim().replace(/^assets\//, up + "assets/")).join(", ") + close);
+  }
 
   const note = "<!-- Tệp này do tools/build.mjs tạo ra. Đừng sửa tay: sửa src/template.html hoặc assets/js/i18n.js rồi chạy node tools/build.mjs -->";
   return html.replace(/^(<!doctype html>\n)/i, "$1" + note + "\n");
@@ -116,6 +134,8 @@ function sitemap() {
 const outputs = new Map(LANGS.map((l) => [l.dir + "index.html", page(l.code)]));
 outputs.set("sitemap.xml", sitemap());
 outputs.set("robots.txt", `User-agent: *\nAllow: /\n\nSitemap: ${BASE}sitemap.xml\n`);
+// Trang 404 có thể hiện ở bất kỳ độ sâu thư mục nào, nên mọi đường dẫn trong đó là địa chỉ đầy đủ theo BASE.
+outputs.set("404.html", fs.readFileSync(path.join(ROOT, "src/404.html"), "utf8").replaceAll("__BASE__", BASE));
 
 let stale = 0;
 for (const [file, content] of outputs) {

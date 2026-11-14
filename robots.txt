@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yumespaadachi.com/sitemap.xml
+Sitemap: https://asahivietlifetool-droid.github.io/yume-spa-website/sitemap.xml

@@ -306,3 +306,24 @@ details p { color: var(--ink-soft); font-size: .96rem; margin: 0 0 1rem; }
 
 /* Nút ngôn ngữ được gợi ý theo trình duyệt của khách (không đổi nội dung trang) */
 .lang button.suggest{box-shadow:0 0 0 2px #C8A04A inset;font-weight:500}
+
+/* Nhóm dịch vụ đang chuẩn bị: không hiện giá */
+.menu-card .soon { margin: 0; padding: .9rem 0; border-top: 1px dotted var(--line); border-bottom: 1px dotted var(--line); color: var(--gold-deep); font-size: .95rem; }
+.menu-off { margin-top: 1.75rem; max-width: 44rem; }
+
+/* Dải ảnh minh họa dưới phần Concept */
+.photo-wrap { margin-top: 3.5rem; }
+.photo-band { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.photo-band figure { margin: 0; }
+.photo-band img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 1.1rem; background: var(--silk-deep); box-shadow: 0 18px 40px -28px rgba(43, 36, 52, .55); }
+.photo-band figcaption { margin-top: .7rem; font-family: var(--display); font-size: 1.15rem; color: var(--gold-deep); text-align: center; }
+.photo-note { margin-top: 1.25rem; }
+@media (max-width: 720px) {
+  .photo-wrap { margin-top: 2.5rem; }
+  .photo-band { gap: .6rem; }
+  .photo-band img { border-radius: .7rem; }
+  .photo-band figcaption { font-size: .95rem; margin-top: .45rem; }
+}
+
+/* Nhãn "đang chuẩn bị" trên thẻ head spa ở mục Ba dịch vụ */
+.state-tabs .tab-soon { display: block; margin-top: .15rem; font-style: normal; font-family: var(--body); font-size: .72rem; letter-spacing: .04em; color: var(--gold-deep); }

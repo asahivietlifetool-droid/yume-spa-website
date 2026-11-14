@@ -21,9 +21,20 @@
       var d = document.createElement("p");
       d.className = "d";
       d.textContent = t("menu." + cat.id + ".d");
+      if (cat.soon) {
+        // Nhóm đang chuẩn bị: không hiện giá.
+        var soon = document.createElement("p");
+        soon.className = "soon";
+        soon.textContent = t("menu.soon");
+        card.className += " is-soon";
+        card.appendChild(h); card.appendChild(d); card.appendChild(soon);
+        grid.appendChild(card);
+        return;
+      }
       var ul = document.createElement("ul");
       ul.className = "price-list";
       cat.items.forEach(function (it) {
+        if (it.hidden) return;
         var li = document.createElement("li");
         var n = document.createElement("span"); n.className = "n"; n.textContent = t("menu." + it.key);
         var tm = document.createElement("span"); tm.className = "t"; tm.textContent = t("menu." + it.key + ".t") + t("menu.min");
@@ -43,6 +54,10 @@
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
       var v = t(el.getAttribute("data-i18n"));
       if (v) el.textContent = v;
+    });
+    document.querySelectorAll("[data-i18n-alt]").forEach(function (el) {
+      var v = t(el.getAttribute("data-i18n-alt"));
+      if (v) el.setAttribute("alt", v);
     });
     document.querySelectorAll(".lang button").forEach(function (b) {
       b.setAttribute("aria-pressed", b.getAttribute("data-lang") === current ? "true" : "false");
