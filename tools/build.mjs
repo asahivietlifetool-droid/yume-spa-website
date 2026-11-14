@@ -12,7 +12,8 @@ import vm from "node:vm";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const BASE = "https://asahivietlifetool-droid.github.io/yume-spa-website/";
+// Địa chỉ chính thức của website. Đổi tên miền thì sửa đúng một dòng này rồi dựng lại.
+const BASE = "https://yumespaadachi.com/";
 const LANGS = [
   { code: "ja", dir: "", hreflang: "ja" },
   { code: "vi", dir: "vi/", hreflang: "vi" },
@@ -80,6 +81,8 @@ function page(lang) {
   html = html.replace(/(<meta property="og:description" content=")[^"]*(">)/, `$1${escAttr(t(lang, "meta.og"))}$2`);
   html = html.replace(/(<meta property="og:image" content=")[^"]*(">)/, `$1${BASE}assets/img/logo.png$2`);
 
+  html = html.replace('"url": "__BASE__"', `"url": "${BASE}${here.dir}"`);
+
   // 4. Địa chỉ chuẩn và liên kết giữa ba bản ngôn ngữ
   const alternates = LANGS.map((l) => `  <link rel="alternate" hreflang="${l.hreflang}" href="${BASE}${l.dir}">`).join("\n");
   const headExtra = `  <link rel="canonical" href="${BASE}${here.dir}">\n${alternates}\n` +
@@ -112,6 +115,7 @@ function sitemap() {
 
 const outputs = new Map(LANGS.map((l) => [l.dir + "index.html", page(l.code)]));
 outputs.set("sitemap.xml", sitemap());
+outputs.set("robots.txt", `User-agent: *\nAllow: /\n\nSitemap: ${BASE}sitemap.xml\n`);
 
 let stale = 0;
 for (const [file, content] of outputs) {

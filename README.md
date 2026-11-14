@@ -6,7 +6,8 @@ Chạy miễn phí trên GitHub Pages, 3 ngôn ngữ (日本語 / Tiếng Việt
 
 ## Cấu trúc
 - `src/template.html` – **khung trang** (hero, concept, menu, quy trình, ưu đãi khai trương, địa chỉ, đặt lịch, FAQ). Sửa khung ở đây.
-- `index.html` (tiếng Nhật), `vi/index.html`, `en/index.html`, `sitemap.xml` – **do máy dựng ra**, đừng sửa tay.
+- `index.html` (tiếng Nhật), `vi/index.html`, `en/index.html`, `sitemap.xml`, `robots.txt` – **do máy dựng ra**, đừng sửa tay.
+- `404.html` – trang báo "không tìm thấy", dẫn về ba bản ngôn ngữ.
 - `tools/build.mjs` – dựng ba trang trên từ khung trang + `i18n.js`.
 
 ### Sau khi sửa chữ, giá hoặc khung trang
@@ -31,7 +32,7 @@ Khi chia sẻ cho người Việt, dùng link `/vi/`; cho người nói tiếng 
 3. `i18n.js › links.map` – dán link embed Google Maps khi có địa chỉ; sửa `access.addrv` 3 ngôn ngữ và JSON-LD trong `index.html`.
 4. Giá trong `i18n.js › menu` là **giá dự kiến** – chốt lại trước khi đăng.
 5. Thay ảnh thật của quán (hiện chưa có ảnh): thêm vào `assets/img/` và chèn vào `index.html`.
-6. Tên miền: khi mua, tạo file `CNAME` chứa tên miền và trỏ DNS về GitHub Pages.
+6. Tên miền chính thức: **yumespaadachi.com** (mua ở Tenten ngày 14/11/2026). Địa chỉ gốc nằm ở một dòng `BASE` trong `tools/build.mjs`. Lúc đưa lên: thêm tệp `CNAME` chứa `yumespaadachi.com` vào nhánh `main`, rồi ở Tenten tạo 4 bản ghi A cho `@` (185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153) và CNAME `www` → `asahivietlifetool-droid.github.io`; sau đó bật "Enforce HTTPS" trong Settings → Pages. Nguồn: docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site (tra 14/11/2026).
 
 ## Quy tắc từ ngữ (bắt buộc – luật Nhật)
 - 薬機法 / 景品表示法: **không** dùng 治療・治す・改善・医療・美白・シミが消える・小顔・アンチエイジング・若返り・発毛.
