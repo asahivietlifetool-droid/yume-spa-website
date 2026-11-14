@@ -75,7 +75,7 @@
       line.href = Y.links.line;
       if (openingBtn) { openingBtn.href = Y.links.line; openingBtn.target = "_blank"; openingBtn.rel = "noopener"; }
     } else {
-      line.href = "tel:+817027944770";
+      line.href = "tel:+817028136693";
       line.removeAttribute("target");
     }
     if (Y.links.facebook) fb.href = Y.links.facebook;

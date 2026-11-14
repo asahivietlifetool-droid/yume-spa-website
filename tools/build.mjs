@@ -20,8 +20,8 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const BASE = "https://asahivietlifetool-droid.github.io/yume-spa-website/";
 const LANGS = [
   { code: "ja", dir: "", hreflang: "ja" },
-  { code: "vi", dir: "vi/", hreflang: "vi" },
   { code: "en", dir: "en/", hreflang: "en" },
+  { code: "vi", dir: "vi/", hreflang: "vi" },
 ];
 const CHECK = process.argv.includes("--check");
 
