@@ -141,7 +141,7 @@ const T = {
    e_bad_pin:"Sai mã PIN",e_no_pin:"Chưa có mã – báo quản lý",e_bad_device:"Máy này chưa được cấp phép chấm công – báo quản lý",e_locked:"Sai nhiều lần, thử lại sau 15 phút",e_bad_input:"Thông tin chưa đủ",e_busy:"Máy đang bận, bấm lại",e_net:"Mất kết nối – bấm lại (không bị ghi trùng)",e_need_photo:"Cần chụp ảnh",
    today:"Hôm nay",inNow:"Đang trong ca",month:"Tổng giờ tháng",time:"Lúc",person:"Người",type:"Loại",h:"Số giờ",ca:"Ca",over:"Quá 8 tiếng",night:"Giờ đêm",none:"Chưa có",
    fix:"Ghi sửa giờ (quên bấm)",fixH:"Số giờ cộng (+) hoặc trừ (−)",fixR:"Lý do",fixMonth:"Tháng",save:"Ghi lại",saved:"Đã ghi vào tab SuaGio",lock:"Khóa",
-   days:["Chủ nhật","Thứ hai","Thứ ba","Thứ tư","Thứ năm","Thứ sáu","Thứ bảy"],TY:{"VÀO CA":"Vào ca","NGHỈ":"Nghỉ","TRỞ LẠI":"Trở lại","RA CA":"Ra ca"},foot:"Giờ ghi theo máy chủ (giờ Tokyo)"},
+   days:["Chủ nhật","Thứ hai","Thứ ba","Thứ tư","Thứ năm","Thứ sáu","Thứ bảy"],TY:{"VÀO CA":"Vào ca","NGHỈ":"Nghỉ","TRỞ LẠI":"Trở lại","RA CA":"Ra ca"},foot:"Giờ ghi theo máy chủ (giờ Tokyo)",ghCon:"Còn được làm tối đa",ghH:"giờ",ghVuot:"ĐÃ VƯỢT GIỚI HẠN GIỜ – báo quản lý ngay",ghHs:"Hồ sơ chưa đủ – báo quản lý",ghTit:"Giới hạn giờ làm",ghLim:"Giới hạn",ghDa:"Đã làm",ghConT:"Còn",ghTt:"Mức",ghLd:"Ghi chú",ghK7:"7 ngày",ghKt:"tuần này"},
  ja:{sub:"勤怠打刻",tap:"自分の名前をタップしてください",mgr:"管理者",pin:"4桁のPINを入力",mpin:"管理者コード（4桁）",del:"削除",clr:"クリア",
    in:"出勤",brk:"休憩開始",back:"休憩終了",out:"退勤",off:"未出勤",on:"勤務中",onb:"休憩中",
    cam:"カメラを見て下のボタンを押してください（写真は自動保存）",camNo:"カメラを起動できません。そのまま下のボタンで打刻できます",camBtn:"カメラを開く",camOk:"撮影済み",
@@ -149,7 +149,7 @@ const T = {
    e_bad_pin:"PINが違います",e_no_pin:"コード未設定です。管理者に連絡してください",e_bad_device:"この端末は打刻が許可されていません",e_locked:"誤りが続いたため15分後に再試行してください",e_bad_input:"入力が不足しています",e_busy:"処理中です。もう一度押してください",e_net:"通信エラー：もう一度押してください（二重記録されません）",e_need_photo:"写真が必要です",
    today:"本日",inNow:"勤務中",month:"今月の合計",time:"時刻",person:"スタッフ",type:"種別",h:"時間",ca:"回数",over:"8時間超",night:"深夜",none:"なし",
    fix:"時間修正（打刻漏れ）",fixH:"加算（+）または減算（−）する時間",fixR:"理由",fixMonth:"月",save:"記録",saved:"SuaGioタブに記録しました",lock:"ロック",
-   days:["日曜日","月曜日","火曜日","水曜日","木曜日","金曜日","土曜日"],TY:{"VÀO CA":"出勤","NGHỈ":"休憩開始","TRỞ LẠI":"休憩終了","RA CA":"退勤"},foot:"時刻はサーバー基準（東京時間）"},
+   days:["日曜日","月曜日","火曜日","水曜日","木曜日","金曜日","土曜日"],TY:{"VÀO CA":"出勤","NGHỈ":"休憩開始","TRỞ LẠI":"休憩終了","RA CA":"退勤"},foot:"時刻はサーバー基準（東京時間）",ghCon:"本日あと最大",ghH:"時間",ghVuot:"労働時間の上限を超えています。すぐに管理者へ",ghHs:"登録情報が不足しています。管理者へ",ghTit:"労働時間の上限",ghLim:"上限",ghDa:"実績",ghConT:"残り",ghTt:"状態",ghLd:"備考",ghK7:"直近7日",ghKt:"今週"},
  en:{sub:"Time clock",tap:"Tap your name",mgr:"Manager",pin:"Enter your 4-digit PIN",mpin:"Manager code (4 digits)",del:"Delete",clr:"Clear",
    in:"Clock in",brk:"Start break",back:"End break",out:"Clock out",off:"Not clocked in",on:"On shift since",onb:"On break",
    cam:"Look at the camera and press a button below – the photo saves itself",camNo:"Camera unavailable – you can still press a button below",camBtn:"Open camera",camOk:"Photo ready",
@@ -157,7 +157,7 @@ const T = {
    e_bad_pin:"Wrong PIN",e_no_pin:"No code set – tell the manager",e_bad_device:"This device is not allowed to clock in",e_locked:"Too many attempts, try again in 15 minutes",e_bad_input:"Missing information",e_busy:"Busy, press again",e_net:"Connection lost – press again (it will not be recorded twice)",e_need_photo:"A photo is required",
    today:"Today",inNow:"On shift now",month:"Hours this month",time:"Time",person:"Staff",type:"Type",h:"Hours",ca:"Shifts",over:"Over 8 h",night:"Night",none:"None",
    fix:"Correct hours (missed punch)",fixH:"Hours to add (+) or subtract (−)",fixR:"Reason",fixMonth:"Month",save:"Save",saved:"Saved to the SuaGio tab",lock:"Lock",
-   days:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],TY:{"VÀO CA":"Clock in","NGHỈ":"Start break","TRỞ LẠI":"End break","RA CA":"Clock out"},foot:"Times follow the server clock (Tokyo)"}
+   days:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],TY:{"VÀO CA":"Clock in","NGHỈ":"Start break","TRỞ LẠI":"End break","RA CA":"Clock out"},foot:"Times follow the server clock (Tokyo)",ghCon:"You can still work up to",ghH:"h",ghVuot:"Hour limit exceeded – tell the manager now",ghHs:"Profile incomplete – tell the manager",ghTit:"Working-hour limits",ghLim:"Limit",ghDa:"Worked",ghConT:"Left",ghTt:"Status",ghLd:"Note",ghK7:"last 7 days",ghKt:"this week"}
 };
 const COLORS = ["#c9738a","#7a9e7e","#8a7fb5","#c08a5b","#5f8fb0","#b5677f","#6f9a96","#a07b6a"];
 let lang = "ja", st = {staff:[],open:{}}, off = 0, sel = null, pin = "", mode = "staff", mcode = "", photo = "", stream = null, pending = null, idle = null;
@@ -218,8 +218,11 @@ function doPunch(type, btn){
       stopCam(); const k = {"VÀO CA":["in","✓","ok_in"],"NGHỈ":["brk","☕","ok_brk"],"TRỞ LẠI":["in","↩","ok_back"],"RA CA":["out","✓","ok_out"]}[type];
       $("#doneBox").innerHTML = `<div class="ic ${k[0]}">${k[1]}</div><h3>${esc(sel.name || sel.code)} · ${esc(t("TY")[type])}</h3><div class="tm">${esc(r.time)}</div><div class="sub">${t(k[2])}</div>`
         + (r.hours !== "" && r.hours != null ? `<div class="sub">${t("hrs")}: <b>${r.hours}</b>${r.month !== "" && r.month != null ? ` · ${t("mon")}: <b>${Math.round(r.month * 10) / 10}</b>` : ""}</div>` : "")
+        + (r.gh && r.gh.muc ? (r.gh.muc === "ĐỎ" ? `<div class="w" style="background:#fde2e2;color:#a11">⛔ ${t(r.gh.tuan === 0 ? "ghHs" : "ghVuot")}</div>`
+            : r.gh.muc === "CHƯA RÕ" ? `<div class="w">⚠ ${t("ghHs")}</div>`
+            : type !== "RA CA" ? `<div class="sub" style="${r.gh.muc === "VÀNG" ? "color:var(--warn);font-weight:600" : ""}">${t("ghCon")} <b>${r.gh.con}</b> ${t("ghH")}</div>` : "") : "")
         + (r.warn ? `<div class="w">⚠ ${esc(r.warn)}</div>` : "");
-      open("sDone"); pending = null; load(); setTimeout(closeAll, r.warn ? 7000 : 3500);
+      open("sDone"); pending = null; load(); setTimeout(closeAll, r.warn || (r.gh && r.gh.muc !== "XANH") ? 8000 : 3500);
     }).withFailureHandler(() => { document.querySelectorAll("#acts button").forEach(x => x.disabled = false); $("#actErr").textContent = t("e_net"); })
     .punch(KEY, sel.code, pin, type, img, navigator.userAgent.slice(0, 60), pending.id);
 }
@@ -235,6 +238,7 @@ function loadMgr(){
         <div class="box"><h4>${t("inNow")}</h4>${openRows ? `<table><tbody>${openRows}</tbody></table>` : `<div class="empty">${t("none")}</div>`}</div>
         <div class="box"><h4>${t("month")}</h4>${r.totals.length ? `<table><thead><tr><th>${t("person")}</th><th class="num">${t("h")}</th><th class="num">${t("ca")}</th><th class="num">${t("over")}</th><th class="num">${t("night")}</th></tr></thead><tbody>${r.totals.map(x => `<tr><td>${esc(x.name)}</td><td class="num">${Math.round((+x.h||0)*10)/10}</td><td class="num">${esc(x.ca)}</td><td class="num">${Math.round((+x.over8||0)*10)/10}</td><td class="num">${Math.round((+x.night||0)*10)/10}</td></tr>`).join("")}</tbody></table>` : `<div class="empty">${t("none")}</div>`}</div>
       </div>
+      <div class="box" style="margin-top:18px"><h4>${t("ghTit")}</h4>${(r.limits || []).length ? `<table><thead><tr><th>${t("person")}</th><th class="num">${t("ghLim")}</th><th class="num">${t("ghDa")}</th><th class="num">${t("ghConT")}</th><th>${t("ghTt")}</th><th>${t("ghLd")}</th></tr></thead><tbody>${r.limits.map(x => `<tr><td>${esc(x.name)}</td><td class="num">${x.gioi_han_tuan} (${t(x.kieu === "cuon" ? "ghK7" : "ghKt")})</td><td class="num">${x.da_tuan}</td><td class="num">${x.con}</td><td style="font-weight:600;color:${x.muc === "ĐỎ" ? "var(--bad)" : x.muc === "VÀNG" || x.muc === "CHƯA RÕ" ? "var(--warn)" : "var(--ok)"}">${esc(x.muc)}</td><td style="font-size:13px">${esc(x.ly_do)}${x.the ? " · " + esc(x.the) : ""}</td></tr>`).join("")}</tbody></table>` : `<div class="empty">${t("none")}</div>`}</div>
       <div class="box" style="margin-top:18px"><h4>${t("today")}</h4>${r.today.length ? `<table><thead><tr><th>${t("time")}</th><th>${t("person")}</th><th>${t("type")}</th><th class="num">${t("h")}</th><th></th></tr></thead><tbody>${r.today.map(x => `<tr><td class="num">${esc(x.t)}</td><td>${esc(x.name)}</td><td>${ty(x.type)}</td><td class="num">${x.h === "" ? "" : esc(x.h)}</td><td style="color:var(--warn);font-size:13px">${esc(x.warn)}</td></tr>`).join("")}</tbody></table>` : `<div class="empty">${t("none")}</div>`}</div>
       <div class="box" style="margin-top:18px"><h4>${t("fix")}</h4><div class="fx">
         <select id="fxNv">${opts}</select><input id="fxM" value="${esc(r.month)}" placeholder="${t("fixMonth")}">
