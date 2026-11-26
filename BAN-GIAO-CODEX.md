@@ -1,70 +1,81 @@
-# Bàn giao cho Codex – website Yume Spa (27/11/2026)
+# Bàn giao cho đội AI agent – Yume Spa (cập nhật 28/11/2026)
 
-Người giao: Claude (bộ máy AI của Asahi VietLife). Chủ: giám đốc Minamoto Trường Giang. Ngôn ngữ làm việc với giám đốc: tiếng Việt. Nội dung cho khách: tiếng Nhật (JA), tiếng Việt (VI), tiếng Anh (EN), **mỗi ngôn ngữ một trang riêng, không trộn trong một câu**.
+Áp dụng cho mọi agent: Codex, Claude (phiên khác), ChatGPT (người rà soát). Người cập nhật: Claude. Chủ: giám đốc Minamoto Trường Giang. Làm việc với giám đốc bằng tiếng Việt. Nội dung cho khách: JA/VI/EN, **mỗi ngôn ngữ một trang riêng, không trộn trong một câu**.
 
-## 1. Hiện trạng (đã kiểm 27/11/2026)
+**Đọc trước khi làm:** mục 1 (hiện trạng), mục 3 (việc đang chặn – đừng làm vượt), mục 5 (quy tắc). Báo cáo sáng 28/11 cho giám đốc: repo ops `reports/2026-11-28-yume-square-google-website.md`.
+
+## 0. Ai làm gì
+| Agent | Vai trò | Ở đâu |
+|---|---|---|
+| Claude (Claude Code, máy nhà giám đốc) | Kỹ sư triển khai: website, Square, hồ sơ Google, repo ops | Repo này + `asahi-vietlife-ai-ops`; Chrome của giám đốc (đã đăng nhập Square, Google `authuser=7` = email đặt lịch của quán, Tenten) |
+| ChatGPT | Rà soát độc lập (menu, nhân sự, lịch, luật quảng cáo) | Box "Tư vấn website Yume Spa" trong dự án "TRUONG GIANG" trên tài khoản ChatGPT của giám đốc. Gửi báo cáo **không chứa tên nhân viên, SĐT, email cá nhân, dữ liệu khách, mật khẩu** |
+| Codex | Sửa code website khi được giao | Repo này |
+Mọi agent: không coi ChatGPT đã duyệt nếu chưa có phản hồi; giám đốc là người quyết cuối.
+
+## 1. Hiện trạng (kiểm 28/11/2026)
 | Hạng mục | Trạng thái |
 |---|---|
-| Website đang chạy | https://asahivietlifetool-droid.github.io/yume-spa-website/ (GitHub Pages, dựng từ nhánh `main`, thư mục gốc). 6 trang, không lỗi tải, liên kết, JS |
-| Trang | `/` (JA), `/vi/`, `/en/`, `/menu/` (JA), `/vi/menu/`, `/en/menu/` |
-| Menu | Theo tệp nhân viên "Yume Spa 新料金メニュー案" (giám đốc duyệt đưa lên web 26/11): 11 nhóm, ưu đãi khai trương 初回限定, 4 combo. Nguồn duy nhất: `assets/js/menu-data.js` |
-| PDF in | `assets/menu/yume-spa-menu-{ja,vi,en}.pdf` + `.png` |
-| Ảnh | Toàn bộ là ảnh minh họa do AI tạo (Canva), trang ghi 「写真はすべてイメージです」. Chưa có ảnh thật tại quán. Danh sách: `assets/img/photos/CREDITS.md` |
-| Tên miền chính thức | **yumespaadachi.com – CHƯA CHẠY.** Mua ở Tenten (Việt Nam) 14/11/2026. RDAP 27/11: trạng thái `client hold`, nameserver `NS-A1/A2/A3.TENTEN.VN`, DNS trả NXDOMAIN. Lý do: chủ chưa làm eKYC và xác thực email ở Tenten |
-| Email chính của quán | booking.yumespa.takenotsuka@gmail.com (đã đúng ở mọi trang) |
-| Điện thoại | 070-2813-6693 · giờ 10:00–22:00, nhận khách cuối 21:30, tạm mở cả 7 ngày · tiền mặt, PayPay |
-| Khai trương | 19/12/2026 (dự kiến) |
-| LINE, Facebook fanpage, link đặt lịch, Google Maps link | Chưa có. Nút LINE và Facebook ở mục đặt lịch đang tự ẩn (`assets/js/main.js › wireLinks`), câu dẫn ghi "LINE đang chuẩn bị" |
+| Website | https://asahivietlifetool-droid.github.io/yume-spa-website/ – 6 trang (`/`, `/vi/`, `/en/`, `/menu/`, `/vi/menu/`, `/en/menu/`) trả 200. Có địa chỉ thật + bản đồ Google, 徒歩1分, giờ nhận khách cuối **20:30** (đổi 27/11 theo chỉ thị giám đốc), ngôn ngữ đúng quy tắc 5 |
+| Tên miền yumespaadachi.com | **CHƯA CHẠY** – Tenten `client hold`. Xác thực email: giám đốc đã bấm nhưng Tenten chưa ghi nhận. eKYC: bị từ chối vì hồ sơ tên miền ghi số **hộ chiếu**, giám đốc chụp **CCCD**; chụp hộ chiếu thì bị báo mờ. Cách gỡ: gọi Tenten 02471 097 222 nhờ sửa số giấy tờ, hoặc chụp lại trang hộ chiếu (ngang, rõ 2 dòng mã cuối). AI không làm eKYC, không giữ giấy tờ |
+| Địa chỉ quán | 〒121-0813 東京都足立区竹の塚1丁目29-11 アーバンステージ (theo hồ sơ Google đã xác minh). Thiếu tầng/phòng. `yume/facts.yaml` chưa ghi (đề xuất đã nằm trong `facts-proposals.md`) |
+| Menu, giá | **Nguồn giá duy nhất: `YumeSpa Menu.docx`** (giám đốc chốt; bản sao `ネイルコース.docx` cùng nội dung) = `assets/js/menu-data.js`. Không lấy phần nội bộ (経営方針, so sánh PONO), không dùng 3 ảnh tiệm khác trong tệp |
+| Hồ sơ Google "Yume Spa Adachi" | Danh mục ネイルサロン (chính), フェイシャル スパ, エステティック サロン. Mô tả JA mới. Website + link menu = `yumespaadachi.com` (**giám đốc muốn giữ tên miền, không đổi sang github.io**). 17 dịch vụ có giá. 1 bài khai trương – **nội dung trên Google đang ghi 12/12/2026, mọi nơi khác 19/12: chờ giám đốc xác nhận ngày, chưa sửa**. Logo/ảnh bìa: giám đốc tự tải (trình duyệt tự động không chọn được tệp) từ `Downloads\Yume-Spa-anh-Google`. Ảnh đại diện đang là Street View tiệm hoa cũ (không xóa được, chỉ đẩy xuống bằng ảnh thật) |
+| Đặt lịch | **Square 予約** (giám đốc đổi từ USEN sang Square 27/11). Xem mục 2 |
+| Ảnh | Toàn bộ là ảnh AI có nhãn イメージ. Danh sách ảnh cần chụp: `ANH-CAN-CHUP.md` |
+| LINE, fanpage | Chưa có; nút tự ẩn |
 
-## 2. Cấu trúc repo và lệnh
-- `src/template.html` – khung trang chủ. `assets/js/i18n.js` – chữ 3 ngôn ngữ (và bảng `menu` cũ chỉ còn để bộ soát so với dữ liệu gốc). `assets/js/menu-data.js` – menu đầy đủ.
-- `tools/build.mjs` – dựng `index.html`, `vi/`, `en/`, `menu/`, `vi/menu/`, `en/menu/`, `sitemap.xml`, `robots.txt`, `404.html`. **Không sửa tay các tệp được dựng.** Hằng số `BASE` ở đầu tệp là địa chỉ gốc.
-- `tools/menu-page.mjs` – trang menu. `tools/menu-pdf.mjs` – xuất PDF/PNG (cần Playwright + Chromium).
-- Lệnh sau mỗi lần sửa:
-  ```
-  node tools/build.mjs
-  node tools/build.mjs --check      # phải in "Trang tĩnh khớp với i18n.js và template."
-  NODE_PATH=$(npm root -g) node tools/menu-pdf.mjs   # khi đổi menu
-  ```
-- Soát dữ liệu (nằm ở repo riêng tư `asahivietlifetool-droid/asahi-vietlife-ai-ops`): `python3 yume/tools/site_audit.py --facts yume/facts.yaml --site <đường dẫn repo website>`. Kết quả hiện tại: 0 từ cấm, 10/10 kiểm tra cho Google đạt, 1 chỗ chờ chủ xác nhận.
-- Commit message tiếng Việt; push thẳng `main` (quy tắc của chủ: xong việc là commit + push).
+## 2. Square 予約 – trạng thái
+- Gói: **Plus dùng thử, hết hạn 27/12/2026**, chưa có thẻ → tự về **Free**. Chỉ dùng tính năng có trong Free (giám đốc cấm nâng gói). Free không có: 対応時間の設定, 複数スタッフ対象の予約, 自動予約確認, 1日上限. Free có: lịch theo nhân viên, nhắc lịch, trang đặt lịch, liên kết Google.
+- **Đã tạo 6 category, 26 dịch vụ** đúng tệp giá gốc, giá 税込 cố định, mỗi dịch vụ +10 phút "Block extra time after appointment":
+  - 01 ハンドネイル: クリアジェル 45p ¥4,400 · ワンカラー 60p ¥5,500 · ラメグラデーション 60p ¥5,500 · マグネット・フラッシュ 70p ¥6,050 · ミラー・オーロラ 70p ¥6,600 · カラーグラデーション 75p ¥6,600 · フレンチ 75p ¥7,150 · メンズジェルネイル 60p ¥5,500
+  - 02 定額デザイン: 定額 Simple 75p ¥6,600 · Trend 90p ¥7,700 · Premium 120p ¥9,900
+  - 03 持ち込みデザイン: アート2本 75p ¥6,600〜 · アート4本 90p ¥7,700〜 (**tắt đặt online** tới khi xác minh tay nghề)
+  - 04 チップ長さ出し: ワンカラー・ラメグラ 120p ¥11,000 · マグネット・フラッシュ 130p ¥11,550 · 定額 Simple 135p ¥12,100 · 定額 Trend 150p ¥13,200 (M10本込み)
+  - 05 フットネイル: フットワンカラー 60p · フット ラメグラデーション 60p ¥6,600 · フット マグネット・フラッシュ 75p · フット 親指2本アート 75p ¥7,700 · フット 定額デザイン 90p ¥8,800
+  - 06 フェイシャル: ベーシック保湿 40p ¥5,500 · うるおいマスク 60p ¥7,700 · 毛穴クレンジング 60p ¥8,800 · プレミアム 90p ¥11,000
+- Chưa tạo: Off, Care, Add-on, Combo, ưu đãi khai trương (thiếu thời lượng / điều kiện). Dịch vụ mẫu "ヘアカット（サービス例）": đã tắt đặt online.
+- Giờ cửa hàng (location): 10:00–22:00 cả 7 ngày.
+- **Chưa bật trang đặt lịch công khai.** ChatGPT rà soát CONFIG-01: *CONDITIONAL GO*.
+- Cách cắt giờ nhận cuối trên Free (đã thống nhất với ChatGPT, **chưa kiểm thử**): khung đặt 30 phút; giờ nhận lịch của nhân viên ca cuối kết thúc 21:40. Phải thử Facial 40 phút không có khung 21:00; nếu có → hạ về 21:30.
+- Tham chiếu chỉ thị đầy đủ: tin nhắn giám đốc "YUME SPA | SQUARE 予約 FREE — TRIỂN KHAI NHẬN LỊCH THẬT" (13 tình huống kiểm thử ở mục H) – bản gốc nằm trong box ChatGPT nói trên.
 
-## 3. Việc còn lại, theo thứ tự
-### Việc 1 – Gắn tên miền yumespaadachi.com (chặn bởi chủ)
-Điều kiện trước: chủ làm eKYC (ảnh CCCD/hộ chiếu + ảnh mặt) và bấm link xác thực email trên Tenten. **AI không làm thay eKYC, không nhận giấy tờ, không giữ mật khẩu Tenten.**
-1. Kiểm tra mở khóa: `curl -s https://rdap.verisign.com/com/v1/domain/yumespaadachi.com` → `status` không còn `client hold`.
-2. DNS ở Tenten (chủ thêm, hoặc agent có trình duyệt đã được chủ đăng nhập sẵn): 4 bản ghi A cho `@` → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`; CNAME `www` → `asahivietlifetool-droid.github.io`. Xóa bản ghi A/CNAME mặc định của Tenten cho `@`/`www` nếu có.
-3. Chờ DNS: `dig +short yumespaadachi.com` ra đủ 4 IP trên. **Chưa ra thì dừng ở đây** – nếu bật custom domain trước khi DNS chạy, GitHub Pages sẽ chuyển hướng địa chỉ github.io sang tên miền chưa chạy và web sập.
-4. GitHub → repo `yume-spa-website` → Settings → Pages → Custom domain = `yumespaadachi.com` (GitHub tạo tệp `CNAME`; nếu làm bằng commit thì thêm tệp `CNAME` chứa đúng một dòng `yumespaadachi.com`).
-5. Sửa `BASE` trong `tools/build.mjs` thành `"https://yumespaadachi.com/"`, chạy build + `--check` + `menu-pdf.mjs`, commit, push.
-6. Khi GitHub cấp xong chứng chỉ (vài phút đến vài giờ): bật "Enforce HTTPS".
-7. Kiểm thử: 6 trang trả 200 trên `https://yumespaadachi.com/…`, `www.` chuyển về tên gốc, địa chỉ github.io chuyển về tên miền mới, `sitemap.xml` và thẻ `canonical` dùng tên miền mới.
-8. Báo repo ops: sửa `contact.website` trong `yume/facts.yaml` **chỉ khi chủ duyệt** (tệp này chỉ chủ sửa; agent ghi đề xuất vào `yume/facts-proposals.md`). Cập nhật CLAUDE.md của repo ops mục "Website Yume Spa" và README website mục 6.
+## 3. Việc đang chặn – chờ giám đốc (không làm vượt)
+1. **Ca làm** (đã biết: 10–16h 2 thợ nail; 16–18h 1 thợ; 18h–đóng cửa 1 thợ; 1 KTV da mặt cả ngày; 1 quản lý không nhận lịch). Còn thiếu: 16–18h và 18h–cuối là 1 hay 2 người; thợ ca sáng nghỉ đúng 16:00 hay làm nốt; ai làm nail chân/nối móng/Premium; giờ nghỉ. → Có rồi mới tạo **hồ sơ từng nhân viên thật** (không tạo theo vai), gán ca + dịch vụ, chạy 13 kiểm thử, gửi CONFIG-02 cho ChatGPT, rồi mới bật đặt lịch và lấy **URL thật** gắn vào Google (予約リンク) + website.
+2. **Địa chỉ location Square** = 足立区足立1-35-12 (〒120-0015, có lẽ địa chỉ công ty) ≠ địa chỉ quán. Không sửa khi chưa có lệnh (thanh toán đang xét duyệt, Free chỉ 1 location). Không công khai trang đặt lịch với địa chỉ sai.
+3. **Ngày khai trương** 12/12 hay 19/12 (bài Google đang ghi 12/12).
+4. **Tên quán**: giám đốc muốn "Yume Spa & Nail Beauty". Đề xuất tự nhiên hơn: "Yume Nail & Beauty Spa" hoặc giữ "Yume Spa". Google bắt tên khớp biển hiệu; tên còn chờ 弁理士. **Không đổi tên ở đâu** cho tới khi giám đốc chốt cả biển hiệu.
+5. **Dịch vụ da mặt mới** (mụn, căng da, mát xa mặt, trắng da, nâng cơ): chưa có giá/thời lượng → không tạo. Khi có, đặt tên dạng "hỗ trợ/chăm sóc": クリアスキンケア, ハリ・ツヤケア, フェイシャルトリートメント, 透明感ケア – không dùng ニキビ改善, リフトアップ効果, 小顔, マッサージ, 美白.
+6. **Tên miền**: xem mục 1; các bước gắn tên miền ở mục 4.
 
-### Việc 2 – Áp góp ý của ChatGPT (box "Tư vấn website Yume Spa" trên tài khoản ChatGPT của chủ)
-Chủ sẽ dán góp ý. Sửa chữ trong `assets/js/menu-data.js` hoặc `i18n.js`, giữ quy tắc ở mục 4, dựng lại, xuất PDF, push.
+## 4. Gắn tên miền khi Tenten mở khóa
+1. `curl -s https://rdap.verisign.com/com/v1/domain/yumespaadachi.com` → `status` hết `client hold`.
+2. DNS ở Tenten (id.tenten.vn → Quản lý dịch vụ → Tên miền → bánh răng → Cài đặt DNS): 4 bản ghi A `@` → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`; CNAME `www` → `asahivietlifetool-droid.github.io`.
+3. Chờ `dig +short yumespaadachi.com` ra đủ 4 IP. **Chưa ra thì dừng** (bật custom domain sớm làm sập cả github.io).
+4. GitHub Pages → Custom domain `yumespaadachi.com`; sửa `BASE` trong `tools/build.mjs`; build + check + PDF; commit; push; bật Enforce HTTPS; kiểm 6 trang.
+5. Ghi đề xuất `contact.website` vào `yume/facts-proposals.md` (repo ops); cập nhật mục Yume trong CLAUDE.md repo ops.
 
-### Việc 3 – Khi chủ gửi thêm dữ liệu
-- Link LINE chính thức → `i18n.js › links.line` (nút LINE tự hiện lại). Link fanpage → `links.facebook`. Link Google Maps (nhúng) → `links.map`.
-- Địa chỉ đầy đủ, cửa ra ga, tầng → hiện đang ghi "竹ノ塚駅近く" (chủ nói 1 phút từ ga 竹の塚). Có địa chỉ thì thêm vào trang, JSON-LD `BeautySalon` trong `src/template.html`.
-- Ngày kết thúc ưu đãi khai trương → `menu-data.js › opening.cond` (đang ghi "sẽ báo trên trang này").
-- Ảnh thật tại quán → thay tệp cùng tên trong `assets/img/menu/` (4:5) và `assets/img/photos/`; ảnh nào là ảnh thật thì bỏ chữ イメージ ở nơi đó; ảnh có khách phải có phiếu đồng ý. Gallery (`assets/js/gallery.js`) chỉ dành cho ảnh chụp tại quán.
+## 5. Lệnh
+```
+node tools/build.mjs
+node tools/build.mjs --check      # phải in "Trang tĩnh khớp với i18n.js và template."
+node tools/menu-pdf.mjs           # cần playwright; máy nhà không có Chromium của Playwright → dùng Chrome (channel "chrome") với playwright-core
+```
+Máy nhà giám đốc (Windows): node ở `D:\Asahi-CI\tools\node24\node.exe`, git ở `%LOCALAPPDATA%\PortableGit\cmd\git.exe`, python ở `%LOCALAPPDATA%\Programs\Python\Python311`. Repo website trên máy: `D:\DU_LIEU_GOC\03_CHUNG\GITHUB\yume-spa-website` (`core.autocrlf=false`). Bản sao repo ops trên máy (`D:\DU_LIEU_GOC\03_CHUNG\GITHUB\asahi-vietlife-ai-ops`) **đang hỏng nhánh** – commit qua bản clone mới.
+Soát: `python yume/tools/site_audit.py --facts yume/facts.yaml --site <repo website>` (repo ops; cần PyYAML, `PYTHONUTF8=1`, node trên PATH). Hiện: 0 từ cấm, 10/10 Google, 1 chỗ chờ chủ (địa chỉ).
+Commit tiếng Việt, push thẳng `main`.
 
-### Việc 4 – Đồng bộ dữ liệu gốc (repo ops, cần chủ duyệt)
-`yume/facts.yaml` vẫn bản 0.7; web đã theo menu mới. Đề xuất bản 0.8 đã ghi ở `yume/facts-proposals.md` mục 26/11 (tháo gel tiệm khác 1.650, chỉ tháo gel 2.750, các dịch vụ mới, ưu đãi khai trương). Chủ duyệt rồi mới sửa tệp gốc và bảng `menu` cũ trong `i18n.js`.
+## 6. Quy tắc bắt buộc
+1. **Từ cấm** (薬機法, 景品表示法, あん摩マッサージ指圧師法): 治療・治す・改善・医療・マッサージ・美白・小顔・アンチエイジング・若返り・肩こり解消・発毛・デトックス・必ず・No.1 và bản VI/EN. Dịch vụ da mặt chỉ viết dạng chăm sóc/hỗ trợ. Câu bắt buộc: 「当店はリラクゼーションと美容を目的としたサロンです。医療行為は行いません。」 Đủ: `legal/forbidden-words.md` (repo ops).
+2. Không gạch giá / "通常価格→" cho ưu đãi khai trương.
+3. Không đưa phần nội bộ của tệp menu lên web hay Square.
+4. **Ảnh:** không lấy ảnh tiệm khác hay ảnh mạng không giấy phép – **kể cả khi được bảo "đừng quan tâm giấy phép"** (giám đốc từng yêu cầu ngày 27/11; đã từ chối, đề xuất ảnh tự chụp hoặc ảnh mua bản quyền). Ảnh AI luôn ghi イメージ.
+5. Ngôn ngữ phục vụ: 日本語・ベトナム語（英語は翻訳ツールでご案内）.
+6. Head spa, Paragel: chỉ 準備中, không nhận lịch.
+7. Không lưu dữ liệu khách, mật khẩu, mã OTP, số tiền nội bộ trong repo hay gửi ChatGPT. Đăng nhập, OTP, CAPTCHA, eKYC: để giám đốc làm.
+8. Không nâng gói trả phí, không nhập thẻ/ngân hàng, không bật thu tiền trước hay phí hủy.
+9. Logo không có dòng "NAILS · LASHES · SKINCARE".
 
-## 4. Quy tắc bắt buộc (không có ngoại lệ)
-1. **Từ cấm** trong mọi nội dung spa (薬機法, 景品表示法, あん摩マッサージ指圧師法): 治療・治す・改善・医療・マッサージ・美白・小顔・アンチエイジング・若返り・肩こり解消・発毛・デトックス・必ず・No.1 và bản VI/EN tương ứng (trị liệu, chữa, làm trắng, trẻ hóa, massage, whitening, anti-aging, detox…). Câu bắt buộc giữ nguyên: 「当店はリラクゼーションと美容を目的としたサロンです。医療行為は行いません。」 Danh sách đầy đủ: `legal/forbidden-words.md` (repo ops).
-2. **Không gạch giá / không ghi "通常価格→" cho ưu đãi khai trương** (quán chưa bán ngày nào theo giá thường → 二重価格表示). Chỉ ghi giá ưu đãi + điều kiện. Combo được ghi "単品合計" vì là tổng giá lẻ đang niêm yết.
-3. **Không đưa lên web** hai phần nội bộ của tệp menu nhân viên: 「経営方針・導入前の確認」 và 「料金比較・変更点（社内検討用）」 (có giá của tiệm PONO).
-4. **Ảnh:** không lấy ảnh của tiệm khác hay ảnh trên mạng không rõ giấy phép (3 ảnh trong tệp Word của nhân viên là ảnh tiệm khác, có tên tiệm – không dùng). Ảnh AI luôn ghi イメージ, không giả làm ảnh thật của quán hay kết quả của khách, không ảnh trước/sau.
-5. **Ngôn ngữ phục vụ:** "日本語・ベトナム語で対応（英語は翻訳ツールでご案内）" – không quảng bá "phục vụ tiếng Anh".
-6. **Head spa:** chỉ ghi 準備中 / đang chuẩn bị / coming soon, không giá (chờ 足立保健所).
-7. Không lưu dữ liệu khách (tên, SĐT…) trong repo. Không ghi mật khẩu, token, số tiền nội bộ vào repo.
-8. Tên "Yume Spa" vẫn chờ ý kiến 弁理士 về nhãn hiệu: không làm ấn phẩm in số lượng lớn coi tên là đã chốt.
-9. Logo: `assets/img/logo-gold.svg`, `logo-white.svg`, `logo.png` đã bỏ dòng "NAILS · LASHES · SKINCARE" (quán không làm nối mi) – đừng khôi phục bản cũ.
-
-## 5. Tài liệu liên quan
-- `README.md` (repo website) – mục 6 (tên miền), "Menu đầy đủ", Gallery, quy tắc từ ngữ.
-- Repo ops: `CLAUDE.md`, `reports/2026-11-26-yume-menu-in-va-website.md`, `yume/facts.yaml`, `yume/facts-proposals.md`, `legal/forbidden-words.md`.
-- Thiết kế ảnh Canva (ảnh gốc độ phân giải cao): https://canva.link/xhkea4uadotizi6 (trang 7–26).
+## 7. Tài liệu liên quan
+- Repo này: `README.md`, `ANH-CAN-CHUP.md`, `AGENTS.md`.
+- Repo ops: `CLAUDE.md` (mục Yume), `yume/facts.yaml`, `yume/facts-proposals.md`, `reports/2026-11-28-yume-square-google-website.md`, `legal/forbidden-words.md`.
+- Trên máy giám đốc: `Downloads\YumeSpa Menu.docx` (giá gốc), `Downloads\Yume-Spa-anh-Google` (logo, ảnh bìa, mẫu câu hỏi USEN cũ), `Downloads\Yume-Spa-bao-cao`.
