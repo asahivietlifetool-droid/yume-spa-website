@@ -34,6 +34,11 @@ Khi chia sẻ cho người Việt, dùng link `/vi/`; cho người nói tiếng 
 5. Ảnh: dải ba ảnh dưới phần Concept là **ảnh minh họa có giấy phép** (nguồn: `assets/img/photos/CREDITS.md`), trên trang có ghi rõ. Ảnh chụp tại quán: thêm vào `assets/img/gallery/` và `assets/js/gallery.js`. Không lấy ảnh trên mạng khi chưa rõ giấy phép.
 6. Tên miền chính thức: **yumespaadachi.com** (mua ở Tenten ngày 14/11/2026). **Chưa chạy**: Tenten khóa DNS cho đến khi chủ làm eKYC và xác thực email, nên `BASE` trong `tools/build.mjs` tạm là địa chỉ GitHub Pages. Lúc gắn tên miền: (1) Settings → Pages → Custom domain = `yumespaadachi.com` (GitHub tạo tệp `CNAME`); (2) ở Tenten tạo 4 bản ghi A cho `@` (185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153) và CNAME `www` → `asahivietlifetool-droid.github.io`; (3) đổi `BASE` thành `https://yumespaadachi.com/`, chạy `node tools/build.mjs`, commit; (4) bật "Enforce HTTPS". Nguồn: docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site (tra 14/11/2026).
 
+## Menu in được (26/11/2026)
+- Trang `menu/`, `vi/menu/`, `en/menu/` (khổ A4, in hoặc lưu PDF ngay trên trình duyệt) do `tools/menu-page.mjs` dựng, cùng nguồn `i18n.js` với bảng giá trang chủ. Nút trên trang chủ: "メニュー表を見る".
+- PDF và PNG: `assets/menu/yume-spa-menu-{ja,vi,en}.pdf|png`. Sửa giá hoặc chữ: `node tools/build.mjs` rồi `NODE_PATH=$(npm root -g) node tools/menu-pdf.mjs` (cần Playwright).
+- Ảnh hiện là 2 ảnh minh họa Unsplash (ghi "写真はすべてイメージです"). Có ảnh thật tại quán: đổi `PHOTOS` trong `tools/menu-page.mjs`.
+
 ## Quy tắc từ ngữ (bắt buộc – luật Nhật)
 - 薬機法 / 景品表示法: **không** dùng 治療・治す・改善・医療・美白・シミが消える・小顔・アンチエイジング・若返り・発毛.
 - あん摩マッサージ指圧師法: **không** dùng chữ マッサージ (kể cả tiếng Việt "massage" trên bản JP). Dùng ほぐす・リラックス・ケア.

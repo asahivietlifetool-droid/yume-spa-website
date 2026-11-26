@@ -18,4 +18,22 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://asahivietlifetool-droid.github.io/yume-spa-website/en/"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://asahivietlifetool-droid.github.io/yume-spa-website/vi/"/>
   </url>
+  <url>
+    <loc>https://asahivietlifetool-droid.github.io/yume-spa-website/menu/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://asahivietlifetool-droid.github.io/yume-spa-website/menu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://asahivietlifetool-droid.github.io/yume-spa-website/en/menu/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://asahivietlifetool-droid.github.io/yume-spa-website/vi/menu/"/>
+  </url>
+  <url>
+    <loc>https://asahivietlifetool-droid.github.io/yume-spa-website/en/menu/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://asahivietlifetool-droid.github.io/yume-spa-website/menu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://asahivietlifetool-droid.github.io/yume-spa-website/en/menu/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://asahivietlifetool-droid.github.io/yume-spa-website/vi/menu/"/>
+  </url>
+  <url>
+    <loc>https://asahivietlifetool-droid.github.io/yume-spa-website/vi/menu/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://asahivietlifetool-droid.github.io/yume-spa-website/menu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://asahivietlifetool-droid.github.io/yume-spa-website/en/menu/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://asahivietlifetool-droid.github.io/yume-spa-website/vi/menu/"/>
+  </url>
 </urlset>

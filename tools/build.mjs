@@ -10,6 +10,7 @@ import fs from "node:fs";
 import path from "node:path";
 import vm from "node:vm";
 import { fileURLToPath } from "node:url";
+import { menuPage } from "./menu-page.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 // Địa chỉ gốc của website. Đổi tên miền thì sửa đúng một dòng này rồi dựng lại.
@@ -128,10 +129,15 @@ function sitemap() {
     const links = LANGS.map((a) => `    <xhtml:link rel="alternate" hreflang="${a.hreflang}" href="${BASE}${a.dir}"/>`).join("\n");
     return `  <url>\n    <loc>${BASE}${l.dir}</loc>\n${links}\n  </url>`;
   }).join("\n");
-  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${urls}\n</urlset>\n`;
+  const menus = LANGS.map((l) => {
+    const links = LANGS.map((a) => `    <xhtml:link rel="alternate" hreflang="${a.hreflang}" href="${BASE}${a.dir}menu/"/>`).join("\n");
+    return `  <url>\n    <loc>${BASE}${l.dir}menu/</loc>\n${links}\n  </url>`;
+  }).join("\n");
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${urls}\n${menus}\n</urlset>\n`;
 }
 
 const outputs = new Map(LANGS.map((l) => [l.dir + "index.html", page(l.code)]));
+for (const l of LANGS) outputs.set(l.dir + "menu/index.html", menuPage(l.code, { Y, t, esc, escAttr, yen, BASE, LANGS }));
 outputs.set("sitemap.xml", sitemap());
 outputs.set("robots.txt", `User-agent: *\nAllow: /\n\nSitemap: ${BASE}sitemap.xml\n`);
 // Trang 404 có thể hiện ở bất kỳ độ sâu thư mục nào, nên mọi đường dẫn trong đó là địa chỉ đầy đủ theo BASE.
