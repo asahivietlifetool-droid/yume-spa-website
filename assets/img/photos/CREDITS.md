@@ -1,17 +1,17 @@
 # Nguồn ảnh minh họa
 
-Ba ảnh trong thư mục này là ảnh minh họa lấy từ Unsplash ngày 14/11/2026. Mỗi trang ảnh đều ghi "Free to use under the Unsplash License": được dùng miễn phí, kể cả mục đích kinh doanh, không bắt buộc ghi tên tác giả (https://unsplash.com/license).
+Từ 26/11/2026 mọi ảnh trong thư mục này là **ảnh do AI tạo** bằng công cụ tạo ảnh của Canva (tài khoản Canva của bộ máy, thiết kế "Plain six-page photo album" https://canva.link/xhkea4uadotizi6, trang 7–12). Không lấy ảnh của người khác trên mạng. Ảnh không có người nhận ra được (chỉ tay, chân, đồ vật, phòng).
 
-| Tệp | Tác giả | Trang ảnh | Đã chỉnh |
-|---|---|---|---|
-| `nail-900.webp`, `nail-480.webp` | Esther Olayiwola | https://unsplash.com/photos/a-womans-hand-with-a-pink-manicure-on-it-aFbeH8Qpi2U | Cắt 4:5, đổi sang WebP |
-| `hands-900.webp`, `hands-480.webp` | Esther Olayiwola | https://unsplash.com/photos/a-womans-hand-resting-on-a-white-fur-nehbFCz51mc | Cắt 4:5, đổi sang WebP |
-| `facial-900.webp`, `facial-480.webp` | kimia kazemi | https://unsplash.com/photos/a-person-receiving-a-facial-treatment-RbIcMsh0NSk | Cắt 4:5 (bỏ phần chai mỹ phẩm ở mép phải), đổi sang WebP |
+| Tệp | Nội dung | Mã ảnh Canva |
+|---|---|---|
+| `gel-one-*.webp` | Gel một màu hồng be trên vải lanh | MAHcBupxE-U |
+| `set-design-*.webp` | Móng French, mắt mèo, tay cầm chén trà | MAHcBn9Cgvg |
+| `foot-*.webp` | Gel chân hồng, chậu ngâm chân | MAHcBmnqAiY |
+| `facial-items-*.webp` | Khăn, mặt nạ dưỡng ẩm, chai dưỡng da (không người) | MAHcBqS8fzI |
+| `salon-*.webp` | Không gian tiệm nail (không phải tiệm Yume) | MAHcBq7tZkU |
+| `tools-*.webp` | Khay dụng cụ đóng gói và chai gel | MAHcBu_1uQo |
 
-## Vì sao chỉ dùng ảnh không lộ mặt
-Điều khoản của Unsplash (https://unsplash.com/terms, mục 5) nói giấy phép **không bao gồm** quyền dùng hình ảnh của người nhận ra được trong ảnh, nhãn hiệu và tác phẩm xuất hiện trong ảnh. Vì vậy chỉ chọn ảnh bàn tay và ảnh khuôn mặt bị che phần mắt.
-
-## Quy tắc khi thêm ảnh
-- Ảnh lấy trên mạng đều có bản quyền, dù người trong ảnh là ai. Chỉ dùng ảnh có giấy phép rõ ràng và ghi nguồn vào bảng trên.
-- Ảnh ở đây là ảnh minh họa, trên trang có ghi rõ. Không đưa ảnh minh họa vào mục Gallery: Gallery chỉ dành cho ảnh chụp tại quán.
-- Ảnh khách và ảnh nhân viên: chỉ đăng khi người trong ảnh đồng ý.
+## Quy tắc
+- Đây là ảnh minh họa, không phải ảnh tại quán hay kết quả của khách: trang luôn ghi "写真はすべてイメージです". Không đưa vào mục Gallery (Gallery chỉ cho ảnh chụp tại quán).
+- Ảnh Unsplash cũ (nail, hands, facial) đã gỡ ngày 26/11/2026.
+- Khi có ảnh thật tại quán: thay tệp cùng tên (giữ khổ 4:5 cho ảnh dọc, 3:2 cho ảnh ngang) và bỏ chữ "イメージ" ở ảnh đã là ảnh thật.

@@ -313,14 +313,19 @@ details p { color: var(--ink-soft); font-size: .96rem; margin: 0 0 1rem; }
 
 /* Dải ảnh minh họa dưới phần Concept */
 .photo-wrap { margin-top: 3.5rem; }
-.photo-band { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.photo-band { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.1rem; }
+.space-band { list-style: none; margin: 1.25rem 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+.space-band figure { margin: 0; }
+.space-band img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 1.1rem; background: var(--silk-deep); box-shadow: 0 18px 40px -28px rgba(43, 36, 52, .55); }
+.space-band figcaption { margin-top: .7rem; font-family: var(--display); font-size: 1.1rem; color: var(--gold-deep); text-align: center; }
 .photo-band figure { margin: 0; }
 .photo-band img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 1.1rem; background: var(--silk-deep); box-shadow: 0 18px 40px -28px rgba(43, 36, 52, .55); }
 .photo-band figcaption { margin-top: .7rem; font-family: var(--display); font-size: 1.15rem; color: var(--gold-deep); text-align: center; }
 .photo-note { margin-top: 1.25rem; }
 @media (max-width: 720px) {
   .photo-wrap { margin-top: 2.5rem; }
-  .photo-band { gap: .6rem; }
+  .photo-band { gap: .6rem; grid-template-columns: repeat(2, 1fr); }
+  .space-band { grid-template-columns: 1fr; gap: .9rem; }
   .photo-band img { border-radius: .7rem; }
   .photo-band figcaption { font-size: .95rem; margin-top: .45rem; }
 }

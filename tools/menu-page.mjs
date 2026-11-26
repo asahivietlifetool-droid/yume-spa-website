@@ -2,13 +2,14 @@
 // Nội dung lấy từ assets/js/i18n.js (cùng nguồn với bảng giá trên trang chủ), không gõ giá ở đây.
 // Mỗi trang có ngôn ngữ chính và một dòng nhỏ ngôn ngữ phụ dưới tên dịch vụ:
 //   JA chính + VI phụ (giống bản PDF ChatGPT 14/11/2026), VI chính + JA phụ, EN chính + JA phụ.
-// Ảnh: 3 ảnh minh họa có giấy phép (assets/img/photos/CREDITS.md), luôn ghi "イメージ".
+// Ảnh: 4 ảnh minh họa do AI tạo (Canva, 26/11/2026; assets/img/photos/CREDITS.md), luôn ghi "イメージ".
 // Khi có ảnh thật tại quán: đổi PHOTOS bên dưới, chạy node tools/build.mjs rồi node tools/menu-pdf.mjs.
 
 const PHOTOS = [
-  { src: "assets/img/photos/nail-900.webp", key: "menu.nails" },
-  { src: "assets/img/photos/hands-900.webp", key: "" },
-  // facial-900.webp không dùng ở menu: ảnh có dụng cụ sát mũi, dễ hiểu nhầm là thủ thuật (soát 26/11/2026)
+  { src: "assets/img/photos/gel-one-900.webp" },
+  { src: "assets/img/photos/set-design-900.webp" },
+  { src: "assets/img/photos/foot-900.webp" },
+  { src: "assets/img/photos/facial-items-900.webp" },
 ];
 const SECOND = { ja: "vi", vi: "ja", en: "ja" };
 const PHONE = "070-2813-6693";
