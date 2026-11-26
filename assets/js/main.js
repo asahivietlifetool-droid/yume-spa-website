@@ -70,10 +70,9 @@
     var line = document.getElementById("line-link");
     var cta = document.getElementById("cta-line");
     var fb = document.getElementById("fb-link");
-    var openingBtn = document.querySelector(".opening-card .btn");
+    // Nút ở mục "オープン記念" luôn dẫn tới giá lần đầu trên trang menu (menu/#coupon), không đổi sang LINE.
     if (Y.links.line && Y.links.line.indexOf("XXXX") === -1) {
       line.href = Y.links.line;
-      if (openingBtn) { openingBtn.href = Y.links.line; openingBtn.target = "_blank"; openingBtn.rel = "noopener"; }
     } else {
       // Chưa có LINE chính thức: ẩn nút LINE (không để nút "LINEで予約する" gọi điện thoại).
       if (line && line.parentNode) line.parentNode.style.display = "none";
