@@ -75,10 +75,12 @@
       line.href = Y.links.line;
       if (openingBtn) { openingBtn.href = Y.links.line; openingBtn.target = "_blank"; openingBtn.rel = "noopener"; }
     } else {
-      line.href = "tel:+817028136693";
-      line.removeAttribute("target");
+      // Chưa có LINE chính thức: ẩn nút LINE (không để nút "LINEで予約する" gọi điện thoại).
+      if (line && line.parentNode) line.parentNode.style.display = "none";
     }
-    if (Y.links.facebook) fb.href = Y.links.facebook;
+    // Chưa có link fanpage thật (chỉ là trang chủ facebook.com): ẩn nút Facebook.
+    if (Y.links.facebook && !/^https?:\/\/(www\.)?facebook\.com\/?$/.test(Y.links.facebook)) fb.href = Y.links.facebook;
+    else if (fb && fb.parentNode) fb.parentNode.style.display = "none";
     if (Y.links.map) {
       var map = document.getElementById("map");
       map.innerHTML = "<iframe loading='lazy' referrerpolicy='no-referrer-when-downgrade' src='" + Y.links.map + "' title='Map'></iframe>";
