@@ -34,10 +34,13 @@ Khi chia sẻ cho người Việt, dùng link `/vi/`; cho người nói tiếng 
 5. Ảnh: dải ba ảnh dưới phần Concept là **ảnh minh họa có giấy phép** (nguồn: `assets/img/photos/CREDITS.md`), trên trang có ghi rõ. Ảnh chụp tại quán: thêm vào `assets/img/gallery/` và `assets/js/gallery.js`. Không lấy ảnh trên mạng khi chưa rõ giấy phép.
 6. Tên miền chính thức: **yumespaadachi.com** (mua ở Tenten ngày 14/11/2026). **Chưa chạy**: Tenten khóa DNS cho đến khi chủ làm eKYC và xác thực email, nên `BASE` trong `tools/build.mjs` tạm là địa chỉ GitHub Pages. Lúc gắn tên miền: (1) Settings → Pages → Custom domain = `yumespaadachi.com` (GitHub tạo tệp `CNAME`); (2) ở Tenten tạo 4 bản ghi A cho `@` (185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153) và CNAME `www` → `asahivietlifetool-droid.github.io`; (3) đổi `BASE` thành `https://yumespaadachi.com/`, chạy `node tools/build.mjs`, commit; (4) bật "Enforce HTTPS". Nguồn: docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site (tra 14/11/2026).
 
-## Menu in được (26/11/2026)
-- Trang `menu/`, `vi/menu/`, `en/menu/` (khổ A4, in hoặc lưu PDF ngay trên trình duyệt) do `tools/menu-page.mjs` dựng, cùng nguồn `i18n.js` với bảng giá trang chủ. Nút trên trang chủ: "メニュー表を見る".
-- PDF và PNG: `assets/menu/yume-spa-menu-{ja,vi,en}.pdf|png`. Sửa giá hoặc chữ: `node tools/build.mjs` rồi `NODE_PATH=$(npm root -g) node tools/menu-pdf.mjs` (cần Playwright).
-- Ảnh hiện là 2 ảnh minh họa Unsplash (ghi "写真はすべてイメージです"). Có ảnh thật tại quán: đổi `PHOTOS` trong `tools/menu-page.mjs`.
+## Menu đầy đủ (26/11/2026, bản nhân viên "新料金メニュー案")
+- Nguồn duy nhất: `assets/js/menu-data.js` (11 nhóm, ưu đãi khai trương, combo; chữ JA / VI / EN tách riêng). Không đưa lên web 2 phần nội bộ của tệp gốc (経営方針, 料金比較).
+- Trang `menu/`, `vi/menu/`, `en/menu/`: kiểu Hot Pepper (クーポン lần đầu ở trên, từng nhóm có ảnh mẫu, tên, thời gian, giá). Trang chủ hiện 4 nhóm chính + nút sang trang đầy đủ.
+- Ưu đãi khai trương chỉ ghi giá ưu đãi và điều kiện, không gạch giá thường (二重価格表示).
+- Ảnh mẫu: `assets/img/menu/*.webp`, ảnh minh họa do AI tạo (Canva), trang ghi "写真はすべてイメージです". Có ảnh thật: thay tệp cùng tên.
+- Sửa xong: `node tools/build.mjs`, rồi `NODE_PATH=$(npm root -g) node tools/menu-pdf.mjs` (PDF nhiều trang A4 + PNG dài).
+- `i18n.js › menu` (bảng cũ) chỉ còn để `site_audit.py` so với `yume/facts.yaml`; cập nhật khi tệp gốc lên bản 0.8.
 
 ## Quy tắc từ ngữ (bắt buộc – luật Nhật)
 - 薬機法 / 景品表示法: **không** dùng 治療・治す・改善・医療・美白・シミが消える・小顔・アンチエイジング・若返り・発毛.

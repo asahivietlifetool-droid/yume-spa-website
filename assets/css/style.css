@@ -139,13 +139,18 @@ p { margin: 0 0 1rem; }
 .menu-head h2 { font-size: clamp(1.7rem, 3vw, 2.3rem); }
 .note { color: var(--ink-soft); font-size: .92rem; max-width: 34rem; margin: 0; }
 .note.small { font-size: .85rem; margin-top: 2.5rem; }
-.menu-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 4vw, 3.5rem); }
-@media (max-width: 900px) { .menu-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+.menu-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.5rem, 4vw, 3.5rem); }
+@media (max-width: 760px) { .menu-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+.menu-thumb { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 1rem; margin-bottom: 1rem; box-shadow: 0 18px 40px -30px rgba(43, 36, 52, .6); }
+.price-list .d2 { display: block; color: var(--ink-soft); font-size: .8rem; margin-top: .1rem; }
+.menu-print { margin-top: 1.5rem; }
+.menu-print .link { display: inline-block; padding: .75rem 1.4rem; border-radius: 999px; background: var(--night); color: #F3EBDD; text-decoration: none; font-size: .95rem; }
+.menu-print .link:hover { background: var(--gold-deep); }
 .menu-card h3 { font-size: 1.6rem; color: var(--ink); display: flex; align-items: center; gap: .6rem; }
 .menu-card h3 i { width: .55rem; height: .55rem; border-radius: 50%; background: var(--gold); display: inline-block; }
-.menu-card.nails h3 i { background: var(--petal); }
-.menu-card.facial h3 i { background: var(--gold-light); }
-.menu-card .d { color: var(--ink-soft); font-size: .95rem; margin: .5rem 0 1.25rem; min-height: 4.4em; }
+.menu-card.cat-hand h3 i, .menu-card.cat-foot h3 i { background: var(--petal); }
+.menu-card.cat-facial h3 i { background: var(--gold-light); }
+.menu-card .d { color: var(--ink-soft); font-size: .92rem; margin: .5rem 0 1rem; }
 .price-list { list-style: none; margin: 0; padding: 0; }
 .price-list li { display: grid; grid-template-columns: 1fr auto; gap: .25rem 1rem; align-items: baseline; padding: .7rem 0; border-top: 1px dotted var(--line); }
 .price-list li:last-child { border-bottom: 1px dotted var(--line); }

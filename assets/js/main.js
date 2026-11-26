@@ -11,7 +11,7 @@
 
   function renderMenu() {
     var grid = document.getElementById("menu-grid");
-    if (!grid) return;
+    if (!grid || grid.getAttribute("data-static")) return;  // trang tĩnh theo ngôn ngữ đã có bảng giá đầy đủ
     grid.innerHTML = "";
     Y.menu.forEach(function (cat) {
       var card = document.createElement("div");

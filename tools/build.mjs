@@ -29,7 +29,9 @@ const CHECK = process.argv.includes("--check");
 const sandbox = { window: {} };
 vm.createContext(sandbox);
 vm.runInContext(fs.readFileSync(path.join(ROOT, "assets/js/i18n.js"), "utf8"), sandbox);
+vm.runInContext(fs.readFileSync(path.join(ROOT, "assets/js/menu-data.js"), "utf8"), sandbox);
 const Y = sandbox.window.YUME;
+const M = sandbox.window.YUME_MENU;
 const template = fs.readFileSync(path.join(ROOT, "src/template.html"), "utf8");
 
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -41,19 +43,24 @@ function t(lang, key) {
   return d[key] != null ? d[key] : (Y.t.ja[key] != null ? Y.t.ja[key] : "");
 }
 
-// Giống hệt renderMenu() trong assets/js/main.js, để bảng giá nằm sẵn trong HTML.
+// Bảng giá trang chủ: các nhóm chính lấy từ menu-data.js (đủ giá ở trang menu/). main.js không vẽ lại khi có data-static.
+const HOME_CATS = { hand: 8, fixed: 3, foot: 6, facial: 5 };
 function menuHtml(lang) {
-  return Y.menu.map((cat) => {
-    if (cat.soon) {
-      return `<div class="menu-card ${cat.id} is-soon"><h3><i aria-hidden="true"></i>${esc(t(lang, "menu." + cat.id))}</h3>` +
-        `<p class="d">${esc(t(lang, "menu." + cat.id + ".d"))}</p><p class="soon">${esc(t(lang, "menu.soon"))}</p></div>`;
-    }
-    const items = cat.items.filter((it) => !it.hidden).map((it) =>
-      `<li><span class="n">${esc(t(lang, "menu." + it.key))}</span>` +
-      `<span class="p">${it.from ? "<small>" + esc(t(lang, "menu.from")) + "</small>" : ""}${yen(it.price)}</span>` +
-      `<span class="t">${esc(t(lang, "menu." + it.key + ".t") + t(lang, "menu.min"))}</span></li>`).join("");
-    return `<div class="menu-card ${cat.id}"><h3><i aria-hidden="true"></i>${esc(t(lang, "menu." + cat.id))}</h3>` +
-      `<p class="d">${esc(t(lang, "menu." + cat.id + ".d"))}</p><ul class="price-list">${items}</ul></div>`;
+  const u = M.ui[lang];
+  const L = (o) => (o && (o[lang] != null ? o[lang] : o.ja)) || "";
+  return M.cats.filter((c) => HOME_CATS[c.id]).map((c) => {
+    const items = c.items.slice(0, HOME_CATS[c.id]).map((it) => {
+      const p = it.soon ? esc(u.soon) : it.free ? esc(u.free)
+        : (lang === "ja" ? yen(it.price) + (it.from ? "<small>" + esc(u.from) + "</small>" : "")
+          : (it.from ? "<small>" + esc(u.from) + "</small>" : "") + yen(it.price));
+      return `<li><span class="n">${esc(L(it.n))}${it.d ? `<small class="d2">${esc(L(it.d))}</small>` : ""}</span>` +
+        `<span class="p">${p}</span><span class="t">${it.min ? esc(it.min + u.min) : ""}</span></li>`;
+    }).join("");
+    const img = c.photos && c.photos.length ? c.photos[0][0] : "";
+    return `<div class="menu-card cat-${c.id}">` +
+      (img ? `<img class="menu-thumb" src="assets/img/menu/${img}-360.webp" width="360" height="450" loading="lazy" decoding="async" alt="${escAttr(L(c.photos[0][1]))}">` : "") +
+      `<h3><i aria-hidden="true"></i>${esc(L(c.t))}</h3>` +
+      (c.note && c.id !== "facial" ? `<p class="d">${esc(L(c.note))}</p>` : "") + `<ul class="price-list">${items}</ul></div>`;
   }).join("");
 }
 
@@ -86,7 +93,7 @@ function page(lang) {
 
   // 2. Bảng giá nằm sẵn trong HTML
   html = html.replace('<div class="menu-grid" id="menu-grid"></div>',
-    `<div class="menu-grid" id="menu-grid">${menuHtml(lang)}</div>`);
+    `<div class="menu-grid" id="menu-grid" data-static="1">${menuHtml(lang)}</div>`);
 
   // 3. Ngôn ngữ của trang, tiêu đề, mô tả
   html = html.replace('<html lang="ja">', `<html lang="${lang}" data-page-lang="${lang}" data-base="${up}">`);
@@ -137,7 +144,7 @@ function sitemap() {
 }
 
 const outputs = new Map(LANGS.map((l) => [l.dir + "index.html", page(l.code)]));
-for (const l of LANGS) outputs.set(l.dir + "menu/index.html", menuPage(l.code, { Y, t, esc, escAttr, yen, BASE, LANGS }));
+for (const l of LANGS) outputs.set(l.dir + "menu/index.html", menuPage(l.code, { Y, M, t, esc, escAttr, yen, BASE, LANGS }));
 outputs.set("sitemap.xml", sitemap());
 outputs.set("robots.txt", `User-agent: *\nAllow: /\n\nSitemap: ${BASE}sitemap.xml\n`);
 // Trang 404 có thể hiện ở bất kỳ độ sâu thư mục nào, nên mọi đường dẫn trong đó là địa chỉ đầy đủ theo BASE.
