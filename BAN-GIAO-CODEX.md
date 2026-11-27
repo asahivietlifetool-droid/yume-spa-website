@@ -21,7 +21,8 @@ Mọi agent: không coi ChatGPT đã duyệt nếu chưa có phản hồi; giám
 **Việc cho agent máy nhà:** (agent phụ ghi thêm vào đây)
 - ~~Gắn link đặt lịch Square lên Google + website~~ – XONG 28/11 (giám đốc đồng ý): website có nút WEB予約 (hero, thanh cố định mobile, mục ご予約); Google: 予約リンク = trang Square, website = https://yumebeautyspa.com/, menu = /menu/ (2 link này chờ Google duyệt).
 - Square: ghi website https://yumebeautyspa.com/ vào hồ sơ location LK15VJNH9TBDG – chưa làm vì Square bị đăng xuất 28/11 (giám đốc đăng nhập lại).
-- 28/11 da mặt: web không ghi giá (「店頭でご案内」); Square vẫn còn giá cũ 4 dịch vụ da mặt – chờ giám đốc quyết có đổi sang "giá tùy" không.
+- 28/11 da mặt (lần 2, giám đốc): web ghi giá cơ bản ¥5,500〜/¥7,700〜/¥8,800〜/¥11,000〜 + câu "gói cơ bản đúng giá, phụ phí báo trước" (ChatGPT YUME-MKT-01). Combo có da mặt vẫn 「店頭でご案内」. Chờ giám đốc gửi danh sách phụ phí da mặt.
+- Kênh tìm khách: kế hoạch ở Downloads\Yume-Spa-bao-cao\KE-HOACH-KENH-TIM-KHACH-28-11-2026.md. KHÔNG tạo tài khoản ảo/ステマ. Giám đốc tự tạo tài khoản (IG, LINE公式, WhatsApp Business, Zalo OA); agent viết bài + lên lịch.
 - Hồ sơ Google có trang Facebook (profile.php?id=61586956555272) – có thể gắn vào website (links.facebook trong i18n.js) nếu giám đốc xác nhận đó là trang chính thức.
 
 **Tên miền chính thức: yumebeautyspa.com – ĐÃ GẮN (27/11/2026, lệnh L-023).** Giám đốc thêm DNS ở Tenten (4 A `@` + CNAME `www`), repo có tệp `CNAME`, `BASE` trong `tools/build.mjs` = `https://yumebeautyspa.com/`. Địa chỉ github.io tự chuyển sang tên miền mới. Việc còn lại: (1) GitHub Settings → Pages: kiểm tra Custom domain hiện yumebeautyspa.com, bật "Enforce HTTPS" khi chứng chỉ cấp xong; (2) agent có Chrome đổi link website trên hồ sơ Google và Square sang https://yumebeautyspa.com/; (3) giám đốc quyết bỏ hay giữ yumespaadachi.com.
