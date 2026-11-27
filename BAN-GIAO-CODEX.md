@@ -10,7 +10,18 @@
 | Claude (Claude Code, máy nhà giám đốc) | Kỹ sư triển khai: website, Square, hồ sơ Google, repo ops | Repo này + `asahi-vietlife-ai-ops`; Chrome của giám đốc (đã đăng nhập Square, Google `authuser=7` = email đặt lịch của quán, Tenten) |
 | ChatGPT | Rà soát độc lập (menu, nhân sự, lịch, luật quảng cáo) | Box "Tư vấn website Yume Spa" trong dự án "TRUONG GIANG" trên tài khoản ChatGPT của giám đốc. Gửi báo cáo **không chứa tên nhân viên, SĐT, email cá nhân, dữ liệu khách, mật khẩu** |
 | Codex | Sửa code website khi được giao | Repo này |
+| Claude cloud (phiên phụ, mở từ app desktop, chạy trên cloud – không phụ thuộc máy nhà) | Trợ lý website: code, build, tên miền, tài liệu | Chỉ repo GitHub này. **Không có Chrome** → không vào Square / Google / Tenten |
 Mọi agent: không coi ChatGPT đã duyệt nếu chưa có phản hồi; giám đốc là người quyết cuối.
+
+**Phối hợp nhiều agent (từ 27/11):**
+- Luôn `git pull` trước khi làm. Agent phụ làm trên nhánh riêng + PR vào `main`; không force-push. Agent máy nhà merge.
+- Trạng thái mới ghi vào tài liệu này (có ngày) trong cùng commit/PR. Việc cần Square/Google/Tenten → ghi vào mục "Việc cho agent máy nhà" dưới đây, không tự làm.
+- Không agent nào nhập mật khẩu/OTP, tạo tài khoản, gửi thư thay giám đốc khi chưa được cho phép rõ.
+
+**Việc cho agent máy nhà:** (agent phụ ghi thêm vào đây)
+- Gắn link đặt lịch Square lên Google (予約リンク) + nút đặt lịch website – chờ giám đốc đồng ý.
+
+**Đang chờ giám đốc – tên miền mới (27/11):** giám đốc nói "tên miền website đổi mới" nhưng chưa cho biết tên miền. Cần: tên miền chính xác, nhà đăng ký, đã mở khóa/xác minh chưa, bỏ hẳn `yumespaadachi.com` không. Có rồi thì làm theo mục 4 (thay `yumespaadachi.com` trong `tools/build.mjs`, `assets/js/i18n.js`, `src/template.html`, hồ sơ Google, Square).
 
 ## 1. Hiện trạng (kiểm 28/11/2026)
 | Hạng mục | Trạng thái |
