@@ -71,11 +71,11 @@ export function menuPage(lang, { Y, M, t, esc, escAttr, yen, BASE, LANGS }) {
   <meta property="og:url" content="${self}">
   <link rel="canonical" href="${self}">
 ${alternates}
-  <meta name="theme-color" content="#2B2434">
+  <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="${up}assets/img/icon-32.png" sizes="32x32">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Shippori+Mincho:wght@400;500;600&family=Noto+Sans+JP:wght@400;500&family=Noto+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Noto+Sans+JP:wght@400;500&family=Noto+Sans:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="${up}assets/css/menu.css">
 </head>
 <body class="lang-${lang}">

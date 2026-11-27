@@ -10,12 +10,12 @@
   <meta property="og:description" content="A moment as soft as a dream. A nail and facial care salon, 1 minute from Takenotsuka Station, Tokyo. Opening planned for 19 December 2026.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://yumebeautyspa.com/assets/img/logo.png">
-  <meta name="theme-color" content="#2B2434">
+  <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="../assets/img/icon-32.png" sizes="32x32">
   <link rel="apple-touch-icon" href="../assets/img/icon-180.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Shippori+Mincho:wght@400;500&family=Noto+Sans+JP:wght@400;500&family=Noto+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500&family=Noto+Sans+JP:wght@400;500&family=Noto+Sans:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/style.css">
   <script type="application/ld+json">
   {
@@ -122,6 +122,7 @@
     <a href="#access" data-i18n="nav.access">Access</a>
     <a href="#faq" data-i18n="nav.faq">FAQ</a>
   </nav>
+  <a class="btn btn-dark nav-book" href="https://book.squareup.com/appointments/69awg5w0exe62m/location/LK15VJNH9TBDG/services" target="_blank" rel="noopener" data-i18n="cta.web">Book online</a>
   <div class="lang" role="group" aria-label="Language">
     <button type="button" data-lang="ja" data-href="../" aria-pressed="false">日本語</button>
     <button type="button" data-lang="en" data-href="../en/" aria-pressed="true">English</button>
@@ -131,36 +132,37 @@
 
 <main>
 
-  <!-- Techniques: 6-layer parallax scene, float loop, mouse parallax (desktop), gold particles, clip-path title reveal -->
+  <!-- Hero: chữ bên trái, ảnh lớn bên phải (điện thoại: chữ + nút đặt lịch trước, ảnh sau) -->
   <section class="hero scene" data-scene="hero" aria-labelledby="hero-title">
-    <div class="layer depth-0" data-depth="0" aria-hidden="true"></div>
-    <div class="layer depth-1" data-depth="1" aria-hidden="true"><span class="glow"></span></div>
-    <div class="hero-inner layer depth-4" data-depth="4">
-      <img class="hero-butterfly" src="../assets/img/icon-gold.svg" alt="" width="458" height="405" data-depth="3">
-      <p class="hero-kana" data-i18n="hero.kana">yume · 夢 · dream</p>
+    <div class="hero-text">
+      <p class="hero-eyebrow" data-i18n="hero.eyebrow">Nail &amp; facial care salon in Takenotsuka</p>
       <h1 id="hero-title" class="reveal-title" data-i18n="hero.title">A moment as soft as a dream.</h1>
       <p class="hero-lead" data-i18n="hero.lead">A nail and facial care salon, a 1-minute walk from Takenotsuka Station, Tokyo.</p>
       <p class="hero-open" data-i18n="hero.open">Opening 19 Dec · appointments from 12 Dec</p>
-      <!-- Thông tin nhanh: khách thấy ngay quán ở đâu, mở mấy giờ, đặt lịch thế nào -->
+      <div class="hero-actions">
+        <a class="btn btn-dark" id="cta-line" href="https://book.squareup.com/appointments/69awg5w0exe62m/location/LK15VJNH9TBDG/services" target="_blank" rel="noopener" data-i18n="cta.web">Book online</a>
+        <a class="btn btn-line-dark" href="https://www.google.com/maps?cid=10276560440520517902" target="_blank" rel="noopener" data-i18n="cta.map">Google Maps</a>
+        <a class="btn btn-line-dark" href="tel:+817028136693" data-i18n="cta.tel">Call us</a>
+      </div>
       <dl class="hero-quick">
         <div><dt data-i18n="quick.where">1 min from Takenotsuka Station</dt><dd data-i18n="quick.addr">Urban Stage, 1-29-11 Takenotsuka, Adachi-ku, Tokyo</dd></div>
         <div><dt data-i18n="quick.hours">10:00 – 22:00</dt><dd data-i18n="quick.hoursv">Last booking 20:30 · open every day for now</dd></div>
       </dl>
-      <div class="hero-actions">
-        <a class="btn btn-gold" id="cta-line" href="https://book.squareup.com/appointments/69awg5w0exe62m/location/LK15VJNH9TBDG/services" target="_blank" rel="noopener" data-i18n="cta.web">Book online</a>
-        <a class="btn btn-ghost" href="https://www.google.com/maps?cid=10276560440520517902" target="_blank" rel="noopener" data-i18n="cta.map">Google Maps</a>
-        <a class="btn btn-ghost" href="tel:+817028136693" data-i18n="cta.tel">Call us</a>
-      </div>
     </div>
+    <figure class="hero-photo">
+      <img src="../assets/img/photos/hero-1200.webp" srcset="../assets/img/photos/hero-720.webp 720w, ../assets/img/photos/hero-1200.webp 1200w" sizes="(max-width: 760px) 100vw, 55vw" width="1200" height="1500" fetchpriority="high" decoding="async" alt="A hand with pink-beige one-colour gel nails" data-i18n-alt="photos.a1">
+      <figcaption>Image</figcaption>
+    </figure>
   </section>
 
   <section class="section concept" id="concept" aria-labelledby="concept-title">
     <div class="wrap two">
       <div class="col-title">
+        <p class="eyebrow" aria-hidden="true">Concept</p>
         <h2 id="concept-title" data-i18n="concept.title">About</h2>
       </div>
       <div class="col-body">
-        <p class="big" data-animate="words" data-i18n="concept.lead">Leave everyday life behind for a moment of pure, dreamy comfort.</p>
+        <p class="big" data-i18n="concept.lead">Leave everyday life behind for a moment of pure, dreamy comfort.</p>
         <p data-i18n="concept.body">We want you to have a moment that lets the tiredness of the day slip away. Between work and home, stop by and give yourself a little treat. A clean space, and careful work shaped to your hands and skin. We speak Japanese and Vietnamese, and use a translation tool for English.</p>
         <ul class="values">
           <li><strong data-i18n="concept.v1">Clean</strong><span data-i18n="concept.v1b">Tools are sterilised after every guest. Fresh towels for each visit.</span></li>
@@ -188,6 +190,7 @@
   <section class="section menu" id="menu" aria-labelledby="menu-title">
     <div class="wrap">
       <div class="menu-head">
+        <p class="eyebrow" aria-hidden="true">Menu</p>
         <h2 id="menu-title" data-i18n="menu.title">Menu</h2>
         <p class="note" data-i18n="menu.note">Prices include tax and are planned opening prices. Photos are illustrations. These are our main services; add-ons, removal and sets are on the full menu page.</p>
       </div>
@@ -203,6 +206,7 @@
   <section class="section gallery" id="gallery" aria-labelledby="gallery-title" hidden>
     <div class="wrap">
       <div class="menu-head">
+        <p class="eyebrow" aria-hidden="true">Gallery</p>
         <h2 id="gallery-title" data-i18n="gallery.title">Gallery</h2>
         <p class="note" data-i18n="gallery.note">Guest photos appear only with the guest's consent.</p>
       </div>
@@ -213,6 +217,7 @@
   <section class="section flow" id="flow" aria-labelledby="flow-title">
     <div class="wrap two">
       <div class="col-title">
+        <p class="eyebrow" aria-hidden="true">Flow</p>
         <h2 id="flow-title" data-i18n="flow.title">Your visit</h2>
       </div>
       <div class="col-body">
@@ -229,6 +234,7 @@
   <section class="section opening" id="opening" aria-labelledby="opening-title">
     <div class="wrap">
       <div class="opening-card">
+        <p class="eyebrow" aria-hidden="true">Opening</p>
         <h2 id="opening-title" data-i18n="opening.title">Opening offer</h2>
         <p data-i18n="opening.body">To celebrate our opening on 19 December 2026, we have first-visit prices for new guests. See the details and conditions on the full menu page.</p>
         <a class="btn btn-gold" href="menu/#coupon" data-i18n="opening.cta">See first-visit prices</a>
@@ -239,6 +245,7 @@
   <section class="section access" id="access" aria-labelledby="access-title">
     <div class="wrap two">
       <div class="col-title">
+        <p class="eyebrow" aria-hidden="true">Access</p>
         <h2 id="access-title" data-i18n="access.title">Access</h2>
       </div>
       <div class="col-body">
@@ -261,6 +268,7 @@
   <section class="section booking" id="booking" aria-labelledby="booking-title">
     <div class="wrap two">
       <div class="col-title">
+        <p class="eyebrow" aria-hidden="true">Reservation</p>
         <h2 id="booking-title" data-i18n="booking.title">Book · Contact</h2>
       </div>
       <div class="col-body">
@@ -279,6 +287,7 @@
   <section class="section faq" id="faq" aria-labelledby="faq-title">
     <div class="wrap two">
       <div class="col-title">
+        <p class="eyebrow" aria-hidden="true">FAQ</p>
         <h2 id="faq-title" data-i18n="faq.title">FAQ</h2>
       </div>
       <div class="col-body">
