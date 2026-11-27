@@ -145,10 +145,16 @@
       <p class="hero-kana" data-i18n="hero.kana">yume · 夢 · giấc mơ</p>
       <h1 id="hero-title" class="reveal-title" data-i18n="hero.title">Một khoảng lặng đẹp như mơ.</h1>
       <p class="hero-lead" data-i18n="hero.lead">Salon nail và chăm sóc da mặt, đi bộ 1 phút từ ga Takenotsuka, Tokyo.</p>
-      <p class="hero-open" data-i18n="hero.open">Dự kiến khai trương 19/12/2026</p>
+      <p class="hero-open" data-i18n="hero.open">Khai trương 19/12 · nhận lịch từ ngày 12/12</p>
+      <!-- Thông tin nhanh: khách thấy ngay quán ở đâu, mở mấy giờ, đặt lịch thế nào -->
+      <dl class="hero-quick">
+        <div><dt data-i18n="quick.where">Ga Takenotsuka, đi bộ 1 phút</dt><dd data-i18n="quick.addr">1-29-11 Takenotsuka, Adachi-ku, Tokyo (tòa Urban Stage)</dd></div>
+        <div><dt data-i18n="quick.hours">10:00 – 22:00</dt><dd data-i18n="quick.hoursv">Nhận khách cuối 20:30 · tạm thời mở cả tuần</dd></div>
+      </dl>
       <div class="hero-actions">
-        <a class="btn btn-gold" id="cta-line" href="#booking" data-i18n="cta.book">Đặt lịch · Liên hệ</a>
-        <a class="btn btn-ghost" href="#menu" data-i18n="cta.menu">Xem bảng giá</a>
+        <a class="btn btn-gold" id="cta-line" href="https://book.squareup.com/appointments/69awg5w0exe62m/location/LK15VJNH9TBDG/services" target="_blank" rel="noopener" data-i18n="cta.web">Đặt lịch online</a>
+        <a class="btn btn-ghost" href="https://www.google.com/maps?cid=10276560440520517902" target="_blank" rel="noopener" data-i18n="cta.map">Google Maps</a>
+        <a class="btn btn-ghost" href="tel:+817028136693" data-i18n="cta.tel">Gọi điện</a>
       </div>
     </div>
   </section>
@@ -339,6 +345,7 @@
         <div class="map" id="map" aria-label="Map">
           <p data-i18n="access.map">Đang tải bản đồ.</p>
         </div>
+        <p class="map-open"><a class="btn btn-ghost-dark" href="https://www.google.com/maps?cid=10276560440520517902" target="_blank" rel="noopener" data-i18n="access.gmap">Mở Google Maps</a></p>
       </div>
     </div>
   </section>
@@ -349,8 +356,9 @@
         <h2 id="booking-title" data-i18n="booking.title">Đặt lịch · Liên hệ</h2>
       </div>
       <div class="col-body">
-        <p data-i18n="booking.lead">Bạn cứ gọi điện hoặc gửi email cho tiệm. Khi đang làm cho khách có thể không nghe máy. Đặt lịch online và LINE của tiệm đang chuẩn bị.</p>
+        <p data-i18n="booking.lead">Đặt lịch online 24/24 (nhận lịch từ ngày 12/12). Bạn cũng có thể gọi điện hoặc gửi email. Khi đang làm cho khách có thể không nghe máy.</p>
         <ul class="contacts">
+          <li><a class="btn btn-gold" href="https://book.squareup.com/appointments/69awg5w0exe62m/location/LK15VJNH9TBDG/services" target="_blank" rel="noopener" data-i18n="booking.web">Đặt lịch online (24/24)</a></li>
           <li><a class="btn btn-line" id="line-link" href="#" rel="noopener" target="_blank" data-i18n="booking.line">Đặt lịch qua LINE</a></li>
           <li><a class="btn btn-ghost-dark" href="tel:+817028136693" data-i18n="booking.tel">Gọi 070-2813-6693</a></li>
           <li><a class="btn btn-ghost-dark" id="fb-link" href="#" rel="noopener" target="_blank" data-i18n="booking.fb">Nhắn Facebook</a></li>
@@ -376,6 +384,13 @@
   </section>
 
 </main>
+
+<!-- Thanh nút cố định dưới màn hình điện thoại -->
+<nav class="quickbar" aria-label="Quick links">
+  <a class="qb-book" href="https://book.squareup.com/appointments/69awg5w0exe62m/location/LK15VJNH9TBDG/services" target="_blank" rel="noopener" data-i18n="cta.web">Đặt lịch online</a>
+  <a href="https://www.google.com/maps?cid=10276560440520517902" target="_blank" rel="noopener" data-i18n="qb.map">Bản đồ</a>
+  <a href="tel:+817028136693" data-i18n="qb.tel">Gọi</a>
+</nav>
 
 <footer class="foot">
   <div class="wrap foot-inner">

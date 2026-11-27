@@ -96,6 +96,38 @@ p { margin: 0 0 1rem; }
 .hero-lead { max-width: 32rem; margin: 1.25rem auto .5rem; color: #D9D0C3; font-size: 1.05rem; }
 .hero-open { color: var(--gold-light); font-family: var(--display); font-size: 1.25rem; letter-spacing: .08em; margin-bottom: 2rem; }
 .hero-actions { display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap; }
+/* thẻ thông tin nhanh trong hero */
+.hero-quick { display: flex; justify-content: center; flex-wrap: wrap; gap: .6rem 2rem; margin: 0 auto 1.5rem; max-width: 40rem;
+  padding: .9rem 1.2rem; border: 1px solid rgba(231, 208, 138, .35); border-radius: 14px; background: rgba(255, 255, 255, .04); }
+.hero-quick dt { color: #FBF6EA; font-weight: 600; font-size: 1.02rem; }
+.hero-quick dd { margin: 0; color: #CFC5B6; font-size: .86rem; }
+/* gọn hero: bướm nhỏ hơn, bớt khoảng trống */
+.hero { padding: clamp(2.25rem, 6vw, 4.5rem) 1.25rem clamp(2.25rem, 6vw, 4rem); }
+.hero-butterfly { width: clamp(76px, 13vw, 130px); margin-bottom: 1rem; }
+.hero .companion { width: clamp(50px, 7vw, 90px); }
+.hero-open { font-size: 1.05rem; margin-bottom: 1.25rem; }
+.map-open { margin-top: .75rem; }
+/* thanh nút cố định trên điện thoại */
+.quickbar { display: none; }
+@media (max-width: 760px) {
+  .hero-butterfly { width: 64px; margin-bottom: .6rem; }
+  .hero-kana { display: none; }
+  .hero h1 { font-size: 1.75rem; }
+  .hero-lead { font-size: .95rem; margin: .7rem auto .3rem; }
+  .hero-quick { flex-direction: column; gap: .5rem; text-align: left; padding: .75rem 1rem; }
+  .hero-open { font-size: .9rem; letter-spacing: .02em; margin-bottom: .9rem; }
+  .hero-actions { gap: .45rem; flex-wrap: nowrap; }
+  .hero-actions .btn { padding: .65rem .85rem; font-size: .88rem; white-space: nowrap; }
+  .quickbar { display: grid; grid-template-columns: 2fr 1fr 1fr; position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
+    background: rgba(28, 24, 36, .96); border-top: 1px solid rgba(231, 208, 138, .4); padding: .45rem .5rem calc(.45rem + env(safe-area-inset-bottom)); gap: .4rem; }
+  .quickbar a { text-align: center; text-decoration: none; color: #F5EFE3; font-size: .9rem; font-weight: 600; padding: .65rem .3rem; border-radius: 999px; border: 1px solid rgba(231, 208, 138, .45); }
+  .quickbar .qb-book { background: var(--gold); color: var(--night-deep); border-color: var(--gold); }
+  body { padding-bottom: calc(3.6rem + env(safe-area-inset-bottom)); }
+}
+@media (max-width: 360px) {
+  .hero-actions { flex-wrap: wrap; }
+  .hero-quick dd { font-size: .8rem; }
+}
 
 /* ---------- buttons ---------- */
 .btn {
