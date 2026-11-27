@@ -21,7 +21,7 @@ Mọi agent: không coi ChatGPT đã duyệt nếu chưa có phản hồi; giám
 **Việc cho agent máy nhà:** (agent phụ ghi thêm vào đây)
 - Gắn link đặt lịch Square lên Google (予約リンク) + nút đặt lịch website – chờ giám đốc đồng ý.
 
-**Tên miền mới (27/11, lệnh L-023 trong tab Lenh):** giám đốc giao "update website chính thức lên miền đã mua YumeBeautySpa.com". Claude tra 27/11 12:05: `yumebeautyspa.com` đăng ký ở Tenten lúc 11:42 ngày 27/11 (RDAP `active`, **không bị khóa** như yumespaadachi.com), nameserver `NS-A1/A2/A3.TENTEN.VN` trả lời được nhưng **chưa có bản ghi A hay CNAME** → chỉ còn thiếu 5 bản ghi DNS (mục 4 bước 2, bỏ bước 1). Có DNS rồi làm mục 4 với `yumebeautyspa.com` thay `yumespaadachi.com` (cả `tools/build.mjs`, `assets/js/i18n.js`, `src/template.html`; hồ sơ Google, Square do agent có Chrome đổi). Còn chờ giám đốc: bỏ hẳn `yumespaadachi.com` hay để chuyển hướng sang tên mới.
+**Tên miền chính thức: yumebeautyspa.com – ĐÃ GẮN (27/11/2026, lệnh L-023).** Giám đốc thêm DNS ở Tenten (4 A `@` + CNAME `www`), repo có tệp `CNAME`, `BASE` trong `tools/build.mjs` = `https://yumebeautyspa.com/`. Địa chỉ github.io tự chuyển sang tên miền mới. Việc còn lại: (1) GitHub Settings → Pages: kiểm tra Custom domain hiện yumebeautyspa.com, bật "Enforce HTTPS" khi chứng chỉ cấp xong; (2) agent có Chrome đổi link website trên hồ sơ Google và Square sang https://yumebeautyspa.com/; (3) giám đốc quyết bỏ hay giữ yumespaadachi.com.
 
 ## 1. Hiện trạng (kiểm 28/11/2026)
 | Hạng mục | Trạng thái |

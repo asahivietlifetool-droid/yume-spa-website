@@ -18,7 +18,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 // nên tạm dùng địa chỉ GitHub Pages. Khi tên miền mở được: đổi dòng dưới thành
 //   const BASE = "https://yumespaadachi.com/";
 // rồi chạy node tools/build.mjs và commit.
-const BASE = "https://asahivietlifetool-droid.github.io/yume-spa-website/";
+const BASE = "https://yumebeautyspa.com/";  // 27/11/2026: tên miền chính thức (lệnh L-023), GitHub Pages qua tệp CNAME
 const LANGS = [
   { code: "ja", dir: "", hreflang: "ja" },
   { code: "en", dir: "en/", hreflang: "en" },
