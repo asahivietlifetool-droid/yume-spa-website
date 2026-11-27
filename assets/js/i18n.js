@@ -9,7 +9,7 @@
 window.YUME = {
   links: {
     line: "https://lin.ee/XXXXXXX",            // TODO: link LINE công式 của quán
-    facebook: "https://www.facebook.com/",     // TODO: link fanpage YUME SPA
+    facebook: "https://www.facebook.com/profile.php?id=61586956555272", // trang YUME SPA (giám đốc xác nhận 28/11)
     // Bản đồ nhúng theo địa chỉ trên hồ sơ Google đã xác minh (27/11/2026).
     // Theo địa chỉ (tên mới trên Google còn chờ duyệt). Nút "Googleマップで開く" dùng cid của hồ sơ đã xác minh.
     map: "https://maps.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E8%B6%B3%E7%AB%8B%E5%8C%BA%E7%AB%B9%E3%81%AE%E5%A1%9A1-29-11&z=17&hl=ja&output=embed",
@@ -63,6 +63,7 @@ window.YUME = {
       "nav.concept": "コンセプト", "nav.menu": "メニュー", "nav.flow": "ご来店の流れ", "nav.access": "アクセス", "nav.faq": "よくある質問",
       "hero.kana": "ゆめ びゅーてぃーすぱ ＆ ねいる",
       "hero.title": "夢のような、\nひとときを。", "hero.eyebrow": "竹ノ塚のネイル＆フェイシャルサロン",
+      "bk.loading": "予約カレンダーを読み込んでいます…", "bk.steps": "ご予約の流れ", "bk.s1": "メニューを選ぶ", "bk.s2": "ご希望の日時を選ぶ", "bk.s3": "お名前・電話番号を入力して送信", "bk.s4": "当店が確認後、確定メールが届きます", "bk.note": "12月12日分からご予約いただけます。変更・キャンセルはお電話でも承ります。", "bk.open": "予約ページを別画面で開く", "bk.tel": "お電話でのご予約", "bk.telnote": "施術中はお電話に出られないことがあります。",
       "topbar": "12月19日 GRAND OPEN｜初回限定 ワンカラー ¥4,500・定額デザイン ¥5,500〜",
       "badge.tag": "初回限定", "badge.name": "ワンカラー", "badge.note": "ご新規様・税込",
       "pt1": "竹ノ塚駅から徒歩1分", "pt2": "22:00まで営業・最終受付20:30", "pt3": "日本語・ベトナム語で対応", "pt4": "WEB予約は24時間受付",
@@ -142,7 +143,7 @@ window.YUME = {
       "access.lang": "対応言語", "access.langv": "日本語・ベトナム語（英語は翻訳ツールでご案内）",
       "access.map": "地図を読み込んでいます。", "access.gmap": "Googleマップで開く",
       "booking.title": "ご予約・お問い合わせ",
-      "booking.lead": "WEB予約は24時間受け付けています（12月12日分から）。お電話・メールでもお気軽にどうぞ。施術中はお電話に出られないことがあります。",
+      "booking.lead": "下のカレンダーから、空いている日時をそのままお選びいただけます。WEB予約は24時間受付です。",
       "booking.web": "WEB予約（24時間受付）",
       "booking.line": "LINEで予約する", "booking.tel": "電話 070-2813-6693", "booking.fb": "Facebook でメッセージ",
       "faq.title": "よくある質問",
@@ -164,6 +165,7 @@ window.YUME = {
       "nav.concept": "Về Yume", "nav.menu": "Bảng giá", "nav.flow": "Quy trình", "nav.access": "Địa chỉ", "nav.faq": "Hỏi đáp",
       "hero.kana": "yume · 夢 · giấc mơ",
       "hero.title": "Một khoảng lặng đẹp như mơ.", "hero.eyebrow": "Salon nail & chăm sóc da mặt ở Takenotsuka",
+      "bk.loading": "Đang tải lịch đặt hẹn…", "bk.steps": "Cách đặt lịch", "bk.s1": "Chọn dịch vụ", "bk.s2": "Chọn ngày giờ", "bk.s3": "Nhập tên, số điện thoại rồi gửi", "bk.s4": "Tiệm xác nhận và gửi email xác nhận cho bạn", "bk.note": "Nhận lịch từ ngày 12/12. Đổi hoặc hủy lịch có thể gọi điện cho tiệm.", "bk.open": "Mở trang đặt lịch ở cửa sổ mới", "bk.tel": "Đặt lịch qua điện thoại", "bk.telnote": "Khi đang làm cho khách có thể không nghe máy.",
       "topbar": "Khai trương 19/12 · Lần đầu: gel một màu ¥4,500, mẫu cố định từ ¥5,500",
       "badge.tag": "Lần đầu", "badge.name": "Gel một màu", "badge.note": "Khách mới · gồm thuế",
       "pt1": "1 phút đi bộ từ ga Takenotsuka", "pt2": "Mở đến 22:00, nhận khách cuối 20:30", "pt3": "Phục vụ tiếng Nhật và tiếng Việt", "pt4": "Đặt lịch online 24/24",
@@ -243,7 +245,7 @@ window.YUME = {
       "access.lang": "Ngôn ngữ", "access.langv": "Tiếng Việt · Tiếng Nhật (tiếng Anh hỗ trợ bằng công cụ dịch)",
       "access.map": "Đang tải bản đồ.", "access.gmap": "Mở Google Maps",
       "booking.title": "Đặt lịch · Liên hệ",
-      "booking.lead": "Đặt lịch online 24/24 (nhận lịch từ ngày 12/12). Bạn cũng có thể gọi điện hoặc gửi email. Khi đang làm cho khách có thể không nghe máy.",
+      "booking.lead": "Chọn ngay ngày giờ còn trống trong lịch bên dưới. Đặt lịch online 24/24.",
       "booking.web": "Đặt lịch online (24/24)",
       "booking.line": "Đặt lịch qua LINE", "booking.tel": "Gọi 070-2813-6693", "booking.fb": "Nhắn Facebook",
       "faq.title": "Hỏi đáp",
@@ -265,6 +267,7 @@ window.YUME = {
       "nav.concept": "About", "nav.menu": "Menu", "nav.flow": "Your visit", "nav.access": "Access", "nav.faq": "FAQ",
       "hero.kana": "yume · 夢 · dream",
       "hero.title": "A moment as soft as a dream.", "hero.eyebrow": "Nail & facial care salon in Takenotsuka",
+      "bk.loading": "Loading the booking calendar…", "bk.steps": "How to book", "bk.s1": "Choose a service", "bk.s2": "Pick a date and time", "bk.s3": "Enter your name and phone number, then send", "bk.s4": "We confirm and you receive a confirmation email", "bk.note": "Appointments from 12 December. To change or cancel, you can also call us.", "bk.open": "Open the booking page in a new window", "bk.tel": "Book by phone", "bk.telnote": "We may not answer while we are with a guest.",
       "topbar": "Grand opening 19 Dec · First visit: one colour ¥4,500, set designs from ¥5,500",
       "badge.tag": "First visit", "badge.name": "One colour", "badge.note": "New guests · tax incl.",
       "pt1": "1 minute from Takenotsuka Station", "pt2": "Open until 22:00, last booking 20:30", "pt3": "Japanese & Vietnamese spoken", "pt4": "Book online 24/7",
@@ -344,7 +347,7 @@ window.YUME = {
       "access.lang": "Languages", "access.langv": "Japanese · Vietnamese (English with a translation tool)",
       "access.map": "Loading the map.", "access.gmap": "Open in Google Maps",
       "booking.title": "Book · Contact",
-      "booking.lead": "Book online any time (appointments from 12 December). You can also call or email us. We may not answer the phone while we are with a guest.",
+      "booking.lead": "Pick any free time straight from the calendar below. Online booking is open 24/7.",
       "booking.web": "Book online (24 hours)",
       "booking.line": "Book on LINE", "booking.tel": "Call 070-2813-6693", "booking.fb": "Message on Facebook",
       "faq.title": "FAQ",

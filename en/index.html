@@ -124,7 +124,7 @@
     <a href="#access" data-i18n="nav.access">Access</a>
     <a href="#faq" data-i18n="nav.faq">FAQ</a>
   </nav>
-  <a class="btn btn-dark nav-book" href="https://book.squareup.com/appointments/69awg5w0exe62m/location/LK15VJNH9TBDG/services" target="_blank" rel="noopener" data-i18n="cta.web">Book online</a>
+  <a class="btn btn-dark nav-book" href="#booking" data-i18n="cta.web">Book online</a>
   <div class="lang" role="group" aria-label="Language">
     <button type="button" data-lang="ja" data-href="../" aria-pressed="false">日本語</button>
     <button type="button" data-lang="en" data-href="../en/" aria-pressed="true">English</button>
@@ -142,7 +142,7 @@
       <p class="hero-lead" data-i18n="hero.lead">A nail and facial care salon, a 1-minute walk from Takenotsuka Station, Tokyo.</p>
       <p class="hero-open" data-i18n="hero.open">Opening 19 Dec · appointments from 12 Dec</p>
       <div class="hero-actions">
-        <a class="btn btn-dark" id="cta-line" href="https://book.squareup.com/appointments/69awg5w0exe62m/location/LK15VJNH9TBDG/services" target="_blank" rel="noopener" data-i18n="cta.web">Book online</a>
+        <a class="btn btn-dark" id="cta-line" href="#booking" data-i18n="cta.web">Book online</a>
         <a class="btn btn-line-dark" href="https://www.google.com/maps?cid=10276560440520517902" target="_blank" rel="noopener" data-i18n="cta.map">Google Maps</a>
         <a class="btn btn-line-dark" href="tel:+817028136693" data-i18n="cta.tel">Call us</a>
       </div>
@@ -290,7 +290,45 @@
       <p class="eyebrow" aria-hidden="true">Reservation</p>
       <h2 id="cta-title" data-i18n="cta.title">Book online any time</h2>
       <p data-i18n="cta.sub">Appointments from 12 December. You can also call us.</p>
-      <div class="cta-actions"><a class="btn btn-white" href="https://book.squareup.com/appointments/69awg5w0exe62m/location/LK15VJNH9TBDG/services" target="_blank" rel="noopener" data-i18n="cta.web">Book online</a><a class="btn btn-line-white" href="tel:+817028136693" data-i18n="cta.tel">Call us</a></div>
+      <div class="cta-actions"><a class="btn btn-white" href="#booking" data-i18n="cta.web">Book online</a><a class="btn btn-line-white" href="tel:+817028136693" data-i18n="cta.tel">Call us</a></div>
+    </div>
+  </section>
+  <!-- Đặt lịch: lịch Square nhúng ngay trong trang -->
+  <section class="section booking" id="booking" aria-labelledby="booking-title">
+    <div class="wrap">
+      <div class="bk-head">
+        <p class="eyebrow" aria-hidden="true">Reservation</p>
+        <h2 id="booking-title" data-i18n="booking.title">Book · Contact</h2>
+        <p class="note" data-i18n="booking.lead">Pick any free time straight from the calendar below. Online booking is open 24/7.</p>
+      </div>
+      <div class="bk-grid">
+        <div class="bk-embed" id="bk-embed">
+          <p class="bk-loading" data-i18n="bk.loading">Loading the booking calendar…</p>
+          <script src="https://square.site/appointments/buyer/widget/69awg5w0exe62m/LK15VJNH9TBDG.js"></script>
+          <noscript><a class="btn btn-dark" href="https://book.squareup.com/appointments/69awg5w0exe62m/location/LK15VJNH9TBDG/services">WEB予約</a></noscript>
+        </div>
+        <aside class="bk-side">
+          <h3 data-i18n="bk.steps">How to book</h3>
+          <ol class="bk-steps">
+            <li data-i18n="bk.s1">Choose a service</li>
+            <li data-i18n="bk.s2">Pick a date and time</li>
+            <li data-i18n="bk.s3">Enter your name and phone number, then send</li>
+            <li data-i18n="bk.s4">We confirm and you receive a confirmation email</li>
+          </ol>
+          <p class="note" data-i18n="bk.note">Appointments from 12 December. To change or cancel, you can also call us.</p>
+          <p><a class="btn btn-line-dark bk-open" href="https://book.squareup.com/appointments/69awg5w0exe62m/location/LK15VJNH9TBDG/services" target="_blank" rel="noopener" data-i18n="bk.open">Open the booking page in a new window</a></p>
+          <div class="bk-contact">
+            <p class="bk-label" data-i18n="bk.tel">Book by phone</p>
+            <a class="bk-tel" href="tel:+817028136693">070-2813-6693</a>
+            <p class="note" data-i18n="bk.telnote">We may not answer while we are with a guest.</p>
+            <ul class="contacts">
+              <li><a class="btn btn-line" id="line-link" href="#" rel="noopener" target="_blank" data-i18n="booking.line">Book on LINE</a></li>
+              <li><a class="btn btn-ghost-dark" id="fb-link" href="#" rel="noopener" target="_blank" data-i18n="booking.fb">Message on Facebook</a></li>
+              <li><a class="link" href="mailto:booking.yumespa.takenotsuka@gmail.com">booking.yumespa.takenotsuka@gmail.com</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
     </div>
   </section>
   <section class="section access" id="access" aria-labelledby="access-title">
@@ -316,24 +354,6 @@
     </div>
   </section>
 
-  <section class="section booking" id="booking" aria-labelledby="booking-title">
-    <div class="wrap two">
-      <div class="col-title">
-        <p class="eyebrow" aria-hidden="true">Reservation</p>
-        <h2 id="booking-title" data-i18n="booking.title">Book · Contact</h2>
-      </div>
-      <div class="col-body">
-        <p data-i18n="booking.lead">Book online any time (appointments from 12 December). You can also call or email us. We may not answer the phone while we are with a guest.</p>
-        <ul class="contacts">
-          <li><a class="btn btn-gold" href="https://book.squareup.com/appointments/69awg5w0exe62m/location/LK15VJNH9TBDG/services" target="_blank" rel="noopener" data-i18n="booking.web">Book online (24 hours)</a></li>
-          <li><a class="btn btn-line" id="line-link" href="#" rel="noopener" target="_blank" data-i18n="booking.line">Book on LINE</a></li>
-          <li><a class="btn btn-ghost-dark" href="tel:+817028136693" data-i18n="booking.tel">Call 070-2813-6693</a></li>
-          <li><a class="btn btn-ghost-dark" id="fb-link" href="#" rel="noopener" target="_blank" data-i18n="booking.fb">Message on Facebook</a></li>
-          <li><a class="link" href="mailto:booking.yumespa.takenotsuka@gmail.com">booking.yumespa.takenotsuka@gmail.com</a></li>
-        </ul>
-      </div>
-    </div>
-  </section>
 
   <section class="section faq" id="faq" aria-labelledby="faq-title">
     <div class="wrap two">
@@ -355,7 +375,7 @@
 
 <!-- Thanh nút cố định dưới màn hình điện thoại -->
 <nav class="quickbar" aria-label="Quick links">
-  <a class="qb-book" href="https://book.squareup.com/appointments/69awg5w0exe62m/location/LK15VJNH9TBDG/services" target="_blank" rel="noopener" data-i18n="cta.web">Book online</a>
+  <a class="qb-book" href="#booking" data-i18n="cta.web">Book online</a>
   <a href="https://www.google.com/maps?cid=10276560440520517902" target="_blank" rel="noopener" data-i18n="qb.map">Map</a>
   <a href="tel:+817028136693" data-i18n="qb.tel">Call</a>
 </nav>

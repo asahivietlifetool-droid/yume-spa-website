@@ -124,7 +124,7 @@
     <a href="#access" data-i18n="nav.access">Địa chỉ</a>
     <a href="#faq" data-i18n="nav.faq">Hỏi đáp</a>
   </nav>
-  <a class="btn btn-dark nav-book" href="https://book.squareup.com/appointments/69awg5w0exe62m/location/LK15VJNH9TBDG/services" target="_blank" rel="noopener" data-i18n="cta.web">Đặt lịch online</a>
+  <a class="btn btn-dark nav-book" href="#booking" data-i18n="cta.web">Đặt lịch online</a>
   <div class="lang" role="group" aria-label="Language">
     <button type="button" data-lang="ja" data-href="../" aria-pressed="false">日本語</button>
     <button type="button" data-lang="en" data-href="../en/" aria-pressed="false">English</button>
@@ -142,7 +142,7 @@
       <p class="hero-lead" data-i18n="hero.lead">Salon nail và chăm sóc da mặt, đi bộ 1 phút từ ga Takenotsuka, Tokyo.</p>
       <p class="hero-open" data-i18n="hero.open">Khai trương 19/12 · nhận lịch từ ngày 12/12</p>
       <div class="hero-actions">
-        <a class="btn btn-dark" id="cta-line" href="https://book.squareup.com/appointments/69awg5w0exe62m/location/LK15VJNH9TBDG/services" target="_blank" rel="noopener" data-i18n="cta.web">Đặt lịch online</a>
+        <a class="btn btn-dark" id="cta-line" href="#booking" data-i18n="cta.web">Đặt lịch online</a>
         <a class="btn btn-line-dark" href="https://www.google.com/maps?cid=10276560440520517902" target="_blank" rel="noopener" data-i18n="cta.map">Google Maps</a>
         <a class="btn btn-line-dark" href="tel:+817028136693" data-i18n="cta.tel">Gọi điện</a>
       </div>
@@ -290,7 +290,45 @@
       <p class="eyebrow" aria-hidden="true">Reservation</p>
       <h2 id="cta-title" data-i18n="cta.title">Đặt lịch online 24/24</h2>
       <p data-i18n="cta.sub">Nhận lịch từ ngày 12/12. Cũng có thể gọi điện.</p>
-      <div class="cta-actions"><a class="btn btn-white" href="https://book.squareup.com/appointments/69awg5w0exe62m/location/LK15VJNH9TBDG/services" target="_blank" rel="noopener" data-i18n="cta.web">Đặt lịch online</a><a class="btn btn-line-white" href="tel:+817028136693" data-i18n="cta.tel">Gọi điện</a></div>
+      <div class="cta-actions"><a class="btn btn-white" href="#booking" data-i18n="cta.web">Đặt lịch online</a><a class="btn btn-line-white" href="tel:+817028136693" data-i18n="cta.tel">Gọi điện</a></div>
+    </div>
+  </section>
+  <!-- Đặt lịch: lịch Square nhúng ngay trong trang -->
+  <section class="section booking" id="booking" aria-labelledby="booking-title">
+    <div class="wrap">
+      <div class="bk-head">
+        <p class="eyebrow" aria-hidden="true">Reservation</p>
+        <h2 id="booking-title" data-i18n="booking.title">Đặt lịch · Liên hệ</h2>
+        <p class="note" data-i18n="booking.lead">Chọn ngay ngày giờ còn trống trong lịch bên dưới. Đặt lịch online 24/24.</p>
+      </div>
+      <div class="bk-grid">
+        <div class="bk-embed" id="bk-embed">
+          <p class="bk-loading" data-i18n="bk.loading">Đang tải lịch đặt hẹn…</p>
+          <script src="https://square.site/appointments/buyer/widget/69awg5w0exe62m/LK15VJNH9TBDG.js"></script>
+          <noscript><a class="btn btn-dark" href="https://book.squareup.com/appointments/69awg5w0exe62m/location/LK15VJNH9TBDG/services">WEB予約</a></noscript>
+        </div>
+        <aside class="bk-side">
+          <h3 data-i18n="bk.steps">Cách đặt lịch</h3>
+          <ol class="bk-steps">
+            <li data-i18n="bk.s1">Chọn dịch vụ</li>
+            <li data-i18n="bk.s2">Chọn ngày giờ</li>
+            <li data-i18n="bk.s3">Nhập tên, số điện thoại rồi gửi</li>
+            <li data-i18n="bk.s4">Tiệm xác nhận và gửi email xác nhận cho bạn</li>
+          </ol>
+          <p class="note" data-i18n="bk.note">Nhận lịch từ ngày 12/12. Đổi hoặc hủy lịch có thể gọi điện cho tiệm.</p>
+          <p><a class="btn btn-line-dark bk-open" href="https://book.squareup.com/appointments/69awg5w0exe62m/location/LK15VJNH9TBDG/services" target="_blank" rel="noopener" data-i18n="bk.open">Mở trang đặt lịch ở cửa sổ mới</a></p>
+          <div class="bk-contact">
+            <p class="bk-label" data-i18n="bk.tel">Đặt lịch qua điện thoại</p>
+            <a class="bk-tel" href="tel:+817028136693">070-2813-6693</a>
+            <p class="note" data-i18n="bk.telnote">Khi đang làm cho khách có thể không nghe máy.</p>
+            <ul class="contacts">
+              <li><a class="btn btn-line" id="line-link" href="#" rel="noopener" target="_blank" data-i18n="booking.line">Đặt lịch qua LINE</a></li>
+              <li><a class="btn btn-ghost-dark" id="fb-link" href="#" rel="noopener" target="_blank" data-i18n="booking.fb">Nhắn Facebook</a></li>
+              <li><a class="link" href="mailto:booking.yumespa.takenotsuka@gmail.com">booking.yumespa.takenotsuka@gmail.com</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
     </div>
   </section>
   <section class="section access" id="access" aria-labelledby="access-title">
@@ -316,24 +354,6 @@
     </div>
   </section>
 
-  <section class="section booking" id="booking" aria-labelledby="booking-title">
-    <div class="wrap two">
-      <div class="col-title">
-        <p class="eyebrow" aria-hidden="true">Reservation</p>
-        <h2 id="booking-title" data-i18n="booking.title">Đặt lịch · Liên hệ</h2>
-      </div>
-      <div class="col-body">
-        <p data-i18n="booking.lead">Đặt lịch online 24/24 (nhận lịch từ ngày 12/12). Bạn cũng có thể gọi điện hoặc gửi email. Khi đang làm cho khách có thể không nghe máy.</p>
-        <ul class="contacts">
-          <li><a class="btn btn-gold" href="https://book.squareup.com/appointments/69awg5w0exe62m/location/LK15VJNH9TBDG/services" target="_blank" rel="noopener" data-i18n="booking.web">Đặt lịch online (24/24)</a></li>
-          <li><a class="btn btn-line" id="line-link" href="#" rel="noopener" target="_blank" data-i18n="booking.line">Đặt lịch qua LINE</a></li>
-          <li><a class="btn btn-ghost-dark" href="tel:+817028136693" data-i18n="booking.tel">Gọi 070-2813-6693</a></li>
-          <li><a class="btn btn-ghost-dark" id="fb-link" href="#" rel="noopener" target="_blank" data-i18n="booking.fb">Nhắn Facebook</a></li>
-          <li><a class="link" href="mailto:booking.yumespa.takenotsuka@gmail.com">booking.yumespa.takenotsuka@gmail.com</a></li>
-        </ul>
-      </div>
-    </div>
-  </section>
 
   <section class="section faq" id="faq" aria-labelledby="faq-title">
     <div class="wrap two">
@@ -355,7 +375,7 @@
 
 <!-- Thanh nút cố định dưới màn hình điện thoại -->
 <nav class="quickbar" aria-label="Quick links">
-  <a class="qb-book" href="https://book.squareup.com/appointments/69awg5w0exe62m/location/LK15VJNH9TBDG/services" target="_blank" rel="noopener" data-i18n="cta.web">Đặt lịch online</a>
+  <a class="qb-book" href="#booking" data-i18n="cta.web">Đặt lịch online</a>
   <a href="https://www.google.com/maps?cid=10276560440520517902" target="_blank" rel="noopener" data-i18n="qb.map">Bản đồ</a>
   <a href="tel:+817028136693" data-i18n="qb.tel">Gọi</a>
 </nav>

@@ -320,3 +320,32 @@ details p { color: var(--ink-soft); font-size: .9rem; margin: 0 0 1.1rem; }
 
 /* concept: bỏ khoảng ảnh nhỏ đã thay bằng thẻ dịch vụ */
 .space-band { margin-top: 0; }
+
+/* ---------- đặt lịch: lịch Square nhúng (29/11) ---------- */
+.booking { background: var(--paper); border-top: 1px solid var(--line); scroll-margin-top: 4rem; }
+.bk-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: .4rem 2rem; margin-bottom: clamp(1.5rem, 4vw, 2.5rem); padding-bottom: 1.25rem; border-bottom: 1px solid var(--line); }
+.bk-head .eyebrow { flex-basis: 100%; margin-bottom: -.2rem; }
+.bk-head h2 { font-size: clamp(1.45rem, 2.4vw, 1.85rem); }
+.bk-grid { display: grid; grid-template-columns: minmax(0, 1fr) 18rem; gap: clamp(1.5rem, 4vw, 3rem); align-items: start; }
+.bk-embed { height: 760px; border: 1px solid var(--line); background: #fff; }
+.bk-embed iframe { display: block; }
+.bk-side h3 { font-size: 1.05rem; margin-bottom: .8rem; }
+.bk-steps { list-style: none; counter-reset: bk; margin: 0 0 1.25rem; padding: 0; }
+.bk-steps li { counter-increment: bk; display: grid; grid-template-columns: 2rem 1fr; padding: .6rem 0; border-top: 1px solid var(--line); font-size: .88rem; }
+.bk-steps li:last-child { border-bottom: 1px solid var(--line); }
+.bk-steps li::before { content: counter(bk, decimal-leading-zero); color: var(--accent); font-size: .75rem; letter-spacing: .1em; padding-top: .15rem; }
+.bk-side .note { margin-bottom: 1rem; }
+.bk-open { font-size: .8rem; padding: .75rem 1rem; }
+.bk-contact { margin-top: 1.75rem; padding: 1.25rem; background: var(--blush); }
+.bk-label { font-size: .78rem; color: var(--ink-soft); margin: 0 0 .2rem; }
+.bk-tel { display: block; font-family: var(--mincho); font-size: 1.55rem; letter-spacing: .06em; text-decoration: none; margin-bottom: .3rem; }
+.bk-contact .contacts { margin-top: .75rem; }
+.bk-contact .contacts .btn { padding: .55rem .9rem; font-size: .78rem; }
+@media (max-width: 860px) {
+  .bk-grid { grid-template-columns: minmax(0, 1fr); }
+  .bk-embed { height: 820px; }
+}
+.bk-embed { position: relative; }
+.bk-embed iframe { position: relative; z-index: 1; }
+.bk-loading { position: absolute; top: 2.5rem; left: 0; right: 0; text-align: center; font-size: .85rem; color: var(--ink-mute); margin: 0; }
+.bk-contact a.link { word-break: break-all; font-size: .85rem; }
