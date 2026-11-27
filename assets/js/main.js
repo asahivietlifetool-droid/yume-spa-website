@@ -72,7 +72,11 @@
     var cta = document.getElementById("cta-line");
     var fb = document.getElementById("fb-link");
     // Nút ở mục "オープン記念" luôn dẫn tới giá lần đầu trên trang menu (menu/#coupon), không đổi sang LINE.
-    if (Y.links.line && Y.links.line.indexOf("XXXX") === -1) {
+    var hasLine = Y.links.line && Y.links.line.indexOf("XXXX") === -1;
+    // LINE là kênh liên hệ chính (giám đốc 29/11): có link thì hiện mọi nút LINE và thay nút điện thoại ở đầu trang / thanh dưới.
+    document.querySelectorAll(".js-line, .js-line-box").forEach(function (el) { if (hasLine) { if (el.tagName === "A") el.href = Y.links.line; el.hidden = false; } });
+    if (hasLine) document.querySelectorAll(".js-tel").forEach(function (el) { el.hidden = true; });
+    if (hasLine) {
       line.href = Y.links.line;
     } else {
       // Chưa có LINE chính thức: ẩn nút LINE (không để nút "LINEで予約する" gọi điện thoại).

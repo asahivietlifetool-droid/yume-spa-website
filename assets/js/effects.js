@@ -89,8 +89,6 @@
       gsap.from(el, { y: 16, opacity: 0, duration: .6, ease: "power2.out",
         scrollTrigger: { trigger: el, start: "top 88%", once: true } });
     });
-
-  });
   });
 
   window.addEventListener("load", function () { ScrollTrigger.refresh(); });

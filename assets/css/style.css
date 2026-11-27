@@ -349,3 +349,11 @@ details p { color: var(--ink-soft); font-size: .9rem; margin: 0 0 1.1rem; }
 .bk-embed iframe { position: relative; z-index: 1; }
 .bk-loading { position: absolute; top: 2.5rem; left: 0; right: 0; text-align: center; font-size: .85rem; color: var(--ink-mute); margin: 0; }
 .bk-contact a.link { word-break: break-all; font-size: .85rem; }
+
+/* ---------- LINE là kênh liên hệ chính (29/11) ---------- */
+.bk-linebox { margin-top: 1.75rem; padding: 1.25rem; border: 1px solid #06C755; }
+.bk-line-btn { display: block; text-align: center; background: #06C755; border-color: #06C755; color: #fff; margin: .4rem 0 .6rem; }
+.bk-line-btn:hover { background: #05b04b; }
+@media (max-width: 760px) { .quickbar .qb-line { background: #06C755; border-color: #06C755; color: #fff; } }
+
+[hidden] { display: none !important; }
