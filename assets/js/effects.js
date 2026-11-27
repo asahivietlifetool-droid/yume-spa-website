@@ -102,6 +102,16 @@
       var text = p.textContent.trim();
       var cjk = /[぀-ヿ㐀-鿿]/.test(text);
       var parts = cjk ? Array.from(text) : text.split(/\s+/);
+      if (cjk) {
+        // Giữ quy tắc ngắt dòng tiếng Nhật: dấu đóng (、。」…) dính chữ trước, dấu mở (「…) dính chữ sau.
+        var merged = [];
+        parts.forEach(function (c) {
+          if (merged.length && /^[、。，．」』）】〕！？ー…ぁぃぅぇぉっゃゅょァィゥェォッャュョ]$/.test(c)) merged[merged.length - 1] += c;
+          else if (merged.length && /[「『（【〔]$/.test(merged[merged.length - 1])) merged[merged.length - 1] += c;
+          else merged.push(c);
+        });
+        parts = merged;
+      }
       p.setAttribute("aria-label", text); p.textContent = "";
       parts.forEach(function (w, i) { var s = document.createElement("span"); s.className = "w"; s.setAttribute("aria-hidden", "true"); s.textContent = w; if (i && !cjk) p.append(" "); p.append(s); });
       gsap.fromTo(p.querySelectorAll(".w"), { opacity: .18 }, { opacity: 1, stagger: .04, ease: "none",
