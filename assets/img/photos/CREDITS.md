@@ -16,5 +16,27 @@ Từ 28/11/2026 sáu ảnh trang chủ trong thư mục này là **ảnh chụp 
 - Giấy phép Unsplash không gồm quyền hình ảnh người hay nhãn hiệu trong ảnh (https://unsplash.com/terms mục 5): không dùng ảnh lộ mặt, không cắt ảnh để làm như ảnh của quán.
 - Khi có ảnh thật tại quán: thay tệp cùng tên (giữ khổ 4:5 cho ảnh dọc, 3:2 cho ảnh ngang) và bỏ chữ "イメージ" ở ảnh đã là ảnh thật.
 
-## Ảnh mẫu menu (`assets/img/menu/`, 26/11/2026)
-14 ảnh mẫu nail do AI tạo bằng Canva (thiết kế https://canva.link/xhkea4uadotizi6, trang 13–26), ghi rõ là イメージ. Ba ảnh tham khảo trong tệp Word của nhân viên là ảnh của tiệm khác (có tên tiệm trên ảnh) nên **không** dùng.
+## Ảnh mẫu menu (`assets/img/menu/`, thay 28/11/2026)
+17 ảnh chụp thật từ Unsplash (giấy phép Unsplash, ảnh "Free", không lộ mặt), giám đốc đồng ý 28/11/2026; thay cho ảnh AI Canva cũ. Ghi rõ là イメージ trên trang. Mẫu trong ảnh chỉ để khách hình dung loại dịch vụ, không phải mẫu quán đã làm.
+
+| Tệp | Ảnh Unsplash |
+|---|---|
+| clear | https://unsplash.com/photos/JgTUQoe9haU |
+| one | https://unsplash.com/photos/hvqHtZqNMeI |
+| glitter | https://unsplash.com/photos/vpEQkF0rKtg |
+| magnet | https://unsplash.com/photos/samx9TulLD0 |
+| mirror | https://unsplash.com/photos/v3-AHQ63Wws |
+| gradient | https://unsplash.com/photos/olHWqqK7OVw |
+| french | https://unsplash.com/photos/3AQ_VHXfjEg |
+| mens | https://unsplash.com/photos/v47ltneXusM |
+| simple | https://unsplash.com/photos/zqWkb1FPymI |
+| trend | https://unsplash.com/photos/mciNDxIq4J0 |
+| premium | https://unsplash.com/photos/v9agFscJCIE |
+| tips | https://unsplash.com/photos/GV9_jUGReBo |
+| custom | https://unsplash.com/photos/51-4BSipn7E |
+| foot | https://unsplash.com/photos/WBuwkanEPiM |
+| foot-art | https://unsplash.com/photos/FJgbyGdY7oI |
+| care | https://unsplash.com/photos/OywwlEPLEDI |
+| facial | https://unsplash.com/photos/W71jxsXrwyQ |
+
+Ba ảnh tham khảo trong tệp Word của nhân viên là ảnh của tiệm khác (có tên tiệm trên ảnh) nên **không** dùng.
