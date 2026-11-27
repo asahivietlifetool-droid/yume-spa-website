@@ -370,3 +370,15 @@ details p { color: var(--ink-soft); font-size: .96rem; margin: 0 0 1rem; }
 
 /* Nhãn "đang chuẩn bị" trên thẻ head spa ở mục Ba dịch vụ */
 .state-tabs .tab-soon { display: block; margin-top: .15rem; font-style: normal; font-family: var(--body); font-size: .72rem; letter-spacing: .04em; color: var(--gold-deep); }
+
+/* ---------- 28/11: bớt cảm giác "mẫu AI" – góc vuông nhẹ, bỏ bóng đổ, chú thích kiểu tạp chí ---------- */
+.photo-band img, .space-band img, .menu-thumb, .map, .map iframe { border-radius: 3px; box-shadow: none; }
+.photo-band figcaption, .space-band figcaption { text-align: left; font-family: inherit; font-size: .82rem; letter-spacing: .12em; color: var(--ink-soft); border-top: 1px solid var(--line); padding-top: .5rem; }
+.btn, .menu-print .link { border-radius: 3px; letter-spacing: .06em; }
+.hero-quick { border-radius: 3px; }
+.opening-card { border-radius: 3px; }
+.opening-card::after { display: none; }
+@media (max-width: 760px) {
+  .photo-band img { border-radius: 2px; }
+  .quickbar a { border-radius: 3px; }
+}

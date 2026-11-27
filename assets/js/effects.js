@@ -10,6 +10,11 @@
   function t(key) { var l = document.documentElement.lang || "ja"; var d = (window.YUME.t[l] || window.YUME.t.ja); return d[key] || window.YUME.t.ja[key] || ""; }
   function renderGallery() {
     var root = document.getElementById("gallery-groups"); if (!root) return;
+    // Chưa có ảnh thật nào: giữ mục Gallery ẩn (không hiện ô trống "準備中" trông như trang chưa xong).
+    var total = ["space", "nails", "guests"].reduce(function (n, g) { return n + ((G[g] || []).length); }, 0);
+    var sec = document.getElementById("gallery"), nav = document.querySelector('a[href="#gallery"]');
+    if (!total) { if (sec) sec.hidden = true; if (nav) nav.hidden = true; return; }
+    if (sec) sec.hidden = false; if (nav) nav.hidden = false;
     root.innerHTML = "";
     ["space", "nails", "guests"].forEach(function (g) {
       var wrap = document.createElement("div"); wrap.className = "gallery-group";
