@@ -39,7 +39,8 @@
         var n = document.createElement("span"); n.className = "n"; n.textContent = t("menu." + it.key);
         var tm = document.createElement("span"); tm.className = "t"; tm.textContent = t("menu." + it.key + ".t") + t("menu.min");
         var p = document.createElement("span"); p.className = "p";
-        p.innerHTML = (it.from ? "<small>" + t("menu.from") + "</small>" : "") + yen(it.price);
+        if (it.ask) p.innerHTML = "<small>" + ({ ja: "店頭でご案内", vi: "Tư vấn tại quán", en: "Ask at the salon" }[current] || "店頭でご案内") + "</small>";
+        else p.innerHTML = (it.from ? "<small>" + t("menu.from") + "</small>" : "") + yen(it.price);
         li.appendChild(n); li.appendChild(p); li.appendChild(tm);
         ul.appendChild(li);
       });

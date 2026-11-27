@@ -44,9 +44,9 @@ window.YUME = {
     {
       id: "facial",
       items: [
-        { key: "f1", price: 5500 },
-        { key: "f2", price: 7700 },
-        { key: "f3", price: 9900, hidden: true }
+        { key: "f1", ask: true },
+        { key: "f2", ask: true },
+        { key: "f3", ask: true, hidden: true }
       ]
     }
   ],

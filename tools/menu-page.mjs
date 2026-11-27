@@ -15,9 +15,10 @@ export function menuPage(lang, { Y, M, t, esc, escAttr, yen, BASE, LANGS }) {
   const L = (o) => (o && (o[lang] != null ? o[lang] : o.ja)) || "";
   const price = (it) => it.soon ? `<span class="m-soon">${esc(u.soon)}</span>`
     : it.free ? `<span class="m-free">${esc(u.free)}</span>`
+    : it.ask ? `<span class="m-soon">${esc(u.ask)}</span>`
     : `${yen(it.price)}${it.from ? `<small>${esc(u.from.trim())}</small>` : ""}`;
   const fmtPrice = (it) => lang === "ja" ? price(it)
-    : it.soon || it.free ? price(it) : `${it.from ? `<small>${esc(u.from)}</small>` : ""}${yen(it.price)}`;
+    : it.soon || it.free || it.ask ? price(it) : `${it.from ? `<small>${esc(u.from)}</small>` : ""}${yen(it.price)}`;
 
   const coupon = `<section class="m-coupon" id="coupon" aria-labelledby="coupon-h">
       <header class="m-sec-head"><p class="m-en">${esc(M.opening.en)}</p><h2 id="coupon-h">${esc(L(M.opening.t))}</h2></header>
@@ -49,7 +50,7 @@ export function menuPage(lang, { Y, M, t, esc, escAttr, yen, BASE, LANGS }) {
       <header class="m-sec-head"><p class="m-en"><b>${M.sets.no}</b> ${esc(M.sets.en)}</p><h2 id="sets-h">${esc(L(M.sets.t))}</h2></header>
       <p class="m-lead2">${esc(L(M.sets.note))}</p>
       <ul class="m-setlist">${M.sets.items.map((it) =>
-        `<li><p class="m-sn">${esc(L(it.n))}</p><p class="m-sd">${esc(L(it.d))}</p><p class="m-sp"><span class="m-sum">${esc(u.sum)} ${yen(it.sum)}</span><span class="m-setp">${esc(u.setp)} <b>${yen(it.price)}</b></span></p></li>`).join("")}</ul>
+        `<li><p class="m-sn">${esc(L(it.n))}</p><p class="m-sd">${esc(L(it.d))}</p><p class="m-sp">${it.ask ? `<span class="m-setp"><b>${esc(u.ask)}</b></span>` : `<span class="m-sum">${esc(u.sum)} ${yen(it.sum)}</span><span class="m-setp">${esc(u.setp)} <b>${yen(it.price)}</b></span>`}</p></li>`).join("")}</ul>
     </section>`;
 
   const alternates = LANGS.map((l) => `  <link rel="alternate" hreflang="${l.hreflang}" href="${BASE}${l.dir}menu/">`).join("\n");

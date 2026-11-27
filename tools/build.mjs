@@ -50,7 +50,7 @@ function menuHtml(lang) {
   const L = (o) => (o && (o[lang] != null ? o[lang] : o.ja)) || "";
   return M.cats.filter((c) => HOME_CATS[c.id]).map((c) => {
     const items = c.items.slice(0, HOME_CATS[c.id]).map((it) => {
-      const p = it.soon ? esc(u.soon) : it.free ? esc(u.free)
+      const p = it.soon ? esc(u.soon) : it.free ? esc(u.free) : it.ask ? `<small>${esc(u.ask)}</small>`
         : (lang === "ja" ? yen(it.price) + (it.from ? "<small>" + esc(u.from) + "</small>" : "")
           : (it.from ? "<small>" + esc(u.from) + "</small>" : "") + yen(it.price));
       return `<li><span class="n">${esc(L(it.n))}${it.d ? `<small class="d2">${esc(L(it.d))}</small>` : ""}</span>` +
@@ -60,7 +60,7 @@ function menuHtml(lang) {
     return `<div class="menu-card cat-${c.id}">` +
       (img ? `<img class="menu-thumb" src="assets/img/menu/${img}-360.webp" width="360" height="450" loading="lazy" decoding="async" alt="${escAttr(L(c.photos[0][1]))}">` : "") +
       `<h3><i aria-hidden="true"></i>${esc(L(c.t))}</h3>` +
-      (c.note && c.id !== "facial" ? `<p class="d">${esc(L(c.note))}</p>` : "") + `<ul class="price-list">${items}</ul></div>`;
+      (c.note ? `<p class="d">${esc(L(c.note))}</p>` : "") + `<ul class="price-list">${items}</ul></div>`;
   }).join("");
 }
 

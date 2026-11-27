@@ -165,13 +165,14 @@ window.YUME_MENU = {
     {
       id: "facial", no: "10", en: "FACIAL CARE", time: true,
       t: { ja: "フェイシャル", vi: "Chăm sóc da mặt", en: "Facial care" },
-      note: { ja: "当店はリラクゼーションと美容を目的としたサロンです。医療行為は行いません。", vi: "Yume Beauty Spa & Nail là salon thư giãn và làm đẹp, không thực hiện các hoạt động y tế.", en: "Yume Beauty Spa & Nail is a relaxation and beauty salon. We do not provide medical treatment." },
+      // Giám đốc 2026-11-28: da mặt không ghi giá trên web, báo giá tại quán (giá gốc trong YumeSpa Menu.docx: 5,500 / 7,700 / 8,800 / 11,000).
+      note: { ja: "料金はご来店時にご希望をお伺いしてからご案内します。施術の前に内容と料金を必ずお伝えし、ご了承いただいてから始めます。当店はリラクゼーションと美容を目的としたサロンです。医療行為は行いません。", vi: "Giá được báo tại quán sau khi hỏi mong muốn của bạn. Trước khi làm, chúng tôi luôn báo rõ nội dung và giá, bạn đồng ý rồi mới bắt đầu. Yume Beauty Spa & Nail là salon thư giãn và làm đẹp, không thực hiện các hoạt động y tế.", en: "Prices are given at the salon after we hear what you would like. Before we start, we always tell you the content and price and begin only once you agree. Yume Beauty Spa & Nail is a relaxation and beauty salon. We do not provide medical treatment." },
       photos: [["facial", { ja: "フェイシャル", vi: "Da mặt", en: "Facial" }]],
       items: [
-        { n: { ja: "ベーシック保湿フェイシャル", vi: "Facial dưỡng ẩm cơ bản", en: "Basic moisturising facial" }, min: 40, price: 5500 },
-        { n: { ja: "うるおいマスクコース", vi: "Facial mặt nạ dưỡng ẩm", en: "Hydrating mask course" }, min: 60, price: 7700 },
-        { n: { ja: "毛穴クレンジングコース", vi: "Facial làm sạch lỗ chân lông", en: "Pore cleansing course" }, min: 60, price: 8800 },
-        { n: { ja: "プレミアムフェイシャル", vi: "Facial cao cấp", en: "Premium facial" }, min: 90, price: 11000 },
+        { n: { ja: "ベーシック保湿フェイシャル", vi: "Facial dưỡng ẩm cơ bản", en: "Basic moisturising facial" }, min: 40, ask: true },
+        { n: { ja: "うるおいマスクコース", vi: "Facial mặt nạ dưỡng ẩm", en: "Hydrating mask course" }, min: 60, ask: true },
+        { n: { ja: "毛穴クレンジングコース", vi: "Facial làm sạch lỗ chân lông", en: "Pore cleansing course" }, min: 60, ask: true },
+        { n: { ja: "プレミアムフェイシャル", vi: "Facial cao cấp", en: "Premium facial" }, min: 90, ask: true },
         { n: { ja: "ヘッドスパ", vi: "Head spa", en: "Head spa" }, soon: true }
       ]
     }
@@ -183,9 +184,9 @@ window.YUME_MENU = {
     note: { ja: "ネイルと美容ケアを組み合わせたセットです。", vi: "Combo kết hợp nail và chăm sóc làm đẹp.", en: "Sets that combine nails and beauty care." },
     items: [
       { n: { ja: "Hand & Foot Set", vi: "Hand & Foot Set", en: "Hand & Foot Set" }, d: { ja: "ハンド＋フット ワンカラー", vi: "Gel một màu tay + chân", en: "Hand and foot, one colour" }, sum: 12100, price: 11000 },
-      { n: { ja: "Beauty Set", vi: "Beauty Set", en: "Beauty Set" }, d: { ja: "ハンドワンカラー＋ベーシックフェイシャル", vi: "Gel tay một màu + facial dưỡng ẩm cơ bản", en: "Hand one colour + basic moisturising facial" }, sum: 11000, price: 9900 },
-      { n: { ja: "Luxury Set", vi: "Luxury Set", en: "Luxury Set" }, d: { ja: "定額Trend＋うるおいフェイシャル", vi: "Mẫu cố định Trend + facial mặt nạ dưỡng ẩm", en: "Set design Trend + hydrating mask facial" }, sum: 15400, price: 13200 },
-      { n: { ja: "Yume Special Set", vi: "Yume Special Set", en: "Yume Special Set" }, d: { ja: "ハンド＋フット ワンカラー＋ベーシックフェイシャル", vi: "Gel một màu tay + chân + facial dưỡng ẩm cơ bản", en: "Hand and foot one colour + basic moisturising facial" }, sum: 17600, price: 15400 }
+      { n: { ja: "Beauty Set", vi: "Beauty Set", en: "Beauty Set" }, d: { ja: "ハンドワンカラー＋ベーシックフェイシャル", vi: "Gel tay một màu + facial dưỡng ẩm cơ bản", en: "Hand one colour + basic moisturising facial" }, ask: true },
+      { n: { ja: "Luxury Set", vi: "Luxury Set", en: "Luxury Set" }, d: { ja: "定額Trend＋うるおいフェイシャル", vi: "Mẫu cố định Trend + facial mặt nạ dưỡng ẩm", en: "Set design Trend + hydrating mask facial" }, ask: true },
+      { n: { ja: "Yume Special Set", vi: "Yume Special Set", en: "Yume Special Set" }, d: { ja: "ハンド＋フット ワンカラー＋ベーシックフェイシャル", vi: "Gel một màu tay + chân + facial dưỡng ẩm cơ bản", en: "Hand and foot one colour + basic moisturising facial" }, ask: true }
     ]
   },
 
@@ -204,14 +205,13 @@ window.YUME_MENU = {
       { n: { ja: "定額 Simple", vi: "Mẫu cố định Simple", en: "Set design Simple" }, price: 5500 },
       { n: { ja: "定額 Trend", vi: "Mẫu cố định Trend", en: "Set design Trend" }, price: 6600 },
       { n: { ja: "長さ出し10本＋ワンカラー", vi: "Nối 10 móng + gel một màu", en: "10 extensions + one colour" }, price: 9900 },
-      { n: { ja: "フットワンカラー", vi: "Gel chân một màu", en: "Foot, one colour" }, price: 5500 },
-      { n: { ja: "ベーシックフェイシャル", vi: "Facial dưỡng ẩm cơ bản", en: "Basic moisturising facial" }, price: 3980 }
+      { n: { ja: "フットワンカラー", vi: "Gel chân một màu", en: "Foot, one colour" }, price: 5500 }
     ]
   },
 
   ui: {
-    ja: { title: "メニュー・料金", lead: "表示価格はすべて税込・オープン時の予定価格です。施術時間は目安です。", time: "時間目安", price: "料金", min: "分", from: "〜", free: "無料", soon: "準備中", sum: "単品合計", setp: "セット料金", coupon: "初回限定", star: "看板メニュー", photo: "写真はすべてイメージです（実際の施術写真ではありません）。デザインはサンプルからお選びいただけます。", toc: "目次" },
-    vi: { title: "Bảng giá", lead: "Giá đã gồm thuế, là giá dự kiến khi khai trương. Thời gian chỉ là ước tính.", time: "Thời gian", price: "Giá", min: " phút", from: "từ ", free: "Miễn phí", soon: "Đang chuẩn bị", sum: "Tổng giá lẻ", setp: "Giá combo", coupon: "Lần đầu", star: "Mẫu nổi bật", photo: "Tất cả là ảnh minh họa, không phải ảnh làm tại tiệm. Mẫu thật bạn chọn trong bảng mẫu tại tiệm.", toc: "Mục lục" },
-    en: { title: "Menu & prices", lead: "All prices include tax and are planned opening prices. Times are approximate.", time: "Time", price: "Price", min: " min", from: "from ", free: "Free", soon: "Coming soon", sum: "Separately", setp: "Set price", coupon: "First visit", star: "Signature", photo: "All photos are illustrations, not photos of our work. Choose your design from our in-salon samples.", toc: "Contents" }
+    ja: { title: "メニュー・料金", lead: "表示価格はすべて税込・オープン時の予定価格です。施術時間は目安です。", time: "時間目安", price: "料金", min: "分", from: "〜", free: "無料", soon: "準備中", ask: "店頭でご案内", sum: "単品合計", setp: "セット料金", coupon: "初回限定", star: "看板メニュー", photo: "写真はすべてイメージです（実際の施術写真ではありません）。デザインはサンプルからお選びいただけます。", toc: "目次" },
+    vi: { title: "Bảng giá", lead: "Giá đã gồm thuế, là giá dự kiến khi khai trương. Thời gian chỉ là ước tính.", time: "Thời gian", price: "Giá", min: " phút", from: "từ ", free: "Miễn phí", soon: "Đang chuẩn bị", ask: "Tư vấn tại quán", sum: "Tổng giá lẻ", setp: "Giá combo", coupon: "Lần đầu", star: "Mẫu nổi bật", photo: "Tất cả là ảnh minh họa, không phải ảnh làm tại tiệm. Mẫu thật bạn chọn trong bảng mẫu tại tiệm.", toc: "Mục lục" },
+    en: { title: "Menu & prices", lead: "All prices include tax and are planned opening prices. Times are approximate.", time: "Time", price: "Price", min: " min", from: "from ", free: "Free", soon: "Coming soon", ask: "Ask at the salon", sum: "Separately", setp: "Set price", coupon: "First visit", star: "Signature", photo: "All photos are illustrations, not photos of our work. Choose your design from our in-salon samples.", toc: "Contents" }
   }
 };
