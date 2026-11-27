@@ -165,14 +165,14 @@ window.YUME_MENU = {
     {
       id: "facial", no: "10", en: "FACIAL CARE", time: true,
       t: { ja: "フェイシャル", vi: "Chăm sóc da mặt", en: "Facial care" },
-      // Giám đốc 2026-11-28: da mặt không ghi giá trên web, báo giá tại quán (giá gốc trong YumeSpa Menu.docx: 5,500 / 7,700 / 8,800 / 11,000).
-      note: { ja: "料金はご来店時にご希望をお伺いしてからご案内します。施術の前に内容と料金を必ずお伝えし、ご了承いただいてから始めます。当店はリラクゼーションと美容を目的としたサロンです。医療行為は行いません。", vi: "Giá được báo tại quán sau khi hỏi mong muốn của bạn. Trước khi làm, chúng tôi luôn báo rõ nội dung và giá, bạn đồng ý rồi mới bắt đầu. Yume Beauty Spa & Nail là salon thư giãn và làm đẹp, không thực hiện các hoạt động y tế.", en: "Prices are given at the salon after we hear what you would like. Before we start, we always tell you the content and price and begin only once you agree. Yume Beauty Spa & Nail is a relaxation and beauty salon. We do not provide medical treatment." },
+      // Giám đốc 2026-11-28 (lần 2): hiện mốc giá cơ bản "¥…〜" theo YumeSpa Menu.docx, chi tiết báo tại quán trước khi làm.
+      note: { ja: "表示価格は基本コースの税込料金で、オプションなしでも表示価格でご利用いただけます。オプション追加をご希望の場合は、施術前に内容と追加料金をご案内し、ご同意をいただいてから施術いたします。当店はリラクゼーションと美容を目的としたサロンです。医療行為は行いません。", vi: "Giá hiển thị là giá gói cơ bản đã gồm thuế, không thêm gì vẫn đúng giá này. Nếu bạn muốn thêm tùy chọn, chúng tôi báo rõ nội dung và phụ phí trước, bạn đồng ý rồi mới làm. Yume Beauty Spa & Nail là salon thư giãn và làm đẹp, không thực hiện các hoạt động y tế.", en: "Prices shown are for the basic course, tax included, and you can have the basic course at that price. If you would like add-ons, we explain them and the extra cost first and start only once you agree. Yume Beauty Spa & Nail is a relaxation and beauty salon. We do not provide medical treatment." },
       photos: [["facial", { ja: "フェイシャル", vi: "Da mặt", en: "Facial" }]],
       items: [
-        { n: { ja: "ベーシック保湿フェイシャル", vi: "Facial dưỡng ẩm cơ bản", en: "Basic moisturising facial" }, min: 40, ask: true },
-        { n: { ja: "うるおいマスクコース", vi: "Facial mặt nạ dưỡng ẩm", en: "Hydrating mask course" }, min: 60, ask: true },
-        { n: { ja: "毛穴クレンジングコース", vi: "Facial làm sạch lỗ chân lông", en: "Pore cleansing course" }, min: 60, ask: true },
-        { n: { ja: "プレミアムフェイシャル", vi: "Facial cao cấp", en: "Premium facial" }, min: 90, ask: true },
+        { n: { ja: "ベーシック保湿フェイシャル", vi: "Facial dưỡng ẩm cơ bản", en: "Basic moisturising facial" }, min: 40, price: 5500, from: true },
+        { n: { ja: "うるおいマスクコース", vi: "Facial mặt nạ dưỡng ẩm", en: "Hydrating mask course" }, min: 60, price: 7700, from: true },
+        { n: { ja: "毛穴クレンジングコース", vi: "Facial làm sạch lỗ chân lông", en: "Pore cleansing course" }, min: 60, price: 8800, from: true },
+        { n: { ja: "プレミアムフェイシャル", vi: "Facial cao cấp", en: "Premium facial" }, min: 90, price: 11000, from: true },
         { n: { ja: "ヘッドスパ", vi: "Head spa", en: "Head spa" }, soon: true }
       ]
     }
