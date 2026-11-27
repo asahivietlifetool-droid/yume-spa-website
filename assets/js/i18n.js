@@ -53,12 +53,12 @@ window.YUME = {
 
   t: {
     ja: {
-      "meta.title": "Yume Spa｜竹ノ塚駅徒歩1分のネイル＆フェイシャルケアサロン",
-      "meta.desc": "Yume Spa は東京都足立区竹の塚、竹ノ塚駅から徒歩1分のネイル＆フェイシャルケアサロン。ジェルネイル、定額デザイン、長さ出し、フットネイル、フェイシャルケア。日本語・ベトナム語で対応。2026年12月19日オープン予定。",
+      "meta.title": "Yume Beauty Spa & Nail｜竹ノ塚駅徒歩1分のネイル＆フェイシャルケアサロン",
+      "meta.desc": "Yume Beauty Spa & Nail は東京都足立区竹の塚、竹ノ塚駅から徒歩1分のネイル＆フェイシャルケアサロン。ジェルネイル、定額デザイン、長さ出し、フットネイル、フェイシャルケア。日本語・ベトナム語で対応。2026年12月19日オープン予定。",
       "meta.og": "夢のような、ひとときを。竹ノ塚駅徒歩1分のネイル＆フェイシャルケアサロン。2026年12月19日オープン予定。",
       "skip": "メニューへ移動",
       "nav.concept": "コンセプト", "nav.menu": "メニュー", "nav.flow": "ご来店の流れ", "nav.access": "アクセス", "nav.faq": "よくある質問",
-      "hero.kana": "ゆめ すぱ",
+      "hero.kana": "ゆめ びゅーてぃーすぱ ＆ ねいる",
       "hero.title": "夢のような、ひとときを。",
       "hero.lead": "竹ノ塚駅から徒歩1分。ネイルとフェイシャルケアのサロンです。",
       "hero.open": "2026年12月19日オープン予定",
@@ -88,7 +88,7 @@ window.YUME = {
       "menu.n5": "他店ジェルのオフ（付け替え時）", "menu.n5.t": "20",
       "menu.n8": "ジェルオフのみ", "menu.n8.t": "30",
       "menu.off": "ご新規様のソフトジェル付替オフと、当店で付けたジェルの4週間以内の付け替えオフは無料です。サンプル以外のアートやパーツは、料金を事前にご案内します。",
-      "mp.title": "メニュー", "mp.kana": "ユメスパ", "mp.tag": "夢のような、ひとときを。",
+      "mp.title": "メニュー", "mp.kana": "ユメ ビューティースパ＆ネイル", "mp.tag": "夢のような、ひとときを。",
       "mp.loc": "東武スカイツリーライン 竹ノ塚駅 徒歩1分", "mp.open": "2026年12月19日オープン予定",
       "mp.hours": "営業 10:00〜22:00（最終受付 20:30・長時間メニューはより早め）・当面は毎日営業", "mp.pay": "お支払い：現金・クレジットカード（VISA・Mastercard・JCB・AMEX）・PayPay・au PAY",
       "mp.lang": "日本語・ベトナム語で対応します（英語は翻訳ツールでご案内）",
@@ -138,13 +138,13 @@ window.YUME = {
       "faq.q4": "妊娠中・持病がある場合は？", "faq.a4": "ご予約時にお知らせください。内容によってはお受けできないメニューがあります。医師にご相談のうえご利用ください。",
       "faq.q5": "支払い方法は？", "faq.a5": "現金、クレジットカード（VISA・Mastercard・JCB・AMEX）、PayPay、au PAYがご利用いただけます。",
       "foot.tag": "ネイル · フェイシャル — 東京・竹ノ塚駅 徒歩1分",
-      "foot.legal": "© 2026 Yume Spa. 運営：合同会社朝日越南ライフ（Asahi VietLife LLC）",
+      "foot.legal": "© 2026 Yume Beauty Spa & Nail. 運営：合同会社朝日越南ライフ（Asahi VietLife LLC）",
       "foot.privacy": "お預かりした個人情報は、ご予約の管理とご連絡のみに使用し、第三者に提供しません。"
     },
 
     vi: {
-      "meta.title": "Yume Spa｜Nail và chăm sóc da mặt, 1 phút từ ga Takenotsuka, Tokyo",
-      "meta.desc": "Yume Spa là salon nail và chăm sóc da mặt ở Takenotsuka, Adachi-ku, Tokyo, đi bộ 1 phút từ ga Takenotsuka: gel nail, mẫu cố định, nối móng, nail chân, chăm sóc da mặt. Phục vụ bằng tiếng Việt và tiếng Nhật. Dự kiến khai trương ngày 19/12/2026.",
+      "meta.title": "Yume Beauty Spa & Nail｜Nail và chăm sóc da mặt, 1 phút từ ga Takenotsuka, Tokyo",
+      "meta.desc": "Yume Beauty Spa & Nail là salon nail và chăm sóc da mặt ở Takenotsuka, Adachi-ku, Tokyo, đi bộ 1 phút từ ga Takenotsuka: gel nail, mẫu cố định, nối móng, nail chân, chăm sóc da mặt. Phục vụ bằng tiếng Việt và tiếng Nhật. Dự kiến khai trương ngày 19/12/2026.",
       "meta.og": "Một khoảng lặng đẹp như mơ. Salon nail và chăm sóc da mặt, 1 phút từ ga Takenotsuka, Tokyo. Dự kiến khai trương ngày 19/12/2026.",
       "skip": "Đến phần menu",
       "nav.concept": "Về Yume", "nav.menu": "Bảng giá", "nav.flow": "Quy trình", "nav.access": "Địa chỉ", "nav.faq": "Hỏi đáp",
@@ -166,7 +166,7 @@ window.YUME = {
       "showcase.note": "Hình minh họa. Ảnh thật của quán sẽ ở mục Hình ảnh.",
       "menu.title": "Bảng giá",
       "menu.note": "Giá đã gồm thuế, là giá dự kiến khi khai trương. Ảnh là ảnh minh họa. Đây là các dịch vụ chính; tùy chọn thêm, tháo gel và combo xem ở trang bảng giá đầy đủ.",
-      "menu.legal": "Yume Spa là salon thư giãn và làm đẹp, không thực hiện các hoạt động y tế.",
+      "menu.legal": "Yume Beauty Spa & Nail là salon thư giãn và làm đẹp, không thực hiện các hoạt động y tế.",
       "menu.from": "từ ", "menu.min": " phút",
       "menu.nails": "Nail", "menu.nails.d": "Gel, chăm sóc móng, tháo gel. Giữ móng thật khỏe, đôi tay sạch và gọn.",
       "menu.n1": "Gel một màu (gồm chăm sóc móng cơ bản)", "menu.n1.t": "60",
@@ -178,7 +178,7 @@ window.YUME = {
       "menu.n5": "Tháo gel làm ở tiệm khác (khi làm bộ mới)", "menu.n5.t": "20",
       "menu.n8": "Chỉ tháo gel", "menu.n8.t": "30",
       "menu.off": "Khách mới được tháo gel mềm miễn phí khi làm bộ mới; gel làm tại Yume cũng tháo miễn phí nếu làm lại trong 4 tuần. Vẽ thêm hoặc gắn đá, phụ kiện ngoài bảng mẫu sẽ được báo giá trước khi làm.",
-      "mp.title": "Bảng giá", "mp.kana": "ユメスパ", "mp.tag": "Tinh tế trong từng chi tiết – đẹp tự nhiên, không phô",
+      "mp.title": "Bảng giá", "mp.kana": "ユメ ビューティースパ＆ネイル", "mp.tag": "Tinh tế trong từng chi tiết – đẹp tự nhiên, không phô",
       "mp.loc": "Đi bộ 1 phút từ ga 竹ノ塚 (tuyến Tobu Skytree)", "mp.open": "Dự kiến khai trương 19/12/2026",
       "mp.hours": "Mở cửa 10:00–22:00 (nhận khách cuối 20:30, dịch vụ dài nhận sớm hơn), tạm thời mở cả 7 ngày", "mp.pay": "Thanh toán: tiền mặt, thẻ tín dụng (VISA, Mastercard, JCB, AMEX), PayPay, au PAY",
       "mp.lang": "Phục vụ bằng tiếng Nhật và tiếng Việt (tiếng Anh hỗ trợ bằng công cụ dịch)",
@@ -228,13 +228,13 @@ window.YUME = {
       "faq.q4": "Đang mang thai hoặc có bệnh nền?", "faq.a4": "Hãy báo khi đặt lịch. Một số dịch vụ có thể không phù hợp; nên hỏi ý kiến bác sĩ trước.",
       "faq.q5": "Thanh toán thế nào?", "faq.a5": "Tiền mặt, thẻ tín dụng (VISA, Mastercard, JCB, AMEX), PayPay hoặc au PAY.",
       "foot.tag": "Nail · Chăm sóc da mặt — 1 phút từ ga Takenotsuka, Tokyo",
-      "foot.legal": "© 2026 Yume Spa. Vận hành: Asahi VietLife LLC (合同会社朝日越南ライフ)",
+      "foot.legal": "© 2026 Yume Beauty Spa & Nail. Vận hành: Asahi VietLife LLC (合同会社朝日越南ライフ)",
       "foot.privacy": "Thông tin cá nhân chỉ dùng để quản lý lịch hẹn và liên lạc, không cung cấp cho bên thứ ba."
     },
 
     en: {
-      "meta.title": "Yume Spa | Nail and facial care salon, 1 min from Takenotsuka Station, Tokyo",
-      "meta.desc": "Yume Spa is a nail and facial care salon in Takenotsuka, Adachi-ku, Tokyo, a 1-minute walk from Takenotsuka Station: gel nails, set designs, extensions, pedicure gel and facial care. Japanese and Vietnamese spoken; English with a translation tool. Opening planned for 19 December 2026.",
+      "meta.title": "Yume Beauty Spa & Nail | Nail and facial care salon, 1 min from Takenotsuka Station, Tokyo",
+      "meta.desc": "Yume Beauty Spa & Nail is a nail and facial care salon in Takenotsuka, Adachi-ku, Tokyo, a 1-minute walk from Takenotsuka Station: gel nails, set designs, extensions, pedicure gel and facial care. Japanese and Vietnamese spoken; English with a translation tool. Opening planned for 19 December 2026.",
       "meta.og": "A moment as soft as a dream. A nail and facial care salon, 1 minute from Takenotsuka Station, Tokyo. Opening planned for 19 December 2026.",
       "skip": "Skip to menu",
       "nav.concept": "About", "nav.menu": "Menu", "nav.flow": "Your visit", "nav.access": "Access", "nav.faq": "FAQ",
@@ -256,7 +256,7 @@ window.YUME = {
       "showcase.note": "Illustration only. Real photos live in the gallery.",
       "menu.title": "Menu",
       "menu.note": "Prices include tax and are planned opening prices. Photos are illustrations. These are our main services; add-ons, removal and sets are on the full menu page.",
-      "menu.legal": "Yume Spa is a relaxation and beauty salon. We do not provide medical treatment.",
+      "menu.legal": "Yume Beauty Spa & Nail is a relaxation and beauty salon. We do not provide medical treatment.",
       "menu.from": "from ", "menu.min": " min",
       "menu.nails": "Nails", "menu.nails.d": "Gel, nail care and removal, with your natural nails kept healthy and tidy.",
       "menu.n1": "Gel, one colour (basic nail care included)", "menu.n1.t": "60",
@@ -268,7 +268,7 @@ window.YUME = {
       "menu.n5": "Removal of gel from another salon (with a new set)", "menu.n5.t": "20",
       "menu.n8": "Gel removal only", "menu.n8.t": "30",
       "menu.off": "Soft gel removal is free for first-time guests getting a new set, and for Yume gel redone within 4 weeks. Art or parts outside our samples are quoted before we start.",
-      "mp.title": "Menu", "mp.kana": "ユメスパ", "mp.tag": "A dreamlike moment.",
+      "mp.title": "Menu", "mp.kana": "ユメ ビューティースパ＆ネイル", "mp.tag": "A dreamlike moment.",
       "mp.loc": "1 min walk from Takenotsuka Station (Tobu Skytree Line)", "mp.open": "Opening 19 December 2026 (planned)",
       "mp.hours": "Open 10:00–22:00 (last booking 20:30, earlier for longer services), 7 days a week for now", "mp.pay": "Payment: cash, credit card (VISA, Mastercard, JCB, AMEX), PayPay, au PAY",
       "mp.lang": "We speak Japanese and Vietnamese; English with a translation tool",
@@ -318,7 +318,7 @@ window.YUME = {
       "faq.q4": "I'm pregnant or have a medical condition.", "faq.a4": "Please tell us when booking. Some services may not be suitable; check with your doctor first.",
       "faq.q5": "How can I pay?", "faq.a5": "Cash, credit card (VISA, Mastercard, JCB, AMEX), PayPay or au PAY.",
       "foot.tag": "Nails · Facial care — 1 min from Takenotsuka Station, Tokyo",
-      "foot.legal": "© 2026 Yume Spa. Operated by Asahi VietLife LLC (合同会社朝日越南ライフ)",
+      "foot.legal": "© 2026 Yume Beauty Spa & Nail. Operated by Asahi VietLife LLC (合同会社朝日越南ライフ)",
       "foot.privacy": "Personal details are used only to manage bookings and contact you, and are never shared."
     }
   }

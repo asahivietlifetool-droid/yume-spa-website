@@ -165,7 +165,7 @@ window.YUME_MENU = {
     {
       id: "facial", no: "10", en: "FACIAL CARE", time: true,
       t: { ja: "フェイシャル", vi: "Chăm sóc da mặt", en: "Facial care" },
-      note: { ja: "当店はリラクゼーションと美容を目的としたサロンです。医療行為は行いません。", vi: "Yume Spa là salon thư giãn và làm đẹp, không thực hiện các hoạt động y tế.", en: "Yume Spa is a relaxation and beauty salon. We do not provide medical treatment." },
+      note: { ja: "当店はリラクゼーションと美容を目的としたサロンです。医療行為は行いません。", vi: "Yume Beauty Spa & Nail là salon thư giãn và làm đẹp, không thực hiện các hoạt động y tế.", en: "Yume Beauty Spa & Nail is a relaxation and beauty salon. We do not provide medical treatment." },
       photos: [["facial", { ja: "フェイシャル", vi: "Da mặt", en: "Facial" }]],
       items: [
         { n: { ja: "ベーシック保湿フェイシャル", vi: "Facial dưỡng ẩm cơ bản", en: "Basic moisturising facial" }, min: 40, price: 5500 },
@@ -179,7 +179,7 @@ window.YUME_MENU = {
 
   sets: {
     no: "11", en: "SET MENU",
-    t: { ja: "Yume Spa 限定セットメニュー", vi: "Combo riêng của Yume Spa", en: "Yume Spa set menus" },
+    t: { ja: "Yume Beauty Spa & Nail 限定セットメニュー", vi: "Combo riêng của Yume Beauty Spa & Nail", en: "Yume Beauty Spa & Nail set menus" },
     note: { ja: "ネイルと美容ケアを組み合わせたセットです。", vi: "Combo kết hợp nail và chăm sóc làm đẹp.", en: "Sets that combine nails and beauty care." },
     items: [
       { n: { ja: "Hand & Foot Set", vi: "Hand & Foot Set", en: "Hand & Foot Set" }, d: { ja: "ハンド＋フット ワンカラー", vi: "Gel một màu tay + chân", en: "Hand and foot, one colour" }, sum: 12100, price: 11000 },

@@ -63,7 +63,8 @@ p { margin: 0 0 1rem; }
   .nav { display: none; }
   .lang { margin-left: auto; gap: .2rem; }
   .lang button { font-size: .72rem; padding: .4rem .5rem; white-space: nowrap; }
-  .brand { font-size: 1.15rem; }
+  .brand { font-size: 1rem; min-width: 0; }
+  .brand span { white-space: normal; line-height: 1.1; max-width: 7.5em; }
   .top { gap: .5rem; padding-left: .9rem; padding-right: .9rem; }
 }
 

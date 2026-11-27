@@ -54,7 +54,7 @@ export function menuPage(lang, { Y, M, t, esc, escAttr, yen, BASE, LANGS }) {
 
   const alternates = LANGS.map((l) => `  <link rel="alternate" hreflang="${l.hreflang}" href="${BASE}${l.dir}menu/">`).join("\n");
   const langNav = LANGS.map((l) => `<a href="${up}${l.dir}menu/"${l.code === lang ? ' aria-current="page"' : ""}>${{ ja: "日本語", vi: "Tiếng Việt", en: "English" }[l.code]}</a>`).join("");
-  const title = `${u.title}｜Yume Spa`;
+  const title = `${u.title}｜Yume Beauty Spa & Nail`;
 
   return `<!doctype html>
 <!-- Tệp này do tools/build.mjs (tools/menu-page.mjs) tạo ra. Đừng sửa tay: sửa assets/js/menu-data.js rồi chạy node tools/build.mjs -->
@@ -88,7 +88,7 @@ ${alternates}
   <main class="sheet">
     <header class="m-top">
       <img class="m-logo" src="${up}assets/img/logo-gold.svg" alt="" width="56" height="62">
-      <p class="m-brand">Yume Spa</p>
+      <p class="m-brand">Yume Beauty Spa &amp; Nail</p>
       <p class="m-kana">${esc(t(lang, "mp.kana"))}</p>
       <h1 class="m-title"><span>${esc(u.title)}</span></h1>
       <p class="m-meta">${esc(t(lang, "mp.loc"))}<span>·</span>${esc(t(lang, "mp.open"))}</p>
